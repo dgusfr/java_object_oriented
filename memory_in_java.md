@@ -46,7 +46,7 @@ public class TestaReferencias {
 
 **Memória:**
 
-<img src="images/memory" alt="Java" width="500">
+<img src="images/memory.png" alt="Java" width="500">
 
 ---
 
@@ -88,7 +88,7 @@ System.out.println(y); // Imprime: 20
 
 **Memória:**
 ```
-Stack
+Stack        Heap
 x = 10
 y = 20
 ```
