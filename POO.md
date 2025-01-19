@@ -48,6 +48,15 @@
    2.4 [Sobrecarga de Construtores](#24-sobrecarga-de-construtores)  
    2.5 [Chamando Outro Construtor com `this()`](#25-chamando-outro-construtor-com-this)  
 16. [Resumo e Benefícios](#3-resumo-e-benefícios)
+17. [Introdução aos Atributos de Classe](#1-introdução-aos-atributos-de-classe)  
+18. [Atributos Estáticos com `static`](#2-atributos-estáticos-com-static)  
+   2.1 [Definição de Atributos Estáticos](#21-definição-de-atributos-estáticos)  
+   2.2 [Acesso e Uso de Atributos Estáticos](#22-acesso-e-uso-de-atributos-estáticos)  
+19. [Métodos Estáticos](#3-métodos-estáticos)  
+   3.1 [Características dos Métodos Estáticos](#31-características-dos-métodos-estáticos)  
+   3.2 [Comparação: Métodos Estáticos vs. Métodos de Instância](#32-comparação-métodos-estáticos-vs-métodos-de-instância)  
+20. [Exemplo Prático: Controle de Contas Bancárias](#4-exemplo-prático-controle-de-contas-bancárias)  
+21. [Resumo e Benefícios](#5-resumo-e-benefícios)  
 
 ---
 
@@ -838,4 +847,207 @@ Conta conta = new Conta("Duke", 1234);
 
 Ao dominar esses conceitos, você garante a criação de classes robustas, seguras e fáceis de manter, seguindo os pilares da Programação Orientada a Objetos.
 
+---
+
+### **Atributos de Classe e Métodos Estáticos**
+
+## **1. Introdução aos Atributos de Classe**
+
+Os **atributos de classe** são variáveis que pertencem à classe como um todo, e não a instâncias específicas. Isso significa que todas as instâncias compartilham o mesmo valor do atributo.
+
+Exemplo de problema:  
+```java
+class Conta {
+    private int totalDeContas; // Não funciona como esperado
+    Conta() {
+        this.totalDeContas += 1;
+    }
+}
+```
+Cada objeto `Conta` teria seu próprio `totalDeContas`, resultando em inconsistências.
+
+---
+
+## **2. Atributos Estáticos com `static`**
+
+### **2.1 Definição de Atributos Estáticos**
+
+Os atributos `static` pertencem à classe, não a objetos individuais. Eles têm as seguintes características:
+- São compartilhados por todas as instâncias.
+- Mantêm o mesmo valor para todas as instâncias.
+- Podem ser acessados sem criar uma instância da classe.
+
+**Exemplo:**
+```java
+class Conta {
+    private static int totalDeContas = 0;
+    
+    Conta() {
+        Conta.totalDeContas += 1; // Incrementa ao criar uma conta
+    }
+}
+```
+
+---
+
+### **2.2 Acesso e Uso de Atributos Estáticos**
+
+#### **Acesso pelo Nome da Classe**
+Para acessar um atributo estático, usamos o nome da classe:
+```java
+Conta.totalDeContas;
+```
+
+#### **Uso com Getter Estático**
+Podemos criar um getter estático para expor o valor do atributo de forma controlada:
+```java
+class Conta {
+    private static int totalDeContas = 0;
+
+    Conta() {
+        Conta.totalDeContas += 1;
+    }
+
+    public static int getTotalDeContas() {
+        return Conta.totalDeContas;
+    }
+}
+```
+
+#### **Uso no Programa Principal**
+```java
+public class ProgramaPrincipal {
+    public static void main(String[] args) {
+        Conta c1 = new Conta();
+        Conta c2 = new Conta();
+        System.out.println("Total de contas: " + Conta.getTotalDeContas()); // Exibe: 2
+    }
+}
+```
+
+---
+
+## **3. Métodos Estáticos**
+
+### **3.1 Características dos Métodos Estáticos**
+- **Pertencem à classe:** Não dependem de instâncias.
+- **Acesso direto:** Podem ser chamados usando o nome da classe.
+- **Não acessam membros de instância diretamente:** Como não possuem referência `this`, não podem acessar atributos ou métodos de instância.
+
+**Exemplo de Método Estático:**
+```java
+class Calculadora {
+    public static double soma(double a, double b) {
+        return a + b;
+    }
+}
+```
+**Uso:**
+```java
+double resultado = Calculadora.soma(3, 5); // Saída: 8
+```
+
+---
+
+### **3.2 Comparação: Métodos Estáticos vs. Métodos de Instância**
+
+| **Método Estático**         | **Método de Instância**         |
+|-----------------------------|---------------------------------|
+| Pertence à classe.          | Pertence à instância do objeto.|
+| Não acessa atributos de instância. | Pode acessar e modificar atributos de instância. |
+| Usado para funcionalidades gerais. | Representa o comportamento de um objeto específico. |
+
+**Exemplo:**
+```java
+class Conta {
+    private double saldo;
+
+    public static void mostrarMensagem() {
+        System.out.println("Bem-vindo ao Banco!");
+    }
+
+    public void deposita(double valor) {
+        this.saldo += valor;
+    }
+}
+```
+
+---
+
+## **4. Exemplo Prático: Controle de Contas Bancárias**
+
+#### **Classe Conta**
+```java
+class Conta {
+    private static int totalDeContas = 0;
+    private String titular;
+    private double saldo;
+
+    // Construtor
+    Conta(String titular) {
+        this.titular = titular;
+        this.saldo = 0.0;
+        Conta.totalDeContas += 1;
+    }
+
+    // Getter estático para totalDeContas
+    public static int getTotalDeContas() {
+        return Conta.totalDeContas;
+    }
+
+    // Método de instância para depositar
+    public void deposita(double valor) {
+        if (valor > 0) {
+            this.saldo += valor;
+        }
+    }
+
+    // Método de instância para obter o saldo
+    public double getSaldo() {
+        return this.saldo;
+    }
+}
+```
+
+#### **Programa Principal**
+```java
+public class ProgramaPrincipal {
+    public static void main(String[] args) {
+        Conta conta1 = new Conta("Duke");
+        conta1.deposita(1000);
+
+        Conta conta2 = new Conta("Maria");
+        conta2.deposita(500);
+
+        System.out.println("Saldo da conta 1: " + conta1.getSaldo());
+        System.out.println("Saldo da conta 2: " + conta2.getSaldo());
+        System.out.println("Total de contas: " + Conta.getTotalDeContas());
+    }
+}
+```
+**Saída:**
+```
+Saldo da conta 1: 1000.0
+Saldo da conta 2: 500.0
+Total de contas: 2
+```
+
+---
+
+## **5. Resumo e Benefícios**
+
+### **Atributos Estáticos**
+- **Uso:** Representam informações compartilhadas por todas as instâncias.
+- **Exemplo:** Número total de contas criadas.
+
+### **Métodos Estáticos**
+- **Uso:** Funcionalidades gerais que não dependem de atributos ou estados de instância.
+- **Exemplo:** Calculadoras, validações ou operações matemáticas.
+
+### **Benefícios**
+1. **Centralização de Lógica:** Reduz duplicação de código.
+2. **Manutenção Simplificada:** Alterações no comportamento afetam todas as instâncias de forma consistente.
+3. **Eficiência:** Reduz uso de memória ao compartilhar dados e métodos entre instâncias.
+
+A aplicação correta de atributos e métodos estáticos melhora a organização e o desempenho do código, promovendo boas práticas em Programação Orientada a Objetos.
 
