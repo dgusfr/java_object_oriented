@@ -144,8 +144,8 @@ p1 = p2; // "TV" será desalocado
 **Memória Antes:**
 ```
 Stack         Heap
-p1 ----------> "TV 900.00 0"
-p2 ----------> "Mouse 30.00 0"
+p1 ----------> "TV    900.00 0"
+p2 ----------> "Mouse 30.00  0"
 ```
 
 **Memória Depois:**
