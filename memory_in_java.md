@@ -45,11 +45,8 @@ public class TestaReferencias {
 - Alterar `p2.name` afeta `p1.name` porque ambos referenciam o mesmo objeto.
 
 **Memória:**
-```
-Stack         Heap
-p1 ----------> 0x100358: TV 900 0
-p2 ----------> 0x100358: Radio 900 0
-```
+
+<img src="images/memory" alt="Java" width="500">
 
 ---
 
