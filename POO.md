@@ -60,11 +60,12 @@
 
 ---
 
-## 1. Conceitos Iniciais
+## 1 Conceitos Iniciais
 
 ### 1.1 Classes e Objetos
 
 - **Classe:** Define a estrutura e o comportamento de um objeto. Pode ser considerada como uma "planta" ou modelo.
+  
 - **Objeto:** É uma instância da classe, criada em tempo de execução.
 
 ---
