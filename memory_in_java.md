@@ -105,10 +105,6 @@ y = 20
 
 
 
-2. **Acesso Restrito:**
-   - Após usar `private`, tente acessar os atributos da conta no `main`. O que acontece?
-   - R: O acesso direto aos atributos não será permitido.
-
 3. **Getters e Setters:**
    - Crie getters e setters somente para os atributos necessários. Evite criar setters para atributos que não devem ser modificados diretamente.
 
