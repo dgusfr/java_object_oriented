@@ -93,8 +93,6 @@ x = 10
 y = 20
 ```
 
----
-
 ### **2.4 Comparação: Tipos Referência vs. Tipos Valor**
 
 | **Característica**           | **Classe (Tipo Referência)** | **Tipo Primitivo (Tipo Valor)**  |
