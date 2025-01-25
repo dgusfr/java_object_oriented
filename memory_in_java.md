@@ -65,8 +65,6 @@ p1 ----------> 0x100358: TV 900 0
 p2 ----------> null
 ```
 
----
-
 ### **2.3 Tipos Primitivos como Tipos Valor**
 Tipos primitivos (como `int`, `double`, `boolean`, etc.) armazenam diretamente os valores.
 
