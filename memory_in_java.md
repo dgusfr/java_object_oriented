@@ -7,8 +7,6 @@ Em Java, a alocação dinâmica de memória é gerenciada automaticamente pela *
 
 ## **2. Tipos Referência vs. Tipos Valor**
 
----
-
 ### **2.1 Classes como Tipos Referência**
 Variáveis do tipo referência não armazenam o objeto em si, mas sim uma referência (ou endereço de memória) onde o objeto está localizado na **Heap**.
 
