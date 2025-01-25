@@ -103,12 +103,7 @@ y = 20
 
 ---
 
-## **3. Exercícios e Desafios**
 
-### **Exercícios Práticos**
-1. **Protegendo Atributos da Classe `Conta`:**
-   - Como garantir que os atributos da classe `Conta` não sejam acessados diretamente?
-   - R: Declare os atributos como `private`.
 
 2. **Acesso Restrito:**
    - Após usar `private`, tente acessar os atributos da conta no `main`. O que acontece?
