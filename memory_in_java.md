@@ -132,7 +132,7 @@ p2 ----------> "Mouse 30.00 0"
 
 ---
 
-### **4.2 Escopo Local**
+### **3.2 Escopo Local**
 Variáveis locais são armazenadas na **Stack** e desalocadas ao final do escopo.
 
 **Exemplo Simples:**
@@ -149,7 +149,7 @@ void method1() {
 
 ---
 
-## **5. Resumo**
+## **Resumo**
 
 ### **Gerenciamento de Memória em Java**
 1. **Stack:**
