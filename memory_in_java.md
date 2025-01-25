@@ -101,12 +101,6 @@ y = 20
 | **Localização na Memória**   | **Heap**                    | **Stack**                        |
 | **Desalocação**              | **Garbage Collector**       | Automática (fim do escopo)       |
 
----
-
-
-4. **Validação de CPF na Classe `PessoaFisica`:**
-   - Como garantir que uma `PessoaFisica` nunca seja criada com um CPF inválido?
-   - R: Crie um método de validação e aplique-o no construtor.
 
 ---
 
