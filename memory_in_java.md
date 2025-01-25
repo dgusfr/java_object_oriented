@@ -104,10 +104,6 @@ y = 20
 ---
 
 
-
-3. **Getters e Setters:**
-   - Crie getters e setters somente para os atributos necessários. Evite criar setters para atributos que não devem ser modificados diretamente.
-
 4. **Validação de CPF na Classe `PessoaFisica`:**
    - Como garantir que uma `PessoaFisica` nunca seja criada com um CPF inválido?
    - R: Crie um método de validação e aplique-o no construtor.
