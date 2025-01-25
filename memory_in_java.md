@@ -48,8 +48,6 @@ public class TestaReferencias {
 
 <img src="images/memory.png" alt="Java" width="500">
 
----
-
 ### **2.2 Valor "null"**
 Tipos referência podem assumir o valor `null`, indicando que a variável não está apontando para nenhum objeto.
 
