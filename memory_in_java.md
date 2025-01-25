@@ -104,9 +104,9 @@ y = 20
 
 ---
 
-## **4. Desalocação de Memória**
+## **3. Desalocação de Memória**
 
-### **4.1 Garbage Collector**
+### **3.1 Garbage Collector**
 - **Função:** Remove objetos na **Heap** que não possuem mais referências.
 - **Exemplo Prático:**
 ```java
