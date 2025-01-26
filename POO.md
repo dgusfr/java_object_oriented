@@ -74,7 +74,7 @@
 
 UML (*Unified Modeling Language*) é uma linguagem visual para modelar sistemas de software. Permite representar classes, objetos, interações e relacionamentos, facilitando o design antes da implementação.
 
-<img src="images/UML.png" alt="uml" width="510">
+<img src="images/UML.png" alt="uml" width="511">
 
 #### Exemplo de Classe `Conta`
 - **Atributos:**
