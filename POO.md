@@ -305,6 +305,7 @@ Saldo de Duke: 1000.0
 Saldo de John: 300.0
 ```
 
+---
 
 ## 1. Atributos
 
