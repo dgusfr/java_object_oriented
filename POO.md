@@ -1035,9 +1035,7 @@ Total de contas: 2
 - **Uso:** Representam informações compartilhadas por todas as instâncias.
 - **Exemplo:** Número total de contas criadas.
 
-### **Métodos Estáticos**
-- **Uso:** Funcionalidades gerais que não dependem de atributos ou estados de instância.
-- **Exemplo:** Calculadoras, validações ou operações matemáticas.
+
 
 
 
