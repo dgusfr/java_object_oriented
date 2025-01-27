@@ -1031,9 +1031,6 @@ Total de contas: 2
 
 ## **5. Resumo e Benefícios**
 
-### **Atributos Estáticos**
-- **Uso:** Representam informações compartilhadas por todas as instâncias.
-- **Exemplo:** Número total de contas criadas.
 
 
 
