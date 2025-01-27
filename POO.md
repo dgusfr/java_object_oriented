@@ -188,7 +188,6 @@ boolean saca(double valor) {
 }
 ```
 
----
 
 ### 4.3 O Método `transfere`
 
