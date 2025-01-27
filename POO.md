@@ -173,7 +173,6 @@ void saca(double quantidade) {
 }
 ```
 
----
 
 ### 4.2 Métodos com Retorno
 
