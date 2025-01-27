@@ -220,7 +220,7 @@ boolean transfere(Conta destino, double valor) {
 
 Ambas `c1` e `c2` apontam para o mesmo objeto.
 
----
+
 
 ### 5.2 Comparando Objetos com `==`
 
