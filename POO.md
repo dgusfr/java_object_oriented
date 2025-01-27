@@ -1039,10 +1039,5 @@ Total de contas: 2
 - **Uso:** Funcionalidades gerais que não dependem de atributos ou estados de instância.
 - **Exemplo:** Calculadoras, validações ou operações matemáticas.
 
-### **Benefícios**
-1. **Centralização de Lógica:** Reduz duplicação de código.
-2. **Manutenção Simplificada:** Alterações no comportamento afetam todas as instâncias de forma consistente.
-3. **Eficiência:** Reduz uso de memória ao compartilhar dados e métodos entre instâncias.
 
-A aplicação correta de atributos e métodos estáticos melhora a organização e o desempenho do código, promovendo boas práticas em Programação Orientada a Objetos.
 
