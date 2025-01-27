@@ -152,7 +152,7 @@ double circ = Calculator.circunference(3.0);
 
 Membros não estáticos pertencem a cada instância da classe e precisam de um objeto para serem acessados.
 
----
+
 
 ### 3.3 Melhores Práticas
 
