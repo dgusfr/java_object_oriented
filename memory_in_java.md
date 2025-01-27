@@ -130,7 +130,6 @@ p1 ----------> "Mouse 30.00 0"
 p2 ----------> "Mouse 30.00 0"
 ```
 
----
 
 ### **3.2 Escopo Local**
 Variáveis locais são armazenadas na **Stack** e desalocadas ao final do escopo.
