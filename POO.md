@@ -113,7 +113,6 @@ Objetos são criados usando o operador `new`:
 Conta minhaConta = new Conta();
 ```
 
----
 
 ### 2.3 Acessando e Modificando Atributos
 
