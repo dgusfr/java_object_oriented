@@ -103,8 +103,6 @@ class Conta {
 }
 ```
 
----
-
 ### 2.2 Criando Objetos
 
 Objetos são criados usando o operador `new`:
