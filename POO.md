@@ -147,7 +147,6 @@ Membros estáticos pertencem à classe, não às instâncias. Exemplos:
 double circ = Calculator.circunference(3.0);
 ```
 
----
 
 ### 3.2 Comparação com Membros Não Estáticos
 
