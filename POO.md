@@ -79,6 +79,8 @@ Exemplo de Classe **Conta** em UML:
 - **Visibilidade**:  
   - `-` (privado)  
   - `+` (público)
+    
+<img src="images/UML.png" alt="uml" width="500">
 
 ---
 
