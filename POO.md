@@ -193,6 +193,8 @@ Conta c2 = c1;
 ```
 As variáveis `c1` e `c2` passam a apontar para o mesmo objeto em memória. 
 
+<img src="images/ref.png" alt="Java" width="200">
+
 ### 5.2 Comparando Objetos com ==
 
 ```java
