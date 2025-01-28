@@ -68,7 +68,6 @@
   
 - **Objeto:** É uma instância da classe, criada em tempo de execução.
 
----
 
 ### 1.2 Projeto de Classes com UML
 
