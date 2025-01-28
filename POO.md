@@ -1,6 +1,4 @@
-Diego, segue abaixo o *README* com os tópicos e subtópicos devidamente renumerados, mantendo o conteúdo original. Todos os trechos de código estão sem comentários embutidos e, após cada bloco de código, há um breve parágrafo explicando seu funcionamento.
 
----
 
 # POO com Java
 
