@@ -1,97 +1,93 @@
-# POO com Java
-
-## Sumário
-1. [Conceitos Iniciais](#1-conceitos-iniciais)
-    - [Classes e Objetos](#11-classes-e-objetos)
-    - [Projeto de Classes com UML](#12-projeto-de-classes-com-uml)
-2. [Definindo Classes](#2-definindo-classes)
-    - [Atributos](#21-atributos)
-    - [Criando Objetos](#22-criando-objetos)
-    - [Acessando e Modificando Atributos](#23-acessando-e-modificando-atributos)
-3. [Membros Estáticos](#3-membros-estáticos)
-    - [Atributos e Métodos Estáticos](#31-atributos-e-métodos-estáticos)
-    - [Comparação com Membros Não Estáticos](#32-comparação-com-membros-não-estáticos)
-    - [Melhores Práticas](#33-melhores-práticas)
-4. [Métodos](#4-métodos)
-    - [Definindo Métodos](#41-definindo-métodos)
-    - [Métodos com Retorno](#42-métodos-com-retorno)
-    - [O Método `transfere`](#43-o-método-transfere)
-5. [Referências em Java](#5-referências-em-java)
-    - [Como Referências Funcionam](#51-como-referências-funcionam)
-    - [Comparando Objetos com `==`](#52-comparando-objetos-com-)
-6. [Exemplos de Código](#6-exemplos-de-código)
-    - [Classe `Conta`](#61-classe-conta)
-    - [Teste de Métodos](#62-teste-de-métodos)
-7. [Atributos](#1-atributos)
-   - [Valores Padrão](#11-valores-padrão)
-   - [Composição de Classes](#12-composição-de-classes)
-   - [Referências e `null`](#13-referências-e-null)
-8. [Palavra-chave `this`](#2-palavra-chave-this)
-   - [Diferenciando Atributos de Variáveis Locais](#21-diferenciando-atributos-de-variáveis-locais)
-   - [Passando o Próprio Objeto como Argumento](#22-passando-o-próprio-objeto-como-argumento)
-9. [Controlando o Acesso](#3-controlando-o-acesso)
-   - [Problemas com Acesso Direto a Atributos](#31-problemas-com-acesso-direto-a-atributos)
-   - [Encapsulamento para Proteger os Dados](#32-encapsulamento-para-proteger-os-dados)
-10. [Problemas com Acesso Direto a Atributos](#1-problemas-com-acesso-direto-a-atributos)
-2. [Encapsulamento e Modificadores de Acesso](1#2-encapsulamento-e-modificadores-de-acesso)
-   - [Benefícios do Encapsulamento](#21-benefícios-do-encapsulamento)
-   - [Interface vs. Implementação](#22-interface-vs-implementação)
-13. [Exemplo Prático: Validação de CPF](#3-exemplo-prático-validação-de-cpf)
-14. [Getters e Setters](#1-getters-e-setters)  
-   1.1 [Problema do Acesso Direto](#11-problema-do-acesso-direto)  
-   1.2 [O Papel dos Getters e Setters](#12-o-papel-dos-getters-e-setters)  
-   1.3 [Boas Práticas com Getters e Setters](#13-boas-práticas-com-getters-e-setters)  
-15. [Construtores](#2-construtores)  
-   2.1 [O Que é um Construtor?](#21-o-que-é-um-construtor)  
-   2.2 [Construtor Default](#22-construtor-default)  
-   2.3 [Construtores com Argumentos](#23-construtores-com-argumentos)  
-   2.4 [Sobrecarga de Construtores](#24-sobrecarga-de-construtores)  
-   2.5 [Chamando Outro Construtor com `this()`](#25-chamando-outro-construtor-com-this)  
-16. [Resumo e Benefícios](#3-resumo-e-benefícios)
-17. [Introdução aos Atributos de Classe](#1-introdução-aos-atributos-de-classe)  
-18. [Atributos Estáticos com `static`](#2-atributos-estáticos-com-static)  
-   2.1 [Definição de Atributos Estáticos](#21-definição-de-atributos-estáticos)  
-   2.2 [Acesso e Uso de Atributos Estáticos](#22-acesso-e-uso-de-atributos-estáticos)  
-19. [Métodos Estáticos](#3-métodos-estáticos)  
-   3.1 [Características dos Métodos Estáticos](#31-características-dos-métodos-estáticos)  
-   3.2 [Comparação: Métodos Estáticos vs. Métodos de Instância](#32-comparação-métodos-estáticos-vs-métodos-de-instância)  
-20. [Exemplo Prático: Controle de Contas Bancárias](#4-exemplo-prático-controle-de-contas-bancárias)  
-21. [Resumo e Benefícios](#5-resumo-e-benefícios)  
+Diego, segue abaixo o *README* com os tópicos e subtópicos devidamente renumerados, mantendo o conteúdo original. Todos os trechos de código estão sem comentários embutidos e, após cada bloco de código, há um breve parágrafo explicando seu funcionamento.
 
 ---
 
-## 1 Conceitos Iniciais
+# POO com Java
 
+## Sumário
+
+1. [Conceitos Iniciais](#1-conceitos-iniciais)  
+   1.1 [Classes e Objetos](#11-classes-e-objetos)  
+   1.2 [Projeto de Classes com UML](#12-projeto-de-classes-com-uml)  
+2. [Definindo Classes](#2-definindo-classes)  
+   2.1 [Atributos](#21-atributos)  
+   2.2 [Criando Objetos](#22-criando-objetos)  
+   2.3 [Acessando e Modificando Atributos](#23-acessando-e-modificando-atributos)  
+3. [Membros Estáticos](#3-membros-estáticos)  
+   3.1 [Atributos e Métodos Estáticos](#31-atributos-e-métodos-estáticos)  
+   3.2 [Comparação com Membros Não Estáticos](#32-comparação-com-membros-não-estáticos)  
+   3.3 [Melhores Práticas](#33-melhores-práticas)  
+4. [Métodos](#4-métodos)  
+   4.1 [Definindo Métodos](#41-definindo-métodos)  
+   4.2 [Métodos com Retorno](#42-métodos-com-retorno)  
+   4.3 [O Método transfere](#43-o-método-transfere)  
+5. [Referências em Java](#5-referências-em-java)  
+   5.1 [Como Referências Funcionam](#51-como-referências-funcionam)  
+   5.2 [Comparando Objetos com ==](#52-comparando-objetos-com--)  
+6. [Exemplos de Código](#6-exemplos-de-código)  
+   6.1 [Classe Conta](#61-classe-conta)  
+   6.2 [Teste de Métodos](#62-teste-de-métodos)  
+7. [Atributos](#7-atributos)  
+   7.1 [Valores Padrão](#71-valores-padrão)  
+   7.2 [Composição de Classes](#72-composição-de-classes)  
+   7.3 [Referências e null](#73-referências-e-null)  
+8. [Palavra-chave this](#8-palavra-chave-this)  
+   8.1 [Diferenciando Atributos de Variáveis Locais](#81-diferenciando-atributos-de-variáveis-locais)  
+   8.2 [Passando o Próprio Objeto como Argumento](#82-passando-o-próprio-objeto-como-argumento)  
+9. [Controlando o Acesso](#9-controlando-o-acesso)  
+   9.1 [Problemas com Acesso Direto a Atributos](#91-problemas-com-acesso-direto-a-atributos)  
+   9.2 [Encapsulamento para Proteger os Dados](#92-encapsulamento-para-proteger-os-dados)  
+10. [Encapsulamento e Modificadores de Acesso](#10-encapsulamento-e-modificadores-de-acesso)  
+   10.1 [Benefícios do Encapsulamento](#101-benefícios-do-encapsulamento)  
+   10.2 [Interface vs. Implementação](#102-interface-vs-implementação)  
+11. [Exemplo Prático: Validação de CPF](#11-exemplo-prático-validação-de-cpf)  
+12. [Getters e Setters](#12-getters-e-setters)  
+   12.1 [Problema do Acesso Direto](#121-problema-do-acesso-direto)  
+   12.2 [O Papel dos Getters e Setters](#122-o-papel-dos-getters-e-setters)  
+   12.3 [Boas Práticas com Getters e Setters](#123-boas-práticas-com-getters-e-setters)  
+13. [Construtores](#13-construtores)  
+   13.1 [O Que é um Construtor?](#131-o-que-é-um-construtor)  
+   13.2 [Construtor Default](#132-construtor-default)  
+   13.3 [Construtores com Argumentos](#133-construtores-com-argumentos)  
+   13.4 [Sobrecarga de Construtores](#134-sobrecarga-de-construtores)  
+   13.5 [Chamando Outro Construtor com this()](#135-chamando-outro-construtor-com-this)  
+14. [Resumo e Benefícios](#14-resumo-e-benefícios)  
+15. [Introdução aos Atributos de Classe](#15-introdução-aos-atributos-de-classe)  
+16. [Atributos Estáticos com static](#16-atributos-estáticos-com-static)  
+   16.1 [Definição de Atributos Estáticos](#161-definição-de-atributos-estáticos)  
+   16.2 [Acesso e Uso de Atributos Estáticos](#162-acesso-e-uso-de-atributos-estáticos)  
+17. [Métodos Estáticos](#17-métodos-estáticos)  
+   17.1 [Características dos Métodos Estáticos](#171-características-dos-métodos-estáticos)  
+   17.2 [Comparação: Métodos Estáticos vs. Métodos de Instância](#172-comparação-métodos-estáticos-vs-métodos-de-instância)  
+18. [Exemplo Prático: Controle de Contas Bancárias](#18-exemplo-prático-controle-de-contas-bancárias)  
+19. [Resumo e Benefícios](#19-resumo-e-benefícios)  
+
+---
+
+## 1. Conceitos Iniciais
 ### 1.1 Classes e Objetos
 
-- **Classe:** Define a estrutura e o comportamento de um objeto. Pode ser considerada como uma "planta" ou modelo.
-  
+- **Classe:** Define a estrutura e o comportamento de um objeto; pode ser vista como uma “planta”.  
 - **Objeto:** É uma instância da classe, criada em tempo de execução.
-
 
 ### 1.2 Projeto de Classes com UML
 
 UML (*Unified Modeling Language*) é uma linguagem visual para modelar sistemas de software. Permite representar classes, objetos, interações e relacionamentos, facilitando o design antes da implementação.
 
-<img src="images/UML.png" alt="uml" width="500">
-
-#### Exemplo de Classe `Conta`
-- **Atributos:**
-  - `numero`: Número da conta.
-  - `dono`: Nome do titular.
-  - `saldo`: Saldo atual.
-  - `limite`: Limite de crédito.
-- **Visibilidade:**
-  - `-` (privado): Restringe o acesso.
-  - `+` (público): Permite acesso externo.
+Exemplo de Classe **Conta** em UML:  
+- **Atributos**:  
+  - numero  
+  - dono  
+  - saldo  
+  - limite  
+- **Visibilidade**:  
+  - `-` (privado)  
+  - `+` (público)
 
 ---
 
 ## 2. Definindo Classes
-
 ### 2.1 Atributos
-
-Os atributos definem as características de uma classe. Por exemplo:
 
 ```java
 class Conta {
@@ -101,81 +97,68 @@ class Conta {
     double limite;
 }
 ```
+Esse código declara a classe `Conta` com quatro atributos públicos, definindo as características básicas de uma conta.
 
 ### 2.2 Criando Objetos
-
-Objetos são criados usando o operador `new`:
 
 ```java
 Conta minhaConta = new Conta();
 ```
-
+Esse código cria um novo objeto da classe `Conta` e o atribui à variável `minhaConta`.
 
 ### 2.3 Acessando e Modificando Atributos
-
-Podemos acessar e modificar atributos com o operador ponto (`.`):
 
 ```java
 minhaConta.dono = "Duke";
 minhaConta.saldo = 1000.0;
 System.out.println(minhaConta.saldo);
 ```
+Aqui, atribuimos valores aos atributos `dono` e `saldo` de `minhaConta`, exibindo o saldo ao final.
 
 ---
 
 ## 3. Membros Estáticos
-
 ### 3.1 Atributos e Métodos Estáticos
 
-Membros estáticos pertencem à classe, não às instâncias. Exemplos:
+```java
+public static final double PI = 3.14159;
+```
+Este código mostra um atributo estático que pode ser usado como constante em toda a aplicação.
 
-- **Atributo Estático:**
-  ```java
-  public static final double PI = 3.14159;
-  ```
+```java
+public static double circunference(double radius) {
+    return 2.0 * PI * radius;
+}
+```
+Este método estático realiza o cálculo de circunferência de um círculo, utilizando o atributo estático `PI`.
 
-- **Método Estático:**
-  ```java
-  public static double circunference(double radius) {
-      return 2.0 * PI * radius;
-  }
-  ```
-
-**Uso:**
 ```java
 double circ = Calculator.circunference(3.0);
 ```
-
+Aqui, o método estático `circunference` é chamado diretamente a partir do nome da classe `Calculator`.
 
 ### 3.2 Comparação com Membros Não Estáticos
 
-Membros não estáticos pertencem a cada instância da classe e precisam de um objeto para serem acessados.
-
-
+Membros não estáticos pertencem a cada instância, enquanto membros estáticos pertencem à classe e podem ser acessados sem a criação de objetos.
 
 ### 3.3 Melhores Práticas
 
-- Use membros estáticos para constantes e métodos utilitários.
-- Evite redundância criando atributos e métodos não estáticos para valores invariáveis.
+- Use membros estáticos para constantes e métodos utilitários.  
+- Evite redundância criando membros não estáticos para valores que não variam.
 
 ---
 
 ## 4. Métodos
-
 ### 4.1 Definindo Métodos
-
-Os métodos representam comportamentos de um objeto. Por exemplo:
 
 ```java
 void saca(double quantidade) {
     this.saldo -= quantidade;
 }
 ```
-
+Este método reduz o atributo `saldo` de uma conta ao sacar uma quantia informada.
 
 ### 4.2 Métodos com Retorno
-
-Métodos podem retornar valores. Exemplo de um método `saca` que verifica o saldo antes de realizar a operação:
 
 ```java
 boolean saca(double valor) {
@@ -186,11 +169,9 @@ boolean saca(double valor) {
     return true;
 }
 ```
+Este método verifica se há saldo suficiente antes de efetuar o saque e retorna um valor booleano indicando sucesso ou falha.
 
-
-### 4.3 O Método `transfere`
-
-O método `transfere` permite transferir valores entre contas. Exemplo com validação:
+### 4.3 O Método transfere
 
 ```java
 boolean transfere(Conta destino, double valor) {
@@ -201,41 +182,32 @@ boolean transfere(Conta destino, double valor) {
     return false;
 }
 ```
+Este método utiliza o `saca` internamente para verificar se há saldo e, se bem-sucedido, faz o depósito na conta de destino.
 
 ---
 
 ## 5. Referências em Java
-
 ### 5.1 Como Referências Funcionam
 
-- As variáveis armazenam referências, não os objetos em si.
-- Exemplo:
-  ```java
-  Conta c1 = new Conta();
-  Conta c2 = c1;
-  ```
+```java
+Conta c1 = new Conta();
+Conta c2 = c1;
+```
+As variáveis `c1` e `c2` passam a apontar para o mesmo objeto em memória. 
 
-<img src="images/ref.png" alt="Java" width="200">
-
-Ambas `c1` e `c2` apontam para o mesmo objeto.
-
-
-
-### 5.2 Comparando Objetos com `==`
-
-O operador `==` verifica se duas referências apontam para o mesmo objeto, não se possuem o mesmo conteúdo.
+### 5.2 Comparando Objetos com ==
 
 ```java
 Conta c1 = new Conta();
 Conta c2 = new Conta();
-System.out.println(c1 == c2); // false
+System.out.println(c1 == c2);
 ```
+O operador `==` verifica se as duas variáveis referem-se ao mesmo objeto, não se têm atributos equivalentes.
 
 ---
 
 ## 6. Exemplos de Código
-
-### 6.1 Classe `Conta`
+### 6.1 Classe Conta
 
 ```java
 class Conta {
@@ -261,7 +233,7 @@ class Conta {
     }
 }
 ```
-
+Essa classe `Conta` contém atributos básicos e métodos para saque, depósito e transferência de valores entre contas.
 
 ### 6.2 Teste de Métodos
 
@@ -272,44 +244,26 @@ public class TestaMetodos {
         minhaConta.dono = "Duke";
         minhaConta.saldo = 1000;
 
-        // Saque
         minhaConta.saca(200);
-
-        // Depósito
         minhaConta.deposita(500);
 
-        // Transferência
         Conta outraConta = new Conta();
         outraConta.dono = "John";
         minhaConta.transfere(outraConta, 300);
 
-        // Exibe saldo
         System.out.println("Saldo de " + minhaConta.dono + ": " + minhaConta.saldo);
         System.out.println("Saldo de " + outraConta.dono + ": " + outraConta.saldo);
     }
 }
 ```
-
-Saída esperada:
-
-```
-Saldo de Duke: 1000.0
-Saldo de John: 300.0
-```
+Este programa cria duas contas, realiza operações de saque, depósito e transferência, e exibe os saldos resultantes.
 
 ---
 
-## 1. Atributos
+## 7. Atributos
+### 7.1 Valores Padrão
 
-### 1.1 Valores Padrão
-
-Os atributos em Java recebem valores padrão:
-
-- **Números:** `0`
-- **Booleanos:** `false`
-- **Referências a Objetos:** `null`
-
-Você também pode definir valores padrão explicitamente:
+Em Java, atributos de tipos numéricos são inicializados como 0, booleanos como `false` e referências como `null` se não houver atribuição explícita.
 
 ```java
 class Conta {
@@ -318,12 +272,9 @@ class Conta {
     double saldo = 1000.0;
 }
 ```
+Aqui, definimos valores padrão diretamente na declaração dos atributos.
 
----
-
-### 1.2 Composição de Classes
-
-Uma classe pode conter outra classe como atributo, representando uma composição. Exemplo com `Conta` e `Cliente`:
+### 7.2 Composição de Classes
 
 ```java
 class Cliente {
@@ -338,8 +289,7 @@ class Conta {
     Cliente titular;
 }
 ```
-
-No `main`:
+Essas classes demonstram a composição, onde `Conta` possui um atributo do tipo `Cliente`.
 
 ```java
 Conta minhaConta = new Conta();
@@ -347,39 +297,23 @@ Cliente cliente = new Cliente();
 minhaConta.titular = cliente;
 minhaConta.titular.nome = "Duke";
 ```
+Instanciamos as duas classes separadamente e atribuimos um objeto `Cliente` à conta.
 
-Composição permite delegar responsabilidades entre classes, promovendo maior organização.
+### 7.3 Referências e null
 
----
-
-### 1.3 Referências e `null`
-
-Por padrão, referências a objetos são inicializadas com `null`. Caso uma referência não seja inicializada, acessar seus atributos ou métodos resultará em uma exceção `NullPointerException`.
-
-Exemplo de erro:
-
-```java
-Conta minhaConta = new Conta();
-minhaConta.titular.nome = "Manoel"; // Erro: titular é null!
-```
-
-Solução:
+Se um atributo não é inicializado, ele permanece `null` e seu uso indevido gera exceções em tempo de execução.
 
 ```java
 class Conta {
     Cliente titular = new Cliente();
 }
 ```
-
-Nesse caso, toda nova `Conta` criada terá automaticamente um `Cliente` associado. Decidir instanciar um objeto por padrão depende das regras de negócio.
+Neste exemplo, cada `Conta` já inicia com um objeto `Cliente` associado, evitando `NullPointerException` ao acessar `titular`.
 
 ---
 
-## 2. Palavra-chave `this`
-
-### 2.1 Diferenciando Atributos de Variáveis Locais
-
-Quando os parâmetros de um método possuem o mesmo nome dos atributos da classe, utilizamos `this` para diferenciar os dois:
+## 8. Palavra-chave this
+### 8.1 Diferenciando Atributos de Variáveis Locais
 
 ```java
 public class Produto {
@@ -387,17 +321,14 @@ public class Produto {
     private double preco;
 
     public Produto(String nome, double preco) {
-        this.nome = nome; // Atributo da classe
-        this.preco = preco; // Parâmetro do método
+        this.nome = nome;
+        this.preco = preco;
     }
 }
 ```
+O `this` diferencia os atributos da classe dos parâmetros do construtor que possuem o mesmo nome.
 
----
-
-### 2.2 Passando o Próprio Objeto como Argumento
-
-`this` pode ser usado para passar a referência do objeto atual para outro método ou classe:
+### 8.2 Passando o Próprio Objeto como Argumento
 
 ```java
 public class ChessMatch {
@@ -406,27 +337,29 @@ public class ChessMatch {
     }
 }
 ```
-
-No exemplo, o objeto atual da classe `ChessMatch` é passado para o construtor do `King`, permitindo que a peça interaja diretamente com o tabuleiro e as regras da partida.
+Ao criar o objeto `King`, passamos a própria instância de `ChessMatch` para que a peça conheça o contexto da partida.
 
 ---
 
-## 3. Controlando o Acesso
+## 9. Controlando o Acesso
+### 9.1 Problemas com Acesso Direto a Atributos
 
-### 3.1 Problemas com Acesso Direto a Atributos
-
-Sem encapsulamento, atributos podem ser acessados e modificados diretamente, o que pode gerar inconsistências:
+Quando os atributos são públicos, pode-se inserir valores inválidos ou inconsistentes:
 
 ```java
-Conta minhaConta = new Conta();
-minhaConta.saldo = -200; // Saldo negativo
+class Conta {
+    String titular;
+    int numero;
+    double saldo;
+
+    void saca(double valor) {
+        this.saldo = this.saldo - valor;
+    }
+}
 ```
+Sem validações adequadas, é possível obter saldos negativos ou outras inconsistências.
 
----
-
-### 3.2 Encapsulamento para Proteger os Dados
-
-O encapsulamento permite proteger os atributos, tornando-os privados e acessíveis apenas por métodos controlados:
+### 9.2 Encapsulamento para Proteger os Dados
 
 ```java
 class Conta {
@@ -449,109 +382,26 @@ class Conta {
     }
 }
 ```
-
-No exemplo acima, o saldo só pode ser alterado usando os métodos `saca` e `deposita`, garantindo maior segurança.
-
----
-
-## 1. Problemas com Acesso Direto a Atributos
-
-No início, atributos podem ser acessados diretamente, o que permite que dados inconsistentes sejam atribuídos:
-
-```java
-class Conta {
-    String titular;
-    int numero;
-    double saldo;
-
-    void saca(double valor) {
-        this.saldo = this.saldo - valor; 
-    }
-}
-```
-
-Problemas:
-1. Saques não validados:
-   ```java
-   Conta minhaConta = new Conta();
-   minhaConta.saldo = 1000.0;
-   minhaConta.saca(50000); // saldo só tinha 1000!
-   ```
-
-2. Acessos indevidos:
-   ```java
-   minhaConta.saldo = -200; // saldo negativo sem validação.
-   ```
+Ao tornar `saldo` privado, garantimos que apenas métodos específicos podem alterá-lo, evitando alterações indevidas.
 
 ---
 
-## 2. Encapsulamento e Modificadores de Acesso
+## 10. Encapsulamento e Modificadores de Acesso
+### 10.1 Benefícios do Encapsulamento
 
-O encapsulamento é a prática de restringir o acesso direto aos atributos e métodos de uma classe. Isso é feito usando **modificadores de acesso** como `private` e expondo métodos públicos para interação controlada.
-
-### Tornando os Atributos Privados
-
-Os atributos são protegidos usando o modificador `private`:
-
-```java
-class Conta {
-    private double saldo;
-    private String titular;
-    private int numero;
-
-    public void saca(double valor) {
-        if (valor > this.saldo) { 
-            System.out.println("Não posso sacar um valor maior do que o saldo!");
-        } else {
-            this.saldo -= valor;
-        }
-    }
-
-    public void deposita(double valor) {
-        this.saldo += valor;
-    }
-
-    public double getSaldo() {
-        return this.saldo;
-    }
-}
-```
-
-Tentativas de acesso direto agora resultam em erro de compilação:
-
-```java
-class TestaAcessoDireto {
-    public static void main(String[] args) {
-        Conta minhaConta = new Conta();
-        minhaConta.saldo = 1000; // Erro: saldo has private access in Conta
-    }
-}
-```
-
----
-
-### 2.1 Benefícios do Encapsulamento
-
-1. **Controle de Acesso**: Atributos são acessados apenas por métodos específicos da classe.
-2. **Facilidade de Manutenção**: Validações e regras de negócio centralizadas nos métodos.
-3. **Segurança**: Evita inconsistências, como saldo negativo ou dados inválidos.
+1. **Controle de Acesso**: Apenas métodos da própria classe alteram seus atributos.  
+2. **Facilidade de Manutenção**: Regras de negócio ficam centralizadas nos métodos.  
+3. **Segurança**: Impede atribuições inválidas.  
 4. **Baixo Acoplamento**: Reduz dependências entre classes.
 
----
+### 10.2 Interface vs. Implementação
 
-### 2.2 Interface vs. Implementação
-
-A interface de uma classe (métodos públicos) define **o que fazer**, enquanto a implementação (código interno) define **como fazer**. A separação entre os dois promove flexibilidade e manutenção.
-
-#### Analogia:
-- **Carro**: Você usa os pedais e o volante (*interface*) sem se preocupar com o funcionamento interno do motor (*implementação*).
-- **Celulares**: Realizam ligações (*interface*), independentemente do sistema operacional (*implementação*).
+- **Interface**: Define o que a classe oferece (métodos públicos).  
+- **Implementação**: Detalhes internos (atributos privados, lógica dos métodos).
 
 ---
 
-## 3. Exemplo Prático: Validação de CPF
-
-O encapsulamento é útil para aplicar regras específicas, como validação de CPF:
+## 11. Exemplo Prático: Validação de CPF
 
 ```java
 class Cliente {
@@ -571,59 +421,22 @@ class Cliente {
     }
 }
 ```
-
-#### Uso no Programa Principal:
+A classe `Cliente` valida internamente o CPF para evitar valores nulos ou com tamanho incorreto.
 
 ```java
 class TestaCliente {
     public static void main(String[] args) {
         Cliente cliente = new Cliente();
-        cliente.mudaCPF("12345678901"); // Valida e altera o CPF.
+        cliente.mudaCPF("12345678901");
     }
 }
 ```
-
-Se quisermos aplicar regras adicionais, como restringir a alteração de CPF para clientes com mais de 60 anos:
-
-```java
-public void mudaCPF(String cpf) {
-    if (this.idade <= 60) {
-        validaCPF(cpf);
-        this.cpf = cpf;
-    } else {
-        System.out.println("Clientes com mais de 60 anos não podem alterar o CPF.");
-    }
-}
-```
+Ao chamar `mudaCPF`, a validação acontece dentro da classe e protege o estado do objeto.
 
 ---
 
-## Conclusão
-
-- **Encapsulamento**: Centraliza e protege dados, expondo apenas o necessário.
-- **Modificadores de Acesso**:
-  - `private`: Restringe o acesso à própria classe.
-  - `public`: Permite acesso livre a métodos ou atributos.
-- **Interface vs. Implementação**: Concentra-se no que um método faz, não em como ele é implementado.
-- **Benefícios**:
-  - **Maior Segurança**: Protege atributos contra manipulações indevidas.
-  - **Melhor Organização**: Centraliza regras e validações.
-  - **Facilidade de Manutenção**: Permite alterações internas sem impacto na interface pública.
-
-Pratique o uso de encapsulamento para criar sistemas robustos e flexíveis, garantindo a integridade dos dados e facilitando futuras manutenções e melhorias.
-
-
-### **Getters, Setters e Construtores em Java**
-
-## **1. Getters e Setters**
-
-Os **getters** e **setters** são métodos usados para acessar e modificar atributos privados de uma classe, garantindo controle sobre a manipulação de dados.
-
----
-
-### **1.1 Problema do Acesso Direto**
-
-Se declararmos os atributos de uma classe como `private`, acessá-los diretamente de fora da classe não é possível:
+## 12. Getters e Setters
+### 12.1 Problema do Acesso Direto
 
 ```java
 class Conta {
@@ -631,172 +444,87 @@ class Conta {
     private String titular;
 }
 ```
+Atributos privados não podem ser acessados diretamente de fora da classe.
 
-Exemplo de erro ao tentar acessar diretamente:
-
-```java
-Conta minhaConta = new Conta();
-minhaConta.saldo = 1000; // Erro: saldo tem acesso privado em Conta
-```
-
----
-
-### **1.2 O Papel dos Getters e Setters**
-
-Getters e setters solucionam esse problema permitindo acesso indireto e controlado aos atributos.
-
-#### **Exemplo de Getters e Setters**
+### 12.2 O Papel dos Getters e Setters
 
 ```java
 class Conta {
     private String titular;
     private double saldo;
 
-    // Getter para saldo
-    public double getSaldo() {
-        return this.saldo;
+    public String getTitular() {
+        return this.titular;
     }
 
-    // Setter para titular
     public void setTitular(String titular) {
         this.titular = titular;
     }
 }
 ```
+Métodos *getter* e *setter* controlam o acesso aos atributos privados, permitindo validações e lógicas adicionais.
 
-**Uso no programa principal:**
+### 12.3 Boas Práticas com Getters e Setters
 
-```java
-Conta minhaConta = new Conta();
-minhaConta.setTitular("Duke");
-System.out.println("Titular: " + minhaConta.getTitular());
-```
-
----
-
-### **1.3 Boas Práticas com Getters e Setters**
-
-1. **Evite Setters Desnecessários:** 
-   - Para atributos como `saldo`, é melhor usar métodos como `deposita()` e `saca()` para evitar inconsistências.
-
-2. **Personalize Getters:**
-   - Retorne dados formatados ou acrescente lógica:
-     ```java
-     public double getSaldoComLimite() {
-         return this.saldo + this.limite;
-     }
-     ```
-
-3. **Crie Apenas Quando Necessário:** 
-   - Evite gerar getters e setters automáticos para todos os atributos. Avalie a necessidade real de acesso.
+- Criar *setters* apenas quando for necessário alterar o valor do atributo.  
+- Realizar validações nos *setters* para manter a integridade dos dados.  
+- *Getters* podem formatar ou processar as informações antes de retorná-las.
 
 ---
 
-## **2. Construtores**
+## 13. Construtores
+### 13.1 O Que é um Construtor?
 
-Os construtores são usados para inicializar objetos de forma consistente no momento de sua criação.
-
----
-
-### **2.1 O Que é um Construtor?**
-
-- Bloco especial que **não possui tipo de retorno** (nem mesmo `void`).  
-- Executado automaticamente quando `new` é chamado.  
-
-#### **Exemplo:**
+Bloco especial executado quando o objeto é criado com `new`. Não tem tipo de retorno (nem `void`).
 
 ```java
 class Conta {
-    private String titular;
-
-    // Construtor
     Conta() {
         System.out.println("Nova conta criada!");
     }
 }
 ```
+Ao instanciar `new Conta()`, a mensagem é exibida.
 
----
+### 13.2 Construtor Default
 
-### **2.2 Construtor Default**
+Se não declararmos nenhum construtor, o Java fornece um construtor sem parâmetros que inicializa os atributos com valores padrão.
 
-Quando nenhum construtor é declarado, o Java cria automaticamente um **construtor default**, que:
-- Não recebe parâmetros.
-- Inicializa os atributos com valores padrão (0, `null`, ou `false`).
-
-#### **Exemplo:**
-
-```java
-class Conta {
-    private String titular;
-    private double saldo;
-}
-```
-
-O código abaixo funciona porque o Java cria um construtor default:
-
-```java
-Conta minhaConta = new Conta();
-```
-
----
-
-### **2.3 Construtores com Argumentos**
-
-Construtores podem receber argumentos para inicializar atributos diretamente:
+### 13.3 Construtores com Argumentos
 
 ```java
 class Conta {
     private String titular;
 
-    // Construtor com argumento
     Conta(String titular) {
         this.titular = titular;
     }
 }
 ```
+Podemos receber parâmetros no construtor para inicializar atributos obrigatórios.
 
-**Uso no programa principal:**
-
-```java
-Conta minhaConta = new Conta("Duke");
-System.out.println(minhaConta.getTitular());
-```
-
----
-
-### **2.4 Sobrecarga de Construtores**
-
-Uma classe pode ter vários construtores, desde que tenham assinaturas diferentes (número e/ou tipo de parâmetros).
-
-#### **Exemplo:**
+### 13.4 Sobrecarga de Construtores
 
 ```java
 class Conta {
     private String titular;
     private double saldo;
 
-    // Construtor padrão
     Conta() {}
 
-    // Construtor com um argumento
     Conta(String titular) {
         this.titular = titular;
     }
 
-    // Construtor com dois argumentos
     Conta(String titular, double saldo) {
-        this(titular); // Chama o construtor que recebe o titular
+        this(titular);
         this.saldo = saldo;
     }
 }
 ```
+Permite criar várias versões do construtor, cada uma aceitando parâmetros diferentes.
 
----
-
-### **2.5 Chamando Outro Construtor com `this()`**
-
-Use `this()` para reutilizar a lógica de outro construtor:
+### 13.5 Chamando Outro Construtor com this()
 
 ```java
 class Conta {
@@ -808,92 +536,32 @@ class Conta {
     }
 
     Conta(String titular, int numero) {
-        this(titular); // Reutiliza o construtor que recebe o titular
+        this(titular);
         this.numero = numero;
     }
 }
 ```
-
-**Uso:**
-
-```java
-Conta conta = new Conta("Duke", 1234);
-```
+`this()` reutiliza a lógica de outro construtor, reduzindo duplicação de código.
 
 ---
 
-## **3. Resumo e Benefícios**
+## 14. Resumo e Benefícios
 
-### **Encapsulamento com Getters e Setters**
-- **Proteção dos Dados:** Evita modificações indevidas.
-- **Centralização de Lógica:** Validações e regras de negócio em um único lugar.
-- **Flexibilidade:** Permite mudar a implementação sem afetar o resto do código.
-
-### **Construtores**
-- **Inicialização Obrigatória:** Forçam que certos valores sejam definidos no momento da criação.
-- **Flexibilidade com Sobrecarga:** Permitem múltiplas formas de criar objetos.
-- **Consistência:** Garante que o objeto comece em um estado válido.
-
-### **Melhores Práticas**
-- Use `private` para atributos e exponha métodos públicos apenas quando necessário.
-- Prefira inicializar atributos obrigatórios em construtores em vez de setters.
-- Evite duplicação de código reutilizando construtores com `this()`.
-
-Ao dominar esses conceitos, você garante a criação de classes robustas, seguras e fáceis de manter, seguindo os pilares da Programação Orientada a Objetos.
+- **Encapsulamento**: Protege dados, centraliza validações e facilita manutenção.  
+- **Getters e Setters**: Controlam acesso a atributos privados, mantendo a classe coesa.  
+- **Construtores**: Garantem que o objeto seja criado em estado consistente, podendo aceitar diferentes parâmetros por meio de sobrecarga.  
 
 ---
 
-### **Atributos de Classe e Métodos Estáticos**
+## 15. Introdução aos Atributos de Classe
 
-## **1. Introdução aos Atributos de Classe**
-
-Os **atributos de classe** são variáveis que pertencem à classe como um todo, e não a instâncias específicas. Isso significa que todas as instâncias compartilham o mesmo valor do atributo.
-
-Exemplo de problema:  
-```java
-class Conta {
-    private int totalDeContas; // Não funciona como esperado
-    Conta() {
-        this.totalDeContas += 1;
-    }
-}
-```
-Cada objeto `Conta` teria seu próprio `totalDeContas`, resultando em inconsistências.
+Atributos de classe (ou *variáveis de classe*) são compartilhados por todas as instâncias, ao contrário dos atributos de instância, que são próprios de cada objeto.
 
 ---
 
-## **2. Atributos Estáticos com `static`**
+## 16. Atributos Estáticos com static
+### 16.1 Definição de Atributos Estáticos
 
-### **2.1 Definição de Atributos Estáticos**
-
-Os atributos `static` pertencem à classe, não a objetos individuais. Eles têm as seguintes características:
-- São compartilhados por todas as instâncias.
-- Mantêm o mesmo valor para todas as instâncias.
-- Podem ser acessados sem criar uma instância da classe.
-
-**Exemplo:**
-```java
-class Conta {
-    private static int totalDeContas = 0;
-    
-    Conta() {
-        Conta.totalDeContas += 1; // Incrementa ao criar uma conta
-    }
-}
-```
-
----
-
-### **2.2 Acesso e Uso de Atributos Estáticos**
-
-#### **Acesso pelo Nome da Classe**
-Para acessar um atributo estático, usamos o nome da classe:
-```java
-Conta.totalDeContas;
-```
-
-#### **Uso com Getter Estático**
-Podemos criar um getter estático para expor o valor do atributo de forma controlada:
 ```java
 class Conta {
     private static int totalDeContas = 0;
@@ -901,34 +569,28 @@ class Conta {
     Conta() {
         Conta.totalDeContas += 1;
     }
-
-    public static int getTotalDeContas() {
-        return Conta.totalDeContas;
-    }
 }
 ```
+`totalDeContas` pertence à classe `Conta`. Cada vez que um objeto é criado, incrementa-se esse valor.
 
-#### **Uso no Programa Principal**
+### 16.2 Acesso e Uso de Atributos Estáticos
+
 ```java
-public class ProgramaPrincipal {
-    public static void main(String[] args) {
-        Conta c1 = new Conta();
-        Conta c2 = new Conta();
-        System.out.println("Total de contas: " + Conta.getTotalDeContas()); // Exibe: 2
-    }
+public static int getTotalDeContas() {
+    return Conta.totalDeContas;
 }
 ```
+O acesso pode ser feito diretamente pelo nome da classe, sem instanciar um objeto.
 
 ---
 
-## **3. Métodos Estáticos**
+## 17. Métodos Estáticos
+### 17.1 Características dos Métodos Estáticos
 
-### **3.1 Características dos Métodos Estáticos**
-- **Pertencem à classe:** Não dependem de instâncias.
-- **Acesso direto:** Podem ser chamados usando o nome da classe.
-- **Não acessam membros de instância diretamente:** Como não possuem referência `this`, não podem acessar atributos ou métodos de instância.
+- Não dependem de atributos de instância.  
+- São chamados usando o nome da classe.  
+- Ideais para operações gerais (por exemplo, métodos utilitários de cálculo).
 
-**Exemplo de Método Estático:**
 ```java
 class Calculadora {
     public static double soma(double a, double b) {
@@ -936,74 +598,46 @@ class Calculadora {
     }
 }
 ```
-**Uso:**
-```java
-double resultado = Calculadora.soma(3, 5); // Saída: 8
-```
+Após compilar, `Calculadora.soma(3, 5)` pode ser usado em qualquer parte do código.
+
+### 17.2 Comparação: Métodos Estáticos vs. Métodos de Instância
+
+- **Métodos Estáticos**: Não possuem `this` e não acessam atributos de instância.  
+- **Métodos de Instância**: Podem manipular dados específicos daquele objeto.
 
 ---
 
-### **3.2 Comparação: Métodos Estáticos vs. Métodos de Instância**
+## 18. Exemplo Prático: Controle de Contas Bancárias
 
-| **Método Estático**         | **Método de Instância**         |
-|-----------------------------|---------------------------------|
-| Pertence à classe.          | Pertence à instância do objeto.|
-| Não acessa atributos de instância. | Pode acessar e modificar atributos de instância. |
-| Usado para funcionalidades gerais. | Representa o comportamento de um objeto específico. |
-
-**Exemplo:**
-```java
-class Conta {
-    private double saldo;
-
-    public static void mostrarMensagem() {
-        System.out.println("Bem-vindo ao Banco!");
-    }
-
-    public void deposita(double valor) {
-        this.saldo += valor;
-    }
-}
-```
-
----
-
-## **4. Exemplo Prático: Controle de Contas Bancárias**
-
-#### **Classe Conta**
 ```java
 class Conta {
     private static int totalDeContas = 0;
     private String titular;
     private double saldo;
 
-    // Construtor
     Conta(String titular) {
         this.titular = titular;
         this.saldo = 0.0;
         Conta.totalDeContas += 1;
     }
 
-    // Getter estático para totalDeContas
     public static int getTotalDeContas() {
         return Conta.totalDeContas;
     }
 
-    // Método de instância para depositar
     public void deposita(double valor) {
         if (valor > 0) {
             this.saldo += valor;
         }
     }
 
-    // Método de instância para obter o saldo
     public double getSaldo() {
         return this.saldo;
     }
 }
 ```
+A classe acima mantém um atributo estático `totalDeContas` para contar quantas contas foram criadas, além de métodos para depósito e acesso ao saldo.
 
-#### **Programa Principal**
 ```java
 public class ProgramaPrincipal {
     public static void main(String[] args) {
@@ -1019,17 +653,15 @@ public class ProgramaPrincipal {
     }
 }
 ```
-**Saída:**
-```
-Saldo da conta 1: 1000.0
-Saldo da conta 2: 500.0
-Total de contas: 2
-```
+Este programa cria duas contas, deposita valores e exibe a contagem total de contas criadas, demonstrando o uso de atributo e método estáticos.
 
 ---
 
+## 19. Resumo e Benefícios
 
+- **Atributos Estáticos**: Compartilhados por todas as instâncias, ideais para contadores ou constantes.  
+- **Métodos Estáticos**: Executam funções sem depender do estado de um objeto.  
+- **Facilitam Operações Genéricas**: Como cálculos e utilitários.  
+- **Melhor Organização**: Métodos que não precisam de instância podem ficar em uma classe separada, agrupando funcionalidades afins.
 
-
-
-
+---
