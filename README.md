@@ -1,7 +1,5 @@
 # POO com Java
 
----
-
 ## Introdução à Programação Orientada a Objetos
 
 Antes de mergulharmos nos conceitos específicos de Java, é importante compreender o contexto e os fundamentos que embasam a Programação Orientada a Objetos.
@@ -69,6 +67,8 @@ x = new Triangle(); // Instanciação: um objeto Triangle é criado na Heap e x 
 A distinção entre a variável de referência (na Stack) e o objeto real (na Heap) é fundamental para compreender como o Java gerencia a memória.
 
 ---
+
+<br>
 
 ## Sumário
 
