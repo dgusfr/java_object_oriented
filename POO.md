@@ -27,7 +27,7 @@ Um **paradigma de programação** é um modelo que descreve como resolver proble
 
 A **Programação Orientada a Objetos** organiza o código em torno de *objetos*, que representam entidades do mundo real ou conceitos abstratos. Essa abordagem torna o desenvolvimento mais intuitivo e modular, pois cada objeto possui um estado (dados) e comportamentos (métodos) próprios.
 
-### 0.3 Por que Usar POO?
+### 3. Por que Usar POO?
 
 Utilizar POO oferece diversos benefícios:
 
