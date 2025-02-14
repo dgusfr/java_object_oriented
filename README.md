@@ -157,6 +157,8 @@ UML (*Unified Modeling Language*) é uma linguagem visual para modelar sistemas 
 
 ---
 
+<br>
+
 ## 2. Definindo Classes
 
 ### 2.1 Atributos
