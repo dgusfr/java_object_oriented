@@ -722,6 +722,8 @@ class Conta {
 
 ---
 
+<br>
+
 ## 15. Introdução aos Atributos de Classe
 
 Atributos de classe (ou *variáveis de classe*) são compartilhados entre todas as instâncias. Eles são ideais para manter informações globais, como contadores ou configurações comuns.
