@@ -758,6 +758,8 @@ public static int getTotalDeContas() {
 
 ---
 
+<br>
+
 ## 17. Métodos Estáticos
 
 ### 17.1 Características dos Métodos Estáticos
