@@ -4,7 +4,7 @@ Este documento aborda os principais conceitos de Programação Orientada a Objet
 
 ---
 
-## 0. Introdução à Programação Orientada a Objetos
+## Introdução à Programação Orientada a Objetos
 
 Antes de mergulharmos nos conceitos específicos de Java, é importante compreender o contexto e os fundamentos que embasam a Programação Orientada a Objetos.
 
