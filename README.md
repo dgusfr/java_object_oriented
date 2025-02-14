@@ -227,6 +227,8 @@ double circ = Calculator.circunference(3.0);
 
 ---
 
+<br>
+
 ## 4. Métodos
 
 ### 4.1 Definindo Métodos
