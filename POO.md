@@ -53,7 +53,7 @@ A **abstração** é um dos pilares da POO e consiste em representar um objeto c
 
 Ao escolher quais aspectos modelar, os atributos e métodos da classe podem variar conforme o nível de detalhe desejado. Essa abordagem reduz a complexidade e facilita a manutenção e o reuso do código.
 
-### 0.5 Instância e Instanciação
+### 5. Instância e Instanciação
 
 - **Instância:**  
   É a criação de um objeto a partir de uma classe. Por exemplo, se a classe `Carro` é o molde, uma instância seria um *Ferrari vermelho 2024* – um carro específico criado a partir desse molde.
