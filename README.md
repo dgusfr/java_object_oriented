@@ -131,6 +131,8 @@ A distinção entre a variável de referência (na Stack) e o objeto real (na He
 
 ---
 
+<br>
+
 ## 1. Conceitos Iniciais
 
 ### 1.1 Classes e Objetos
