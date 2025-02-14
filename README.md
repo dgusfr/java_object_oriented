@@ -300,6 +300,8 @@ System.out.println(c1 == c2); // false, pois são objetos distintos.
 
 ---
 
+<br>
+
 ## 6. Exemplos de Código
 
 ### 6.1 Classe Conta
