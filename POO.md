@@ -41,7 +41,7 @@ Utilizar POO oferece diversos benefícios:
 *Exemplo – Cálculo de Área de Triângulos:*  
 Na abordagem procedural, seria necessário trabalhar com várias variáveis separadas para cada lado de cada triângulo. Com POO, cria-se uma classe `Triangle` que agrupa os três lados como atributos e pode incluir métodos para calcular a área ou validar os lados. Assim, cada objeto `Triangle` representa um triângulo específico, reduzindo a quantidade de variáveis e organizando melhor o código.
 
-### 0.4 Abstração
+### 4. Abstração
 
 A **abstração** é um dos pilares da POO e consiste em representar um objeto com apenas as informações essenciais para o contexto do sistema, ignorando detalhes desnecessários.  
   
