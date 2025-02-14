@@ -1,6 +1,3 @@
-
----
-
 # POO com Java
 
 Este documento aborda os principais conceitos de Programação Orientada a Objetos (POO) utilizando Java. Nele, você encontrará desde os fundamentos e paradigmas que orientam o desenvolvimento até tópicos avançados, como encapsulamento, construtores, métodos e atributos estáticos. Cada seção contém exemplos práticos e explicações detalhadas para auxiliar tanto iniciantes quanto desenvolvedores que buscam refinar seus conhecimentos na linguagem.
