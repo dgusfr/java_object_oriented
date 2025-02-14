@@ -8,7 +8,7 @@ Este documento aborda os principais conceitos de Programação Orientada a Objet
 
 Antes de mergulharmos nos conceitos específicos de Java, é importante compreender o contexto e os fundamentos que embasam a Programação Orientada a Objetos.
 
-### 0.1 Paradigma de Programação
+### 1. Paradigma de Programação
 
 Um **paradigma de programação** é um modelo que descreve como resolver problemas e estruturar programas. Ele funciona como uma “filosofia” que orienta a forma de pensar e programar. Alguns paradigmas comuns incluem:
 
