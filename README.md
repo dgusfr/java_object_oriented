@@ -359,6 +359,8 @@ public class TestaMetodos {
 
 ---
 
+<br>
+
 ## 7. Atributos
 
 ### 7.1 Valores Padrão
@@ -415,6 +417,8 @@ class Conta {
 
 ---
 
+<br>
+
 ## 8. Palavra-chave this
 
 ### 8.1 Diferenciando Atributos de Variáveis Locais
@@ -446,6 +450,9 @@ public class ChessMatch {
 ```
 
 ---
+
+<br>
+<br>
 
 ## 9. Controlando o Acesso
 
