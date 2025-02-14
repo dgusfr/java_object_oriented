@@ -814,4 +814,4 @@ public class ProgramaPrincipal {
 
 ---
 
-Este documento revisado integra os tópicos fundamentais e avançados da Programação Orientada a Objetos, incluindo paradigmas, fundamentos, abstração, instanciação, modificadores de acesso e o uso de membros estáticos – proporcionando uma visão completa e detalhada do desenvolvimento em Java.
+Este documento revisado integra os tópicos fundamentais e avançados da Programação Orientada a Objetos, incluindo paradigmas, fundamentos, abstração, instanciação, modificadores de acesso e o uso de membros estáticos – 
