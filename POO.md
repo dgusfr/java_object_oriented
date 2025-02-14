@@ -813,5 +813,3 @@ public class ProgramaPrincipal {
 - **Organização e Modularidade:** A correta utilização de encapsulamento, construtores, getters/setters e membros estáticos resulta em um código mais seguro, organizado e fácil de manter.
 
 ---
-
-Este documento revisado integra os tópicos fundamentais e avançados da Programação Orientada a Objetos, incluindo paradigmas, fundamentos, abstração, instanciação, modificadores de acesso e o uso de membros estáticos – 
