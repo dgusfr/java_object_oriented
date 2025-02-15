@@ -68,6 +68,27 @@ public class Triangle {
 
 Usnaod a classe triangulo:
 
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Criando dois objetos Triangle
+        Triangle x = new Triangle();
+        x.a = 3.0;
+        x.b = 4.0;
+        x.c = 5.0;
+
+        Triangle y = new Triangle();
+        y.a = 7.5;
+        y.b = 4.5;
+        y.c = 4.02;
+
+        // Exibindo os valores dos triângulos
+        System.out.println("Triângulo X: (" + x.a + ", " + x.b + ", " + x.c + ")");
+        System.out.println("Triângulo Y: (" + y.a + ", " + y.b + ", " + y.c + ")");
+    }
+}
+
+
 
 
 
