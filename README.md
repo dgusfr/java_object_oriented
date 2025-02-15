@@ -54,7 +54,22 @@ public class Triangulo {
 ```
 
 
-Com POO, cria-se uma classe `Triangle` que agrupa os três lados como atributos e pode incluir métodos para calcular a área ou validar os lados. Assim, cada objeto `Triangle` representa um triângulo específico, reduzindo a quantidade de variáveis e organizando melhor o código.
+Com POO, cria-se uma classe `Triangle` que agrupa os três lados como atributos e pode incluir métodos para calcular a área ou validar os lados. 
+
+```java
+package entities;
+
+public class Triangle {
+    public double a;
+    public double b; // Corrigido bj para b
+    public double c;
+}
+```
+
+Usnaod a classe
+
+
+Assim, cada objeto `Triangle` representa um triângulo específico, reduzindo a quantidade de variáveis e organizando melhor o código.
 
 ### 4. Abstração
 
