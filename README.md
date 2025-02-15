@@ -35,7 +35,26 @@ Utilizar POO oferece diversos benefícios:
   Alterações são centralizadas dentro das classes, facilitando a correção de erros e a expansão do sistema.
 
 *Exemplo – Cálculo de Área de Triângulos:*  
-Na abordagem procedural, seria necessário trabalhar com várias variáveis separadas para cada lado de cada triângulo. Com POO, cria-se uma classe `Triangle` que agrupa os três lados como atributos e pode incluir métodos para calcular a área ou validar os lados. Assim, cada objeto `Triangle` representa um triângulo específico, reduzindo a quantidade de variáveis e organizando melhor o código.
+Na abordagem procedural, seria necessário trabalhar com várias variáveis separadas para cada lado de cada triângulo. 
+
+```java
+public class Triangulo {
+    public static void main(String[] args) {
+        // Coordenadas do triângulo X
+        double aX = 3.0, bX = 4.0, cX = 5.0;
+
+        // Coordenadas do triângulo Y
+        double ay = 7.5, bY = 4.5, cY = 4.02; // Corrigido "oY" para "cY"
+
+        // Exemplo de saída
+        System.out.println("Triângulo X: (" + aX + ", " + bX + ", " + cX + ")");
+        System.out.println("Triângulo Y: (" + ay + ", " + bY + ", " + cY + ")");
+    }
+}
+```
+
+
+Com POO, cria-se uma classe `Triangle` que agrupa os três lados como atributos e pode incluir métodos para calcular a área ou validar os lados. Assim, cada objeto `Triangle` representa um triângulo específico, reduzindo a quantidade de variáveis e organizando melhor o código.
 
 ### 4. Abstração
 
