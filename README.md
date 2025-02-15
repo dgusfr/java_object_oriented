@@ -101,6 +101,8 @@ A **abstração** é um dos pilares da POO e consiste em representar um objeto c
 - **Abstração Funcional:**  
   Detalhes mecânicos, como o sistema de embreagem e freios, podem ser destacados se o foco for o desempenho e a funcionalidade.
 
+<img src="images/UML.png" alt="Diagrama UML da classe Conta" width="500">
+
 Ao escolher quais aspectos modelar, os atributos e métodos da classe podem variar conforme o nível de detalhe desejado. Essa abordagem reduz a complexidade e facilita a manutenção e o reuso do código.
 
 ### 5. Instância e Instanciação
