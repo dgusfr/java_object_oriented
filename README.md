@@ -66,7 +66,7 @@ public class Triangle {
 }
 ```
 
-Usando a classe triangulo:
+Usando a classe triângulo:
 
 ```java
 public class Main {
@@ -87,10 +87,7 @@ public class Main {
         System.out.println("Triângulo Y: (" + y.a + ", " + y.b + ", " + y.c + ")");
     }
 }
-
-
-
-
+```
 
 Assim, cada objeto `Triangle` representa um triângulo específico, reduzindo a quantidade de variáveis e organizando melhor o código.
 
