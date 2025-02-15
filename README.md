@@ -66,7 +66,7 @@ public class Triangle {
 }
 ```
 
-Usnaod a classe triangulo:
+Usando a classe triangulo:
 
 ```java
 public class Main {
