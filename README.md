@@ -123,7 +123,12 @@ Triangle x, y; // Variáveis de referência na Stack
 x = new Triangle(); // Instanciação: um objeto Triangle é criado na Heap e x armazena seu endereço
 ```
 
-A distinção entre a variável de referência (na Stack) e o objeto real (na Heap) é fundamental para compreender como o Java gerencia a memória.
+Será criada (instanciada) um objeto do tipo triangle na área de memória Heap, responsável por armazenar de objetos dinâmicos.
+
+O Stack contém apenas o endereço que aponta para o objeto no Heap. Note na imagem que existe a variável *‘x’* no stack mas nela existe apenas o endereço de memória do objeto que foi criado na memória Heap.
+
+Ou seja, a variável x armazena um endereço de memória (por exemplo, 0x100358) que *aponta (faz referência)* para o objeto Triangle na Heap. O mesmo também ocorre com y ao instanciá-lo.
+
 
 ---
 
