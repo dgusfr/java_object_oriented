@@ -66,7 +66,9 @@ public class Triangle {
 }
 ```
 
-Usnaod a classe
+Usnaod a classe triangulo:
+
+
 
 
 Assim, cada objeto `Triangle` representa um triângulo específico, reduzindo a quantidade de variáveis e organizando melhor o código.
