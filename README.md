@@ -111,9 +111,10 @@ Ao escolher quais aspectos modelar, os atributos e métodos da classe podem vari
   É a criação de um objeto a partir de uma classe. Por exemplo, se a classe `Carro` é o molde, uma instância seria um *Ferrari vermelho 2024* – um carro específico criado a partir desse molde.
   
 - **Instanciação:**  
-  É o processo de criação de um objeto, que envolve a alocação dinâmica de memória (na *Heap*) utilizando o operador `new` em Java. A variável que recebe o objeto (armazenada na *Stack*) contém uma referência (endereço de memória) para o objeto criado.
+    Instanciação é o processo de criação de um objeto a partir de uma classe, momento em que ocorre a alocação dinâmica de memória para esse objeto. 
+    Em Java, esse processo é feito com o operador *new*, que aloca espaço na memória *Heap* para o objeto e devolve uma referência para esse espaço. Essa referência é armazenada em uma variável de tipo objeto, localizada na memória *Stack*.
 
-<img src="images/UML.png" alt="Diagrama UML da classe Conta" width="500">
+<img src="images/instan.png" alt="Diagrama UML da classe Conta" width="500">
 
 *Exemplo:*
 
