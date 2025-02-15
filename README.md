@@ -113,6 +113,8 @@ Ao escolher quais aspectos modelar, os atributos e métodos da classe podem vari
 - **Instanciação:**  
   É o processo de criação de um objeto, que envolve a alocação dinâmica de memória (na *Heap*) utilizando o operador `new` em Java. A variável que recebe o objeto (armazenada na *Stack*) contém uma referência (endereço de memória) para o objeto criado.
 
+<img src="images/UML.png" alt="Diagrama UML da classe Conta" width="500">
+
 *Exemplo:*
 
 ```java
