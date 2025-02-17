@@ -615,7 +615,7 @@ Os modificadores de acesso em Java controlam a visibilidade de atributos, métod
 | public      | ✅           | ✅           | ✅                       | ✅             |
 
 
-<img src="images/visib.png" alt="alt" width="500">
+<img src="images/visib.png" alt="alt" width="900">
 
 ---
 
