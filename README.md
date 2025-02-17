@@ -334,7 +334,7 @@ boolean transfere(Conta destino, double valor) {
     return false;
 }
 ```
-<img src="images/class.png" alt="Diagrama UML da classe Conta" width="500">
+<img src="images/method.png" alt="alt" width="500">
 
 ---
 
