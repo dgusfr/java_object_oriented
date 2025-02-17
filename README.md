@@ -207,6 +207,8 @@ Ou seja, a variável x armazena um endereço de memória (por exemplo, 0x100358)
 - **Objeto:**  
   É uma instância concreta da classe, criada em tempo de execução. Cada objeto possui seu próprio estado e pode executar os comportamentos definidos na classe.
 
+<img src="images/class.png" alt="Diagrama UML da classe Conta" width="500">
+
 ### 1.2 Projeto de Classes com UML
 
 UML (*Unified Modeling Language*) é uma linguagem visual para modelar sistemas de software. Ela permite representar classes, atributos, métodos, relacionamentos e interações, facilitando o design e a compreensão do sistema antes da implementação.
