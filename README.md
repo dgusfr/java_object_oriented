@@ -614,6 +614,9 @@ Os modificadores de acesso em Java controlam a visibilidade de atributos, métod
 | protected   | ✅           | ✅           | ✅                       | ❌             |
 | public      | ✅           | ✅           | ✅                       | ✅             |
 
+
+<img src="images/ilust.png" alt="alt" width="500">
+
 ---
 
 ## 11. Exemplo Prático: Validação de CPF
