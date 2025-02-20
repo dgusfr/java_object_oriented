@@ -241,6 +241,8 @@ class Example {
 
 Memória Após a Execução de method1:
 
+<img src="images/memory4.png" alt="alt" width="900">
+
 ---
 
 ## 5. Conclusão
