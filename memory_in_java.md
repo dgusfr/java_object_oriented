@@ -102,6 +102,8 @@ System.out.println(y); // 20
 
 ---
 
+<br>
+
 ## **3. Gerenciamento de Memória**
 
 ### **3.1 Garbage Collector**
