@@ -84,6 +84,7 @@ Product p1;
 p1 = null;
 System.out.println(p1.name); // Erro: NullPointerException
 ```
+<img src="images/memory2.png" alt="alt" width="900">
 
 ---
 
