@@ -182,6 +182,7 @@ p2 ----------> ("Mouse", 30.00, 0)
 Stack          Heap
 p1 ----------> ("Mouse", 30.00, 0)
 p2 ----------> ("Mouse", 30.00, 0)
+
 (Nenhuma referência aponta para "TV", 900.00, 0) -> Coletável pelo GC
 ```
 
@@ -204,6 +205,8 @@ void method1() {
     // System.out.println(y); // Erro: variável fora de escopo
 }
 ```
+
+<img src="images/memory3.png" alt="alt" width="900">
 
 - `x` é desalocado ao final de `method1()`.
 - `y` é desalocado assim que o bloco `if` é encerrado.
@@ -235,6 +238,8 @@ class Example {
 1. `method2()` cria um objeto `Product` na Heap.
 2. Retorna a referência para `method1()`, que armazena em `p`.
 3. A variável local `prod` de `method2()` é desalocada ao final de `method2()`, mas o **objeto** persiste na Heap porque `p` ainda o referencia.
+
+Memória Após a Execução de method1:
 
 ---
 
