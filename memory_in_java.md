@@ -1,7 +1,3 @@
-Segue abaixo um documento revisado e mais detalhado, **mantendo todas as informações originais** e complementando-as de forma organizada. Foi incluído um **sumário** para facilitar a navegação.
-
----
-
 # Alocação Dinâmica de Memória em Java
 
 ## Sumário
