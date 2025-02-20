@@ -71,6 +71,8 @@ public class TestReferencias {
 2. `p1 = new Product(...)` cria um novo objeto `Product` na **Heap** e faz `p1` apontar para ele.
 3. `p2 = p1;` faz `p2` apontar para o **mesmo** objeto que `p1`. Assim, mudanças em `p2` também se refletem em `p1`.
 
+<img src="images/visib.png" alt="alt" width="900">
+
 ---
 
 ### 2.2 Valor `null`
