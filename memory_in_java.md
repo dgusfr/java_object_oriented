@@ -1,170 +1,154 @@
-# Alocação Dinâmica de Memória
+# Alocação Dinâmica de Memória em Java
 
-## **1. Introdução**
-Em Java, a alocação dinâmica de memória é gerenciada automaticamente pela **JVM (Java Virtual Machine)**. Isso significa que, ao criar objetos, a memória necessária para armazená-los é alocada na **Heap**, enquanto as variáveis de referência são armazenadas na **Stack**. Compreender como a memória é gerenciada é crucial para evitar erros e otimizar o desempenho das aplicações.
+## Sumário
+
+1. [Introdução](#1-introdução)
+2. [Tipos de Dados e Memória](#2-tipos-de-dados-e-memória)
+   - [2.1 Tipos Referência](#21-tipos-referência)
+   - [2.2 Valor `null`](#22-valor-null)
+   - [2.3 Tipos Primitivos](#23-tipos-primitivos)
+   - [2.4 Comparação: Tipos Referência vs. Tipos Valor](#24-comparação-tipos-referência-vs-tipos-valor)
+3. [Gerenciamento de Memória](#3-gerenciamento-de-memória)
+   - [3.1 Garbage Collector](#31-garbage-collector)
+   - [3.2 Escopo e Desalocação](#32-escopo-e-desalocação)
+4. [Desafios e Exemplos](#4-desafios-e-exemplos)
+5. [Conclusão](#5-conclusão)
 
 ---
 
-## **2. Tipos Referência vs. Tipos Valor**
-Java divide os tipos em tipos referência e tipos valor, cada um com características distintas que impactam como os dados são armazenados e manipulados.
+## **1. Introdução**
 
-### **2.1 Classes como Tipos Referência**
-Variáveis do tipo referência não armazenam o objeto em si, mas sim uma referência (ou endereço de memória) onde o objeto está localizado na **Heap**.
+Em Java, a alocação de memória é gerenciada automaticamente pela **JVM (Java Virtual Machine)**, diferenciando-se de linguagens que exigem controle manual. A memória utilizada é dividida principalmente em:
 
-### **Exemplo:**
+- **Stack:** Armazena variáveis locais e referências para objetos.
+- **Heap:** Armazena objetos criados dinamicamente via `new`.
+- **Garbage Collector:** Remove objetos sem referências para evitar vazamento de memória.
+
+Compreender essa estrutura é essencial para evitar falhas como `NullPointerException` e melhorar a eficiência do código.
+
+---
+
+## **2. Tipos de Dados e Memória**
+
+### **2.1 Tipos Referência**
+
+Variáveis do tipo referência armazenam endereços de memória que apontam para objetos na **Heap**. Quando uma variável de referência é atribuída a outra, ambas passam a apontar para o mesmo objeto.
+
+#### **Exemplo:**
 ```java
 class Product {
     String name;
     double price;
-    int quantity;
-
-    Product(String name, double price, int quantity) {
+    
+    Product(String name, double price) {
         this.name = name;
         this.price = price;
-        this.quantity = quantity;
     }
 }
 
-public class TestaReferencias {
+public class TesteReferencia {
     public static void main(String[] args) {
-        Product p1, p2;
-        p1 = new Product("TV", 900.00, 0);
-        p2 = p1; // p2 aponta para o mesmo objeto que p1
-
+        Product p1 = new Product("TV", 900.00);
+        Product p2 = p1; // p2 aponta para o mesmo objeto que p1
         p2.name = "Radio";
-
+        
         System.out.println(p1.name); // Imprime: Radio
-        System.out.println(p2.name); // Imprime: Radio
     }
 }
 ```
 
-### **Explicação:**
-- `Product p1, p2;`: Declara duas variáveis de referência do tipo `Product`.
-- `p1 = new Product(...)`: Cria um objeto `Product` na **Heap** e faz `p1` apontar para ele.
-- `p2 = p1;`: Faz `p2` apontar para o mesmo objeto que `p1`.
-- Alterar `p2.name` afeta `p1.name` porque ambos referenciam o mesmo objeto.
+🔹 **Explicação:**
+- `p1` e `p2` referenciam o mesmo objeto na **Heap**.
+- Alterações feitas por `p2` afetam `p1`, pois ambos compartilham a mesma referência.
 
-**Memória:**
+### **2.2 Valor `null`**
 
-<img src="images/memory.png" alt="Java" width="500">
+Variáveis de referência podem ser inicializadas como `null`, indicando que não apontam para nenhum objeto.
 
-### **2.2 Valor "null"**
-Tipos referência podem assumir o valor `null`, indicando que a variável não está apontando para nenhum objeto.
-
-**Exemplo:**
 ```java
-Product p1, p2;
-p1 = new Product("TV", 900.00, 0);
-p2 = null;
+Product p1 = null;
+System.out.println(p1.name); // Erro: NullPointerException
 ```
 
-**Memória:**
-```
-Stack         Heap
-p1 ----------> 0x100358: TV 900 0
-p2 ----------> null
-```
+**Importante:** A tentativa de acessar atributos ou métodos de uma variável `null` resulta em um erro de execução.
 
-### **2.3 Tipos Primitivos como Tipos Valor**
-Tipos primitivos (como `int`, `double`, `boolean`, etc.) armazenam diretamente os valores.
+### **2.3 Tipos Primitivos**
 
-**Exemplo:**
+Os tipos primitivos (`int`, `double`, `boolean`, etc.) armazenam valores diretamente na **Stack**, sem referências externas.
+
 ```java
-double x, y;
-x = 10;
-y = x; // y recebe uma cópia do valor de x
+int x = 10;
+int y = x;
 y = 20;
-
-System.out.println(x); // Imprime: 10
-System.out.println(y); // Imprime: 20
+System.out.println(x); // 10 (não foi alterado)
+System.out.println(y); // 20
 ```
 
-**Explicação:**
-- `y = x;`: Copia o valor de `x` para `y`. Modificar `y` não afeta `x`.
-
-**Memória:**
-```
-Stack        Heap
-x = 10
-y = 20
-```
+🔹 **Explicação:** `y` recebe uma cópia do valor de `x`, portanto, modificações em `y` não afetam `x`.
 
 ### **2.4 Comparação: Tipos Referência vs. Tipos Valor**
 
-| **Característica**           | **Classe (Tipo Referência)** | **Tipo Primitivo (Tipo Valor)**  |
-|------------------------------|-----------------------------|-----------------------------------|
-| **Vantagem**                 | Aproveita recursos de POO   | Simples e mais performático      |
-| **Armazenamento**            | Referências                 | Valores diretamente              |
-| **Instanciação**             | Requer `new`                | Não requer `new`                 |
-| **Aceita valor `null`**      | Sim                         | Não                              |
-| **Atribuição (=)**           | Copia a referência          | Copia o valor (independente)     |
-| **Localização na Memória**   | **Heap**                    | **Stack**                        |
-| **Desalocação**              | **Garbage Collector**       | Automática (fim do escopo)       |
-
+| Característica            | Tipo Referência (Objetos) | Tipo Primitivo  |
+|---------------------------|--------------------------|-----------------|
+| **Armazenamento**        | Heap                     | Stack          |
+| **Atribuição (=)**       | Copia referência         | Copia valor    |
+| **Aceita `null`**        | Sim                      | Não            |
+| **Modificação**          | Reflete nas variáveis apontando para o objeto | Independente |
+| **Liberação de Memória** | Garbage Collector        | Automática     |
 
 ---
 
-## **3. Desalocação de Memória**
+## **3. Gerenciamento de Memória**
 
 ### **3.1 Garbage Collector**
-- **Função:** Remove objetos na **Heap** que não possuem mais referências.
-- **Exemplo Prático:**
+
+O **Garbage Collector (GC)** da JVM remove automaticamente objetos sem referências na **Heap**, liberando espaço de memória.
+
+#### **Exemplo:**
 ```java
-Product p1 = new Product("TV", 900.00, 0);
-Product p2 = new Product("Mouse", 30.00, 0);
-
-p1 = p2; // "TV" será desalocado
+Product p1 = new Product("TV", 900.00);
+Product p2 = new Product("Mouse", 30.00);
+p1 = p2; // O objeto "TV" se torna inacessível e será coletado pelo GC
 ```
 
-**Memória Antes:**
+**Antes:**
 ```
-Stack         Heap
-p1 ----------> "TV    900.00 0"
-p2 ----------> "Mouse 30.00  0"
+Stack        Heap
+p1 ------> "TV    900.00"
+p2 ------> "Mouse 30.00"
+```
+**Depois:**
+```
+Stack        Heap
+p1 ------> "Mouse 30.00"
+p2 ------> "Mouse 30.00"
+"TV" é coletado pelo GC
 ```
 
-**Memória Depois:**
-```
-Stack         Heap
-p1 ----------> "Mouse 30.00 0"
-p2 ----------> "Mouse 30.00 0"
-```
+### **3.2 Escopo e Desalocação**
 
+Variáveis locais são desalocadas automaticamente ao final do escopo da função.
 
-### **3.2 Escopo Local**
-Variáveis locais são armazenadas na **Stack** e desalocadas ao final do escopo.
-
-**Exemplo Simples:**
 ```java
-void method1() {
+void metodo() {
     int x = 10;
-    if (x > 0) {
+    if (x > 5) {
         int y = 20;
     }
     System.out.println(x); // OK
-    // System.out.println(y); // Erro
+    // System.out.println(y); // Erro: variável fora de escopo
 }
 ```
 
+**Regras:**
+- Variáveis declaradas dentro de um bloco `{}` são removidas ao sair do bloco.
+- Objetos na **Heap** são removidos apenas quando não há mais referências a eles.
+
 ---
 
-## **Resumo**
+## **4. Desafios e Exemplos**
 
-### **Gerenciamento de Memória em Java**
-1. **Stack:**
-   - Armazena variáveis locais e referências.
-   - Desalocação automática ao final do escopo.
-2. **Heap:**
-   - Armazena objetos criados dinamicamente.
-   - Desalocação automática pelo garbage collector.
-
-**Regras Importantes:**
-- Objetos no **Heap** permanecem enquanto houver referências ativas.
-- Variáveis locais na **Stack** são desalocadas ao término do escopo.
-
-### **Desafios**
-1. **Por que esse código não compila?**
+### **Desafio 1: Código Inválido**
 ```java
 class Teste {
     int x = 37;
@@ -173,9 +157,9 @@ class Teste {
     }
 }
 ```
-   - R: O método `main` é estático, mas `x` não é.
+❌ **Erro:** `x` é uma variável de instância e não pode ser acessada de um método estático.
 
-2. **Correção:**
+✅ **Correção:**
 ```java
 class Teste {
     static int x = 37;
@@ -185,8 +169,38 @@ class Teste {
 }
 ```
 
-3. **Singleton em Java:**
-   - Implemente o padrão **Singleton** na classe `FabricaDeCarro` para garantir que apenas um objeto seja criado.
+### **Desafio 2: Implementando Singleton**
+Garanta que apenas uma instância de `FabricaDeCarro` seja criada.
 
-### **Conclusão**
-Compreender como o Java gerencia memória, especialmente o uso de **Stack**, **Heap** e **Garbage Collector**, é essencial para desenvolver aplicações eficientes e evitar erros comuns, como referências nulas ou vazamentos de memória.
+```java
+class FabricaDeCarro {
+    private static FabricaDeCarro instancia;
+    
+    private FabricaDeCarro() {}
+    
+    public static FabricaDeCarro getInstance() {
+        if (instancia == null) {
+            instancia = new FabricaDeCarro();
+        }
+        return instancia;
+    }
+}
+```
+
+🔹 **Explicação:**
+- Construtor privado impede a criação de novos objetos.
+- O método `getInstance()` cria um único objeto e o reutiliza.
+
+---
+
+## **5. Conclusão**
+
+A alocação de memória em Java ocorre automaticamente, mas entender como **Stack, Heap e Garbage Collector** interagem é fundamental para escrever código eficiente. Algumas regras importantes:
+
+✅ **Objetos vivem na Heap, enquanto referências e variáveis primitivas estão na Stack.**  
+✅ **O Garbage Collector remove objetos inacessíveis, prevenindo vazamentos de memória.**  
+✅ **Tipos primitivos armazenam valores diretamente e são mais performáticos que objetos.**  
+✅ **O escopo das variáveis determina quando a memória será liberada automaticamente.**
+
+Ao compreender esses conceitos, você pode evitar problemas de desempenho e otimizar sua aplicação em Java! 🚀
+
