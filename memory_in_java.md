@@ -16,6 +16,8 @@
 
 ---
 
+<br>
+
 ## **1. Introdução**
 
 Em Java, a alocação de memória é gerenciada automaticamente pela **JVM (Java Virtual Machine)**, diferenciando-se de linguagens que exigem controle manual. A memória utilizada é dividida principalmente em:
