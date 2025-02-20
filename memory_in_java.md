@@ -30,6 +30,8 @@ Compreender essa estrutura é essencial para evitar falhas como `NullPointerExce
 
 ---
 
+<br>
+
 ## **2. Tipos de Dados e Memória**
 
 ### **2.1 Tipos Referência**
