@@ -201,6 +201,8 @@ class FabricaDeCarro {
 
 ---
 
+<br>
+
 ## **5. Conclusão**
 
 A alocação de memória em Java ocorre automaticamente, mas entender como **Stack, Heap e Garbage Collector** interagem é fundamental para escrever código eficiente. Algumas regras importantes:
