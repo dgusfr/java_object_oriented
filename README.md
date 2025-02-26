@@ -2,6 +2,7 @@
 
 ## Sumário
 
+0. [Introdução à Programação Orientada a Objetos](#0-Introdução-à-Programação-Orientada-a-Objetos)
 1. [Conceitos Iniciais](#1-conceitos-iniciais)  
    1.1 [Classes e Objetos](#11-classes-e-objetos)  
    1.2 [Projeto de Classes com UML](#12-projeto-de-classes-com-uml)  
@@ -63,7 +64,7 @@
 
 <br>
 
-## Introdução à Programação Orientada a Objetos
+## 0. Introdução à Programação Orientada a Objetos
 
 Antes de mergulharmos nos conceitos específicos de Java, é importante compreender o contexto e os fundamentos que embasam a Programação Orientada a Objetos.
 
