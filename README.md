@@ -1,5 +1,68 @@
 # POO com Java
 
+## Sumário
+
+1. [Conceitos Iniciais](#1-conceitos-iniciais)  
+   1.1 [Classes e Objetos](#11-classes-e-objetos)  
+   1.2 [Projeto de Classes com UML](#12-projeto-de-classes-com-uml)  
+2. [Definindo Classes](#2-definindo-classes)  
+   2.1 [Atributos](#21-atributos)  
+   2.2 [Criando Objetos](#22-criando-objetos)  
+   2.3 [Acessando e Modificando Atributos](#23-acessando-e-modificando-atributos)  
+3. [Membros Estáticos](#3-membros-estáticos)  
+   3.1 [Atributos e Métodos Estáticos](#31-atributos-e-métodos-estáticos)  
+   3.2 [Comparação com Membros Não Estáticos](#32-comparação-com-membros-não-estáticos)  
+   3.3 [Melhores Práticas](#33-melhores-práticas)  
+4. [Métodos](#4-métodos)  
+   4.1 [Definindo Métodos](#41-definindo-métodos)  
+   4.2 [Métodos com Retorno](#42-métodos-com-retorno)  
+   4.3 [O Método transfere](#43-o-método-transfere)  
+5. [Referências em Java](#5-referências-em-java)  
+   5.1 [Como Referências Funcionam](#51-como-referências-funcionam)  
+   5.2 [Comparando Objetos com ==](#52-comparando-objetos-com--)  
+6. [Exemplos de Código](#6-exemplos-de-código)  
+   6.1 [Classe Conta](#61-classe-conta)  
+   6.2 [Teste de Métodos](#62-teste-de-métodos)  
+7. [Atributos](#7-atributos)  
+   7.1 [Valores Padrão](#71-valores-padrão)  
+   7.2 [Composição de Classes](#72-composição-de-classes)  
+   7.3 [Referências e null](#73-referências-e-null)  
+8. [Palavra-chave this](#8-palavra-chave-this)  
+   8.1 [Diferenciando Atributos de Variáveis Locais](#81-diferenciando-atributos-de-variáveis-locais)  
+   8.2 [Passando o Próprio Objeto como Argumento](#82-passando-o-próprio-objeto-como-argumento)  
+9. [Controlando o Acesso](#9-controlando-o-acesso)  
+   9.1 [Problemas com Acesso Direto a Atributos](#91-problemas-com-acesso-direto-a-atributos)  
+   9.2 [Encapsulamento para Proteger os Dados](#92-encapsulamento-para-proteger-os-dados)  
+10. [Encapsulamento e Modificadores de Acesso](#10-encapsulamento-e-modificadores-de-acesso)  
+    10.1 [Benefícios do Encapsulamento](#101-benefícios-do-encapsulamento)  
+    10.2 [Interface vs. Implementação](#102-interface-vs-implementação)  
+    10.3 [Modificadores de Acesso Detalhados](#103-modificadores-de-acesso-detalhados)  
+11. [Exemplo Prático: Validação de CPF](#11-exemplo-prático-validação-de-cpf)  
+12. [Getters e Setters](#12-getters-e-setters)  
+    12.1 [Problema do Acesso Direto](#121-problema-do-acesso-direto)  
+    12.2 [O Papel dos Getters e Setters](#122-o-papel-dos-getters-e-setters)  
+    12.3 [Personalizando Getters](#123-personalizando-getters)  
+13. [Construtores](#13-construtores)  
+    13.1 [O Que é um Construtor?](#131-o-que-é-um-construtor)  
+    13.2 [Construtor Default](#132-construtor-default)  
+    13.3 [Construtores com Argumentos](#133-construtores-com-argumentos)  
+    13.4 [Sobrecarga de Construtores](#134-sobrecarga-de-construtores)  
+    13.5 [Chamando Outro Construtor com this()](#135-chamando-outro-construtor-com-this)  
+14. [Resumo e Benefícios](#14-resumo-e-benefícios)  
+15. [Introdução aos Atributos de Classe](#15-introdução-aos-atributos-de-classe)  
+16. [Atributos Estáticos com static](#16-atributos-estáticos-com-static)  
+    16.1 [Definição de Atributos Estáticos](#161-definição-de-atributos-estáticos)  
+    16.2 [Acesso e Uso de Atributos Estáticos](#162-acesso-e-uso-de-atributos-estáticos)  
+17. [Métodos Estáticos](#17-métodos-estáticos)  
+    17.1 [Características dos Métodos Estáticos](#171-características-dos-métodos-estáticos)  
+    17.2 [Comparação: Métodos Estáticos vs. Métodos de Instância](#172-comparação-métodos-estáticos-vs-métodos-de-instância)  
+18. [Exemplo Prático: Controle de Contas Bancárias](#18-exemplo-prático-controle-de-contas-bancárias)  
+19. [Resumo e Benefícios](#19-resumo-e-benefícios)  
+
+---
+
+<br>
+
 ## Introdução à Programação Orientada a Objetos
 
 Antes de mergulharmos nos conceitos específicos de Java, é importante compreender o contexto e os fundamentos que embasam a Programação Orientada a Objetos.
@@ -129,69 +192,6 @@ O Stack contém apenas o endereço que aponta para o objeto no Heap. Note na ima
 
 Ou seja, a variável x armazena um endereço de memória (por exemplo, 0x100358) que *aponta (faz referência)* para o objeto Triangle na Heap. O mesmo também ocorre com y ao instanciá-lo.
 
-
----
-
-<br>
-
-## Sumário
-
-1. [Conceitos Iniciais](#1-conceitos-iniciais)  
-   1.1 [Classes e Objetos](#11-classes-e-objetos)  
-   1.2 [Projeto de Classes com UML](#12-projeto-de-classes-com-uml)  
-2. [Definindo Classes](#2-definindo-classes)  
-   2.1 [Atributos](#21-atributos)  
-   2.2 [Criando Objetos](#22-criando-objetos)  
-   2.3 [Acessando e Modificando Atributos](#23-acessando-e-modificando-atributos)  
-3. [Membros Estáticos](#3-membros-estáticos)  
-   3.1 [Atributos e Métodos Estáticos](#31-atributos-e-métodos-estáticos)  
-   3.2 [Comparação com Membros Não Estáticos](#32-comparação-com-membros-não-estáticos)  
-   3.3 [Melhores Práticas](#33-melhores-práticas)  
-4. [Métodos](#4-métodos)  
-   4.1 [Definindo Métodos](#41-definindo-métodos)  
-   4.2 [Métodos com Retorno](#42-métodos-com-retorno)  
-   4.3 [O Método transfere](#43-o-método-transfere)  
-5. [Referências em Java](#5-referências-em-java)  
-   5.1 [Como Referências Funcionam](#51-como-referências-funcionam)  
-   5.2 [Comparando Objetos com ==](#52-comparando-objetos-com--)  
-6. [Exemplos de Código](#6-exemplos-de-código)  
-   6.1 [Classe Conta](#61-classe-conta)  
-   6.2 [Teste de Métodos](#62-teste-de-métodos)  
-7. [Atributos](#7-atributos)  
-   7.1 [Valores Padrão](#71-valores-padrão)  
-   7.2 [Composição de Classes](#72-composição-de-classes)  
-   7.3 [Referências e null](#73-referências-e-null)  
-8. [Palavra-chave this](#8-palavra-chave-this)  
-   8.1 [Diferenciando Atributos de Variáveis Locais](#81-diferenciando-atributos-de-variáveis-locais)  
-   8.2 [Passando o Próprio Objeto como Argumento](#82-passando-o-próprio-objeto-como-argumento)  
-9. [Controlando o Acesso](#9-controlando-o-acesso)  
-   9.1 [Problemas com Acesso Direto a Atributos](#91-problemas-com-acesso-direto-a-atributos)  
-   9.2 [Encapsulamento para Proteger os Dados](#92-encapsulamento-para-proteger-os-dados)  
-10. [Encapsulamento e Modificadores de Acesso](#10-encapsulamento-e-modificadores-de-acesso)  
-    10.1 [Benefícios do Encapsulamento](#101-benefícios-do-encapsulamento)  
-    10.2 [Interface vs. Implementação](#102-interface-vs-implementação)  
-    10.3 [Modificadores de Acesso Detalhados](#103-modificadores-de-acesso-detalhados)  
-11. [Exemplo Prático: Validação de CPF](#11-exemplo-prático-validação-de-cpf)  
-12. [Getters e Setters](#12-getters-e-setters)  
-    12.1 [Problema do Acesso Direto](#121-problema-do-acesso-direto)  
-    12.2 [O Papel dos Getters e Setters](#122-o-papel-dos-getters-e-setters)  
-    12.3 [Personalizando Getters](#123-personalizando-getters)  
-13. [Construtores](#13-construtores)  
-    13.1 [O Que é um Construtor?](#131-o-que-é-um-construtor)  
-    13.2 [Construtor Default](#132-construtor-default)  
-    13.3 [Construtores com Argumentos](#133-construtores-com-argumentos)  
-    13.4 [Sobrecarga de Construtores](#134-sobrecarga-de-construtores)  
-    13.5 [Chamando Outro Construtor com this()](#135-chamando-outro-construtor-com-this)  
-14. [Resumo e Benefícios](#14-resumo-e-benefícios)  
-15. [Introdução aos Atributos de Classe](#15-introdução-aos-atributos-de-classe)  
-16. [Atributos Estáticos com static](#16-atributos-estáticos-com-static)  
-    16.1 [Definição de Atributos Estáticos](#161-definição-de-atributos-estáticos)  
-    16.2 [Acesso e Uso de Atributos Estáticos](#162-acesso-e-uso-de-atributos-estáticos)  
-17. [Métodos Estáticos](#17-métodos-estáticos)  
-    17.1 [Características dos Métodos Estáticos](#171-características-dos-métodos-estáticos)  
-    17.2 [Comparação: Métodos Estáticos vs. Métodos de Instância](#172-comparação-métodos-estáticos-vs-métodos-de-instância)  
-18. [Exemplo Prático: Controle de Contas Bancárias](#18-exemplo-prático-controle-de-contas-bancárias)  
-19. [Resumo e Benefícios](#19-resumo-e-benefícios)  
 
 ---
 
