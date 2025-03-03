@@ -119,6 +119,8 @@ Ao definir quais informações são mais relevantes, os atributos e métodos de 
 - **Instância**: É o objeto propriamente dito. Se a classe “Carro” é o “molde”, então um *Carro vermelho 2024* é uma instância específica daquele molde.  
 - **Instanciação**: É o processo de criar a instância na memória. Em Java, quando usamos um operador para criar o objeto, esse espaço é alocado na memória e uma referência é retornada para ser usada no programa.
 
+<img src="images/method.png" alt="alt" width="500">
+
 Visualize como se estivéssemos construindo uma casa: a planta (classe) descreve como a casa deve ser, mas a casa de verdade (instância) só existe após a construção (instanciação).
 
 ---
@@ -138,7 +140,7 @@ A **POO** baseia-se em quatro conceitos essenciais:
 3. **Atributos**  
    São as variáveis ou características que armazenam o estado de um objeto. No exemplo de um carro, os atributos poderiam ser “cor”, “modelo”, “velocidade”.
 
-<img src="images" alt="alt" width="600">
+<img src="images/atributes.jpg" alt="alt" width="600">
 
 4. **Métodos**  
    São as rotinas (funções ou procedimentos) que definem os comportamentos de um objeto. Por exemplo, um carro pode ter métodos como “acelerar”, “frear” ou “ligarMotor”, que manipulam ou consultam os atributos.
