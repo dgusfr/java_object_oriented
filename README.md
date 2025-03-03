@@ -61,138 +61,101 @@
 19. [Resumo e Benefícios](#19-resumo-e-benefícios)  
 
 ---
+## Introdução à Programação Orientada a Objetos
 
-<br>
+A Programação Orientada a Objetos (POO) organiza o desenvolvimento de software em torno de **objetos**, representando entidades do mundo real ou conceitos abstratos. Esse paradigma torna o código mais intuitivo e modular, pois cada objeto encapsula dados e comportamentos de maneira clara.
 
-## 0. Introdução à Programação Orientada a Objetos
-
-Antes de mergulharmos nos conceitos específicos de Java, é importante compreender o contexto e os fundamentos que embasam a Programação Orientada a Objetos.
+---
 
 ### 1. Paradigma de Programação
 
-Um **paradigma de programação** é um modelo que descreve como resolver problemas e estruturar programas. Ele funciona como uma “filosofia” que orienta a forma de pensar e programar. Alguns paradigmas comuns incluem:
+Um **paradigma de programação** descreve como resolver problemas e estruturar programas. Existem vários paradigmas, como:
 
-- **Procedural:**  
-  Foca em uma sequência de instruções ou comandos que o computador deve executar. Exemplos: C, Pascal.
-- **Orientada a Objetos (POO):**  
-  Organiza o código em objetos que combinam dados e comportamentos. Exemplos: Java, C++, Python.
-- **Funcional:**  
-  Trata a computação como a avaliação de funções matemáticas, evitando mudanças de estado e dados mutáveis. Exemplos: Haskell, Lisp.
-- **Lógico:**  
-  Baseia-se em lógica formal e regras para derivar conclusões. Exemplo: Prolog.
-- **Declarativo:**  
-  Especifica o que o programa deve fazer, sem detalhar como fazê-lo, focando no resultado desejado. Exemplos: SQL, HTML.
+- **Procedural:** Enfatiza uma sequência de instruções, onde o programa é dividido em funções (exemplo: C).  
+- **Orientado a Objetos:** Foca em objetos que combinam dados e comportamentos (exemplos: Java, C++, Python).  
+- **Funcional:** Trata o código como funções matemáticas puras, evitando mudanças de estado (exemplo: Haskell).  
+- **Lógico:** Baseia-se em declarações lógicas e regras para derivar conclusões (exemplo: Prolog).  
+- **Declarativo:** Especifica o que o programa deve fazer, sem detalhar como (exemplos: SQL, HTML).
+
+---
 
 ### 2. Fundamentos de POO
 
-A **Programação Orientada a Objetos** organiza o código em torno de *objetos*, que representam entidades do mundo real ou conceitos abstratos. Essa abordagem torna o desenvolvimento mais intuitivo e modular, pois cada objeto possui um estado (dados) e comportamentos (métodos) próprios.
+A **Programação Orientada a Objetos** gira em torno de quatro pilares principais:
+
+1. **Abstração**: Focar nos aspectos essenciais de um objeto, ignorando detalhes irrelevantes para o contexto.  
+2. **Encapsulamento**: Proteger os dados de um objeto, permitindo acesso e modificação apenas por métodos controlados.  
+3. **Herança**: Possibilitar que classes compartilhem atributos e métodos de uma classe-mãe.  
+4. **Polimorfismo**: Permitir que um objeto seja referenciado de várias formas, adequando-se a diferentes contextos.
+
+---
 
 ### 3. Por que Usar POO?
 
-Utilizar POO oferece diversos benefícios:
+- **Legibilidade**: O código é organizado em “blocos” que correspondem a entidades do problema (por exemplo, “Carro”, “Cliente” etc.).  
+- **Reusabilidade**: As classes podem ser aproveitadas em diversas partes do sistema ou em outros projetos.  
+- **Manutenção Facilitada**: Alterações são centralizadas em cada classe, facilitando testes e correções.  
 
-- **Legibilidade:**  
-  O código fica organizado em “blocos” que representam entidades reais, facilitando o entendimento.
-- **Reusabilidade:**  
-  Classes podem ser reutilizadas em diferentes partes do sistema ou mesmo em outros projetos.
-- **Manutenção:**  
-  Alterações são centralizadas dentro das classes, facilitando a correção de erros e a expansão do sistema.
+*Exemplo de abordagem:*  
+Em um sistema que calcula a área de formas geométricas, a abordagem procedural exigiria várias variáveis e funções separadas para cada forma. Com POO, podemos ter uma classe “Forma” ou “Triângulo” que agrupe os dados (lados) e comportamentos (cálculo da área) em um só lugar, tornando o código mais organizado.
 
-*Exemplo – Cálculo de Área de Triângulos:*  
-Na abordagem procedural, seria necessário trabalhar com várias variáveis separadas para cada lado de cada triângulo. 
-
-```java
-public class Triangulo {
-    public static void main(String[] args) {
-        // Coordenadas do triângulo X
-        double aX = 3.0, bX = 4.0, cX = 5.0;
-
-        // Coordenadas do triângulo Y
-        double ay = 7.5, bY = 4.5, cY = 4.02; // Corrigido "oY" para "cY"
-
-        // Exemplo de saída
-        System.out.println("Triângulo X: (" + aX + ", " + bX + ", " + cX + ")");
-        System.out.println("Triângulo Y: (" + ay + ", " + bY + ", " + cY + ")");
-    }
-}
-```
-
-
-Com POO, cria-se uma classe `Triangle` que agrupa os três lados como atributos e pode incluir métodos para calcular a área ou validar os lados. 
-
-```java
-package entities;
-
-public class Triangle {
-    public double a;
-    public double b; // Corrigido bj para b
-    public double c;
-}
-```
-
-Usando a classe triângulo:
-
-```java
-public class Main {
-    public static void main(String[] args) {
-        // Criando dois objetos Triangle
-        Triangle x = new Triangle();
-        x.a = 3.0;
-        x.b = 4.0;
-        x.c = 5.0;
-
-        Triangle y = new Triangle();
-        y.a = 7.5;
-        y.b = 4.5;
-        y.c = 4.02;
-
-        // Exibindo os valores dos triângulos
-        System.out.println("Triângulo X: (" + x.a + ", " + x.b + ", " + x.c + ")");
-        System.out.println("Triângulo Y: (" + y.a + ", " + y.b + ", " + y.c + ")");
-    }
-}
-```
-
-Assim, cada objeto `Triangle` representa um triângulo específico, reduzindo a quantidade de variáveis e organizando melhor o código.
+---
 
 ### 4. Abstração
 
-A **abstração** é um dos pilares da POO e consiste em representar um objeto com apenas as informações essenciais para o contexto do sistema, ignorando detalhes desnecessários.  
-  
-*Exemplo – Modelo de um Carro:*  
-- **Abstração Visual:**  
-  Atributos como cor, modelo e forma podem ser usados para representar a aparência do carro.  
-- **Abstração Funcional:**  
-  Detalhes mecânicos, como o sistema de embreagem e freios, podem ser destacados se o foco for o desempenho e a funcionalidade.
+A **abstração** consiste em representar um objeto real apenas com as informações necessárias ao contexto do sistema, ignorando detalhes supérfluos. Por exemplo:
 
-<img src="images/abstraction.png" alt="Imagem de abstração" width="500">
+- **Abstração Visual de um Carro**: Pode-se representar cor, modelo e forma, omitindo detalhes de engenharia.  
+- **Abstração Funcional de um Carro**: Foca em características mecânicas, como sistema de freios, motor e embreagem, se o objetivo for simular o desempenho.
 
-Ao escolher quais aspectos modelar, os atributos e métodos da classe podem variar conforme o nível de detalhe desejado. Essa abordagem reduz a complexidade e facilita a manutenção e o reuso do código.
+Ao definir quais informações são mais relevantes, os atributos e métodos de uma classe variam conforme o nível de detalhe escolhido. Isso ajuda a reduzir a complexidade e a facilitar a manutenção.
+
+---
 
 ### 5. Instância e Instanciação
 
-- **Instância:**  
-  É a criação de um objeto a partir de uma classe. Por exemplo, se a classe `Carro` é o molde, uma instância seria um *Ferrari vermelho 2024* – um carro específico criado a partir desse molde.
-  
-- **Instanciação:**  
-    Instanciação é o processo de criação de um objeto a partir de uma classe, momento em que ocorre a alocação dinâmica de memória para esse objeto. 
-    Em Java, esse processo é feito com o operador *new*, que aloca espaço na memória *Heap* para o objeto e devolve uma referência para esse espaço. Essa referência é armazenada em uma variável de tipo objeto, localizada na memória *Stack*.
+- **Instância**: É o objeto propriamente dito. Se a classe “Carro” é o “molde”, então um *Carro vermelho 2024* é uma instância específica daquele molde.  
+- **Instanciação**: É o processo de criar a instância na memória. Em Java, quando usamos um operador para criar o objeto, esse espaço é alocado na memória e uma referência é retornada para ser usada no programa.
 
-<img src="images/instan.png" alt="Diagrama UML da classe Conta" width="500">
+Visualize como se estivéssemos construindo uma casa: a planta (classe) descreve como a casa deve ser, mas a casa de verdade (instância) só existe após a construção (instanciação).
 
-*Exemplo:*
+---
 
-```java
-Triangle x, y; // Variáveis de referência na Stack
-x = new Triangle(); // Instanciação: um objeto Triangle é criado na Heap e x armazena seu endereço
-```
+## Classe, Objeto, Atributos e Métodos
 
-Será criada (instanciada) um objeto do tipo triangle na área de memória Heap, responsável por armazenar de objetos dinâmicos.
+A **POO** baseia-se em quatro conceitos essenciais:
 
-O Stack contém apenas o endereço que aponta para o objeto no Heap. Note na imagem que existe a variável *‘x’* no stack mas nela existe apenas o endereço de memória do objeto que foi criado na memória Heap.
+1. **Classe**  
+   É o “molde” ou “projeto” de um objeto. Descreve quais dados (atributos) e comportamentos (métodos) o objeto deve ter.
 
-Ou seja, a variável x armazena um endereço de memória (por exemplo, 0x100358) que *aponta (faz referência)* para o objeto Triangle na Heap. O mesmo também ocorre com y ao instanciá-lo.
+2. **Objeto**  
+   É a realização concreta de uma classe, criado em tempo de execução. Cada objeto tem seu próprio estado e pode executar comportamentos definidos na classe.
 
+3. **Atributos**  
+   São as variáveis ou características que armazenam o estado de um objeto. No exemplo de um carro, os atributos poderiam ser “cor”, “modelo”, “velocidade”.
+
+4. **Métodos**  
+   São as rotinas (funções ou procedimentos) que definem os comportamentos de um objeto. Por exemplo, um carro pode ter métodos como “acelerar”, “frear” ou “ligarMotor”, que manipulam ou consultam os atributos.
+
+---
+
+### Exemplo Conceitual (sem código)
+
+- **Classe**: “Carro”
+  - **Atributos**: cor, modelo, velocidadeAtual
+  - **Métodos**: acelerar(), frear(), ligarMotor()
+
+- **Objeto**: Carro específico (por exemplo, um carro vermelho, modelo “XYZ”, velocidade atual de 0 km/h)
+  - Quando chamamos `acelerar()`, o objeto altera o valor do atributo “velocidadeAtual”
+  - Se chamamos `frear()`, a velocidade diminui.
+
+Nesse esquema, a classe descreve o que o carro pode ter e fazer; o objeto é um carro individual em uso. Os atributos guardam os dados (velocidade, cor), e os métodos definem os comportamentos (acelerar, frear).
+
+---
+
+## Conclusão
+
+A Programação Orientada a Objetos facilita a **organização** e **manutenção** de sistemas complexos ao **agrupar** dados e comportamentos em entidades coesas (classes/objetos). Conceitos como **Classe, Objeto, Atributos** e **Métodos** estruturam o desenvolvimento, enquanto técnicas como **Abstração**, **Encapsulamento**, **Herança** e **Polimorfismo** tornam o código **mais claro e escalável**.
 
 ---
 
