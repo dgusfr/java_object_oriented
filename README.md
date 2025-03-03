@@ -2,9 +2,14 @@
 
 ## Sumário
 
-0. [Introdução à Programação Orientada a Objetos](#0-Introdução-à-Programação-Orientada-a-Objetos)
+- [Introdução à Programação Orientada a Objetos](#introdução-à-programação-orientada-a-objetos)
+  - [1. Paradigma de Programação](#1-paradigma-de-programação)
+  - [2. Fundamentos de POO](#2-fundamentos-de-poo)
+  - [3. Por que Usar POO?](#3-por-que-usar-poo)
+  - [4. Abstração](#4-abstração)
+  - [5. Instância e Instanciação](#5-instância-e-instanciação)
+  - [Classe, Objeto, Atributos e Métodos](#classe-objeto-atributos-e-métodos)
 1. [Conceitos Iniciais](#1-conceitos-iniciais)  
-   1.1 [Classes e Objetos](#11-classes-e-objetos)  
    1.2 [Projeto de Classes com UML](#12-projeto-de-classes-com-uml)  
 2. [Definindo Classes](#2-definindo-classes)  
    2.1 [Atributos](#21-atributos)  
@@ -147,7 +152,7 @@ A **POO** baseia-se em quatro conceitos essenciais:
 
 ---
 
-### Exemplo Conceitual (sem código)
+### Exemplo Conceitual 
 
 - **Classe**: “Carro”
   - **Atributos**: cor, modelo, velocidadeAtual
@@ -170,14 +175,6 @@ A Programação Orientada a Objetos facilita a **organização** e **manutençã
 <br>
 
 ## 1. Conceitos Iniciais
-
-### 1.1 Classes e Objetos
-
-- **Classe:**  
-  Define a estrutura e o comportamento de um objeto. Pode ser vista como uma “planta” que especifica os atributos (dados) e métodos (comportamentos) que os objetos terão.
-
-- **Objeto:**  
-  É uma instância concreta da classe, criada em tempo de execução. Cada objeto possui seu próprio estado e pode executar os comportamentos definidos na classe.
 
 ### 1.2 Projeto de Classes com UML
 
