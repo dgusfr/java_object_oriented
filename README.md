@@ -583,7 +583,7 @@ Os modificadores de acesso em Java controlam a visibilidade de atributos, métod
 
 <br></br>
 
-<img src="images/visib.png" alt="alt" width="900">
+<img src="images/visib.png" alt="Visibilidadelt" width="900">
 
 ---
 
