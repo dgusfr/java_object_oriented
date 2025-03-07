@@ -140,7 +140,7 @@ A **POO** baseia-se em quatro conceitos essenciais:
 2. **Objeto**  
    É a realização concreta de uma classe, criado em tempo de execução. Cada objeto tem seu próprio estado e pode executar comportamentos definidos na classe.
 
-<img src="images/class.jpg" alt="alt" width="600">
+<img src="images/class.jpg" alt="ClasseJava" width="600">
 
 3. **Atributos**  
    São as variáveis ou características que armazenam o estado de um objeto. No exemplo de um carro, os atributos poderiam ser “cor”, “modelo”, “velocidade”.
