@@ -301,7 +301,7 @@ boolean transfere(Conta destino, double valor) {
     return false;
 }
 ```
-<img src="images/method.png" alt="alt" width="500">
+<img src="images/method.png" alt="Metodos" width="500">
 
 ---
 
