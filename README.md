@@ -110,7 +110,7 @@ Em um sistema que calcula a área de formas geométricas, a abordagem procedural
 
 A **abstração** consiste em representar um objeto real apenas com as informações necessárias ao contexto do sistema, ignorando detalhes supérfluos. Por exemplo:
 
-<img src="images/abstraction.jpg" alt="alt" width="600">
+<img src="images/abstraction.jpg" alt="Abstração" width="600">
 
 - **Abstração Visual de um Carro**: Pode-se representar cor, modelo e forma, omitindo detalhes de engenharia.  
 - **Abstração Funcional de um Carro**: Foca em características mecânicas, como sistema de freios, motor e embreagem, se o objetivo for simular o desempenho.
