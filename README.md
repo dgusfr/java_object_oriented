@@ -145,7 +145,7 @@ A **POO** baseia-se em quatro conceitos essenciais:
 3. **Atributos**  
    São as variáveis ou características que armazenam o estado de um objeto. No exemplo de um carro, os atributos poderiam ser “cor”, “modelo”, “velocidade”.
 
-<img src="images/atributes.jpg" alt="alt" width="600">
+<img src="images/atributes.jpg" alt="Atributos" width="600">
 
 4. **Métodos**  
    São as rotinas (funções ou procedimentos) que definem os comportamentos de um objeto. Por exemplo, um carro pode ter métodos como “acelerar”, “frear” ou “ligarMotor”, que manipulam ou consultam os atributos.
