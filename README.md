@@ -320,7 +320,7 @@ Conta c2 = c1;
 
 *Exemplo gráfico:*
 
-<img src="images/ref.png" alt="Referências em Java" width="200">
+<img src="images/ref.png" alt="Referências em Java" width="500">
 
 ### 5.2 Comparando Objetos com ==
 
