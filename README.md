@@ -83,7 +83,6 @@ Um **paradigma de programação** descreve como resolver problemas e estruturar 
 
 ---
 
-### 2. Fundamentos de POO
 
 
 
