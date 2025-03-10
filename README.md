@@ -87,7 +87,7 @@ Um **paradigma de programação** descreve como resolver problemas e estruturar 
 
 A **Programação Orientada a Objetos** gira em torno de quatro pilares principais:
 
-1. **Abstração**: Focar nos aspectos essenciais de um objeto, ignorando detalhes irrelevantes para o contexto.  
+
 
 
 
