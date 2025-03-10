@@ -90,7 +90,7 @@ A **Programação Orientada a Objetos** gira em torno de quatro pilares principa
 1. **Abstração**: Focar nos aspectos essenciais de um objeto, ignorando detalhes irrelevantes para o contexto.  
 2. **Encapsulamento**: Proteger os dados de um objeto, permitindo acesso e modificação apenas por métodos controlados.  
 3. **Herança**: Possibilitar que classes compartilhem atributos e métodos de uma classe-mãe.  
-4. **Polimorfismo**: Permitir que um objeto seja referenciado de várias formas, adequando-se a diferentes contextos.
+
 
 ---
 
