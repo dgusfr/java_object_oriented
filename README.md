@@ -146,7 +146,7 @@ A **POO** baseia-se em quatro conceitos essenciais:
   - **Atributos**: cor, modelo, velocidadeAtual
   - **Métodos**: acelerar(), frear(), ligarMotor()
 
-- **Objeto**: Carro específico (por exemplo, um carro vermelho, modelo “XYZ”, velocidade atual de 0 km/h)
+- **Objeto**: Carro específico (por exemplo, um carro vermelho, modelo “XYZ”, velocidade atual de X km/h)
   - Quando chamamos `acelerar()`, o objeto altera o valor do atributo “velocidadeAtual”
   - Se chamamos `frear()`, a velocidade diminui.
 
