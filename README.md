@@ -156,7 +156,6 @@ Nesse esquema, a classe descreve o que o carro pode ter e fazer; o objeto é um 
 
 ## Conclusão
 
-A Programação Orientada a Objetos facilita a **organização** e **manutenção** de sistemas complexos ao **agrupar** dados e comportamentos em entidades coesas 
 
 ---
 
