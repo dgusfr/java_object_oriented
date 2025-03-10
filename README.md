@@ -4,7 +4,6 @@
 
 - [Introdução à Programação Orientada a Objetos](#introdução-à-programação-orientada-a-objetos)
   - [1. Paradigma de Programação](#1-paradigma-de-programação)
-  - [2. Fundamentos de POO](#2-fundamentos-de-poo)
   - [3. Por que Usar POO?](#3-por-que-usar-poo)
   - [4. Abstração](#4-abstração)
   - [5. Instância e Instanciação](#5-instância-e-instanciação)
