@@ -154,11 +154,6 @@ Nesse esquema, a classe descreve o que o carro pode ter e fazer; o objeto é um 
 
 ---
 
-## Conclusão
-
-
----
-
 <br>
 
 ## 1. Conceitos Iniciais
