@@ -156,7 +156,7 @@ Nesse esquema, a classe descreve o que o carro pode ter e fazer; o objeto é um 
 
 ## Conclusão
 
-A Programação Orientada a Objetos facilita a **organização** e **manutenção** de sistemas complexos ao **agrupar** dados e comportamentos em entidades coesas (classes/objetos). Conceitos como **Classe, Objeto, Atributos** e **Métodos** estruturam o desenvolvimento, enquanto técnicas como **Abstração**, **Encapsulamento**, **Herança** e **Polimorfismo** tornam o código **mais claro e escalável**.
+A Programação Orientada a Objetos facilita a **organização** e **manutenção** de sistemas complexos ao **agrupar** dados e comportamentos em entidades coesas 
 
 ---
 
