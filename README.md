@@ -83,15 +83,6 @@ Um **paradigma de programação** descreve como resolver problemas e estruturar 
 
 ---
 
-
-
-
-
-
-
-
----
-
 ### 3. Por que Usar POO?
 
 - **Legibilidade**: O código é organizado em “blocos” que correspondem a entidades do problema (por exemplo, “Carro”, “Cliente” etc.).  
