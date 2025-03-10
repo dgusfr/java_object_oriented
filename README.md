@@ -85,7 +85,7 @@ Um **paradigma de programação** descreve como resolver problemas e estruturar 
 
 ### 2. Fundamentos de POO
 
-A **Programação Orientada a Objetos** gira em torno de quatro pilares principais:
+
 
 
 
