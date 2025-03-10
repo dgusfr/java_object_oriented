@@ -90,7 +90,7 @@ Um **paradigma de programação** descreve como resolver problemas e estruturar 
 - **Manutenção Facilitada**: Alterações são centralizadas em cada classe, facilitando testes e correções.  
 
 *Exemplo de abordagem:*  
-Em um sistema que calcula a área de formas geométricas, a abordagem procedural exigiria várias variáveis e funções separadas para cada forma. Com POO, podemos ter uma classe “Forma” ou “Triângulo” que agrupe os dados (lados) e comportamentos (cálculo da área) em um só lugar, tornando o código mais organizado.
+Em um sistema que calcula a área de triângulos, a abordagem procedural exigiria várias variáveis e funções separadas para cada triângulo. Com POO, podemos ter uma classe “Triângulo” que agrupe os dados (lados) e comportamentos (cálculo da área) em um só lugar, tornando o código mais organizado.
 
 ---
 
