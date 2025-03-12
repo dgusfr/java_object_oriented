@@ -2,12 +2,12 @@
 
 ## Sumário
 
-- [Introdução à Programação Orientada a Objetos](#introdução-à-programação-orientada-a-objetos)
-  - [1. Paradigma de Programação](#1-paradigma-de-programação)
-  - [3. Por que Usar POO?](#3-por-que-usar-poo)
-  - [4. Abstração](#4-abstração)
-  - [5. Instância e Instanciação](#5-instância-e-instanciação)
-  - [Classe, Objeto, Atributos e Métodos](#classe-objeto-atributos-e-métodos)
+[Introdução à Programação Orientada a Objetos](#introdução-à-programação-orientada-a-objetos)
+- [Paradigma de Programação](#1-paradigma-de-programação)
+- [Por que Usar POO?](#3-por-que-usar-poo)
+- [Abstração](#4-abstração)
+- [Instância e Instanciação](#5-instância-e-instanciação)
+- [Classe, Objeto, Atributos e Métodos](#classe-objeto-atributos-e-métodos)
 1. [Conceitos Iniciais](#1-conceitos-iniciais)  
    1.2 [Projeto de Classes com UML](#12-projeto-de-classes-com-uml)  
 2. [Definindo Classes](#2-definindo-classes)  
@@ -15,9 +15,6 @@
    2.2 [Criando Objetos](#22-criando-objetos)  
    2.3 [Acessando e Modificando Atributos](#23-acessando-e-modificando-atributos)  
 3. [Membros Estáticos](#3-membros-estáticos)  
-   3.1 [Atributos e Métodos Estáticos](#31-atributos-e-métodos-estáticos)  
-   3.2 [Comparação com Membros Não Estáticos](#32-comparação-com-membros-não-estáticos)  
-   3.3 [Melhores Práticas](#33-melhores-práticas)  
 4. [Métodos](#4-métodos)  
    4.1 [Definindo Métodos](#41-definindo-métodos)  
    4.2 [Métodos com Retorno](#42-métodos-com-retorno)  
@@ -25,13 +22,12 @@
 5. [Referências em Java](#5-referências-em-java)  
    5.1 [Como Referências Funcionam](#51-como-referências-funcionam)  
    5.2 [Comparando Objetos com ==](#52-comparando-objetos-com--)  
-6. [Exemplos de Código](#6-exemplos-de-código)  
-   6.1 [Classe Conta](#61-classe-conta)  
-   6.2 [Teste de Métodos](#62-teste-de-métodos)  
+6. [Exemplo Completo](#6-exemplo-completo)  
 7. [Atributos](#7-atributos)  
-   7.1 [Valores Padrão](#71-valores-padrão)  
-   7.2 [Composição de Classes](#72-composição-de-classes)  
+   7.1 [Atributos como Referências para Outras Classes](#71-atributos-como-referências-para-outras-classes)  
+   7.2 [O Problema de null](#72-o-problema-de-null)  
    7.3 [Referências e null](#73-referências-e-null)  
+---
 8. [Palavra-chave this](#8-palavra-chave-this)  
    8.1 [Diferenciando Atributos de Variáveis Locais](#81-diferenciando-atributos-de-variáveis-locais)  
    8.2 [Passando o Próprio Objeto como Argumento](#82-passando-o-próprio-objeto-como-argumento)  
@@ -114,7 +110,7 @@ Ao definir quais informações são mais relevantes, os atributos e métodos de 
 
 <img src="images/instantiation.jpg" alt="Instanciação" width="600">
 
-Visualize como se estivéssemos construindo uma casa: a planta (classe) descreve como a casa deve ser, mas a casa de verdade (instância) só existe após a construção (instanciação).
+Visualize como se estivéssemos construindo uma carro: o molde (classe) descreve como o carro deve ser, mas o carro de verdade (instância) só existe após a construção (instanciação).
 
 ---
 
@@ -123,7 +119,7 @@ Visualize como se estivéssemos construindo uma casa: a planta (classe) descreve
 A **POO** baseia-se em quatro conceitos essenciais:
 
 1. **Classe**  
-   É o “molde” ou “projeto” de um objeto. Descreve quais dados (atributos) e comportamentos (métodos) o objeto deve ter.
+   É o “molde” de um objeto. Descreve quais dados (atributos) e comportamentos (métodos) o objeto deve ter.
 
 2. **Objeto**  
    É a realização concreta de uma classe, criado em tempo de execução. Cada objeto tem seu próprio estado e pode executar comportamentos definidos na classe.
@@ -131,12 +127,12 @@ A **POO** baseia-se em quatro conceitos essenciais:
 <img src="images/class.jpg" alt="ClasseJava" width="600">
 
 3. **Atributos**  
-   São as variáveis ou características que armazenam o estado de um objeto. No exemplo de um carro, os atributos poderiam ser “cor”, “modelo”, “velocidade”.
+   São as características que armazenam o estado de um objeto. No exemplo de um carro, os atributos poderiam ser “cor”, “modelo”, “velocidade”.
 
 <img src="images/atributes.jpg" alt="Atributos" width="600">
 
 4. **Métodos**  
-   São as rotinas (funções ou procedimentos) que definem os comportamentos de um objeto. Por exemplo, um carro pode ter métodos como “acelerar”, “frear” ou “ligarMotor”, que manipulam ou consultam os atributos.
+   São funções que definem os comportamentos de um objeto. Por exemplo, um carro pode ter métodos como “acelerar”, “frear” ou “ligarMotor”, que manipulam ou consultam os atributos.
 
 ---
 
@@ -176,9 +172,34 @@ UML (*Unified Modeling Language*) é uma linguagem visual para modelar sistemas 
 
 ## 2. Definindo Classes
 
+Até agora vimos exemplos com Carros, mas apartir de agora em iremos considerar o cenario de um Banco, qual é a entidade mais importante para um banco? A conta.
+
+Quais são os atributos impotantes em uma Conta?
+– Número da conta
+– Nome do cliente
+– Saldo
+– Limite
+
+O que toda conta faz? Isto é, quais são seus metodos.
+– saca 
+– deposita 
+– transfere 
+
+Veja como ficaria uma conta em Java:
+
+```java
+class Conta {
+    ...
+}
+```
+
+O que temos até agora é o molde da conta (Classe) ainda precisamos
+construir (instanciar) essa conta, para poder acessar o que ela tem, e pedir para ela fazer alguma coisa.
+
+
 ### 2.1 Atributos
 
-Atributos são as variáveis que definem as características e o estado de um objeto.
+Atributos são as variáveis que definem as características e o estado de um objeto. Note que declaramos os atributos diretamente dentro do escopo da classe, desta forma eles são variáveis do objeto Conta.
 
 ```java
 class Conta {
@@ -191,7 +212,7 @@ class Conta {
 
 ### 2.2 Criando Objetos
 
-Para criar (instanciar) um objeto, utilizamos o operador `new`.
+Até agora temos a classe conta e seus atributos, mais ainda não temos a conta propriamente dita, para criar (instanciar) um objeto, utilizamos o operador `new`.
 
 ```java
 Conta minhaConta = new Conta();
@@ -199,13 +220,14 @@ Conta minhaConta = new Conta();
 
 ### 2.3 Acessando e Modificando Atributos
 
-Após criar o objeto, seus atributos podem ser acessados e modificados.
+Após criar o objeto, precisamos criar metodos para alterar os atributos da Conta, para isso criamos o metodo que realiza a operação que desejamos (Ex: saldo, retorna o saldo atual da conta) e chamamos ele utilizando o operador '.', conforme exemplificado a baixo:
 
 ```java
 minhaConta.dono = "Duke";
 minhaConta.saldo = 1000.0;
 System.out.println(minhaConta.saldo);
 ```
+NO exemplo a cima alteramos o nome do dono da conta para Duke e alteramos o saldo dessa conta.
 
 ---
 
@@ -213,42 +235,19 @@ System.out.println(minhaConta.saldo);
 
 ## 3. Membros Estáticos
 
-### 3.1 Atributos e Métodos Estáticos
-
 Membros estáticos pertencem à classe e não a instâncias individuais. São úteis para constantes e métodos utilitários.
 
-```java
-public static final double PI = 3.14159;
-public static double circunference(double radius) {
-    return 2.0 * PI * radius;
-}
-```
-
-Chamada de método estático:
-
-```java
-double circ = Calculator.circunference(3.0);
-```
-
-### 3.2 Comparação com Membros Não Estáticos
 
 - **Estáticos:** São compartilhados entre todas as instâncias e não acessam `this`.
 - **Não Estáticos:** Pertencem a cada objeto individualmente.
 
-### 3.3 Melhores Práticas
-
-- Use membros estáticos para constantes e métodos que não dependem do estado do objeto.  
-- Evite redundância criando membros de instância para valores fixos.
-
 ---
-
-<br>
 
 ## 4. Métodos
 
 ### 4.1 Definindo Métodos
 
-Métodos representam comportamentos de um objeto.
+Métodos representam comportamentos de um objeto. Veja o metodo 'saca' a baixo que recebe como parametro uma quantidade e subtrai esse valor do saldo:
 
 ```java
 void saca(double quantidade) {
@@ -272,7 +271,9 @@ boolean saca(double valor) {
 
 ### 4.3 O Método transfere
 
-Método que utiliza outros métodos (como `saca` e `deposita`) para realizar operações complexas.
+Quando criamos um metodo para transferir valores entre contas podemos fica tentados a criar um método que recebe dois parâmetros: conta1 e conta2 do tipo Conta. Mas cuidado: assim estamos pensando de maneira procedural.
+
+A idéia é que quando chamarmos o método transfere, já teremos um objeto do tipo Conta instanciado,portanto o método recebe apenas dois parâmetros, a Conta destino e o valor.
 
 ```java
 boolean transfere(Conta destino, double valor) {
@@ -287,9 +288,9 @@ boolean transfere(Conta destino, double valor) {
 
 ---
 
-<br>
-
 ## 5. Referências em Java
+
+Quando declaramos uma variável para associar a um objeto, na verdade, essa variável não guarda o objeto, e sim uma maneira de acessá-lo, chamada de referência.
 
 ### 5.1 Como Referências Funcionam
 
@@ -318,29 +319,48 @@ System.out.println(c1 == c2); // false, pois são objetos distintos.
 
 <br>
 
-## 6. Exemplos de Código
+## 6. Exemplo Completo
 
-### 6.1 Classe Conta
+No nosso exemplo de COnta bancária, temos a seguinte estrutura de pastas:
 
-Exemplo de uma classe `Conta` com atributos e métodos para operações bancárias.
+```
+Banco/
+│── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── banco/
+│   │   │       ├── modelo/
+│   │   │       │   └── Conta.java
+│   │   │       ├── aplicacao/
+│   │   │       │   └── ContaAplicacao.java
+```
+
+Nosso codigo fica assim:
+
+`Conta.java`:
 
 ```java
-class Conta {
+package banco.modelo;
+
+public class Conta {
     int numero;
     String dono;
     double saldo;
     double limite;
 
-    void saca(double quantidade) {
-        this.saldo -= quantidade;
+    public void saca(double quantidade) {
+        if (quantidade <= saldo) {
+            this.saldo -= quantidade;
+        }
     }
 
-    void deposita(double quantidade) {
+    public void deposita(double quantidade) {
         this.saldo += quantidade;
     }
 
-    boolean transfere(Conta destino, double valor) {
-        if (this.saca(valor)) {
+    public boolean transfere(Conta destino, double valor) {
+        if (valor <= saldo) {
+            this.saca(valor);
             destino.deposita(valor);
             return true;
         }
@@ -349,12 +369,14 @@ class Conta {
 }
 ```
 
-### 6.2 Teste de Métodos
-
-Programa que cria contas e realiza operações de saque, depósito e transferência.
+`ContaAplicacao.java`:
 
 ```java
-public class TestaMetodos {
+javapackage banco.aplicacao;
+
+import banco.modelo.Conta;
+
+public class ContaAplicacao {
     public static void main(String[] args) {
         Conta minhaConta = new Conta();
         minhaConta.dono = "Duke";
@@ -370,7 +392,6 @@ public class TestaMetodos {
         System.out.println("Saldo de " + minhaConta.dono + ": " + minhaConta.saldo);
         System.out.println("Saldo de " + outraConta.dono + ": " + outraConta.saldo);
     }
-}
 ```
 
 ---
@@ -379,24 +400,29 @@ public class TestaMetodos {
 
 ## 7. Atributos
 
-### 7.1 Valores Padrão
+Em Java, as variáveis de instância (atributos de uma classe) diferem das variáveis locais (declaradas dentro de um método). Enquanto as variáveis locais precisam ser explicitamente inicializadas antes do uso, os atributos de uma classe recebem valores padrão automaticamente:
 
-Atributos em Java recebem valores padrão se não forem inicializados explicitamente:
-- Números: `0`
-- Booleanos: `false`
-- Referências: `null`
+- **Tipos numéricos**: Inicializados com `0`
+- **Tipo `boolean`**: Inicializado com `false`
+- **Tipos referência (objetos)**: Inicializados com `null`
+
+Além disso, é possível definir valores padrão para os atributos diretamente na sua declaração. Veja o exemplo de uma classe `Conta` com valores iniciais definidos:
 
 ```java
 class Conta {
     int numero = 1234;
-    String titular = "Duke";
-    double saldo = 1000.0;
+    String dono = "Duke";
+    String cpf = "123.456.789-10";
+    double saldo = 1000;
+    double limite = 1000;
 }
 ```
 
-### 7.2 Composição de Classes
+Quando um objeto `Conta` for criado, ele já terá seus atributos preenchidos com esses valores.
 
-A composição permite que uma classe seja formada por outras classes.
+### 7.1 Atributos como Referências para Outras Classes
+
+Os atributos de uma classe podem ser referências para objetos de outras classes. Suponha a classe `Cliente`:
 
 ```java
 class Cliente {
@@ -404,36 +430,68 @@ class Cliente {
     String sobrenome;
     String cpf;
 }
+```
 
+Agora, podemos adicionar um atributo do tipo `Cliente` na classe `Conta`:
+
+```java
 class Conta {
     int numero;
     double saldo;
-    Cliente titular;
+    double limite;
+    Cliente cliente; // Referência para um objeto Cliente
 }
 ```
 
-*Exemplo de uso:*
+Esse atributo `cliente` será inicializado como `null`, pois é uma variável de referência e ainda não aponta para nenhum objeto.
+
+
+### 7.2 O Problema de null
+
+Se tentarmos acessar `minhaConta.cliente` sem antes instanciá-lo, teremos um erro de execução:
 
 ```java
-Conta minhaConta = new Conta();
-Cliente cliente = new Cliente();
-minhaConta.titular = cliente;
-minhaConta.titular.nome = "Duke";
+class Teste {
+    public static void main(String[] args) {
+        Conta minhaConta = new Conta(); // Criamos a conta, mas não o cliente!
+
+        minhaConta.cliente.nome = "Paulo"; // ERRO: NullPointerException!
+    }
+}
 ```
 
-### 7.3 Referências e null
-
-Se um atributo do tipo referência não for inicializado, seu valor será `null`, podendo causar `NullPointerException` se acessado indevidamente.
+Isso acontece porque `minhaConta.cliente` ainda é `null`. Para evitar esse problema, podemos inicializar o cliente no momento da criação da conta:
 
 ```java
 class Conta {
-    Cliente titular = new Cliente(); // Evita null
+    int numero;
+    double saldo;
+    double limite;
+    Cliente cliente = new Cliente(); // Cliente criado automaticamente
 }
 ```
+
+Agora, sempre que criarmos uma nova `Conta`, um objeto `Cliente` será instanciado junto.
+
+---
+
+### Qual Abordagem Escolher?
+
+A decisão de inicializar automaticamente um `Cliente` dentro da `Conta` depende do contexto:
+
+- **Se toda conta sempre deve ter um cliente**, a inicialização automática (`new Cliente()`) pode ser uma boa escolha.
+- **Se nem toda conta precisa de um cliente imediatamente**, pode ser melhor deixar `cliente` como `null` e criar o objeto apenas quando necessário.
+
+Cada caso exige uma análise do problema para decidir a melhor abordagem.
 
 ---
 
 <br>
+<br>
+<br>
+<br>
+
+---
 
 ## 8. Palavra-chave this
 
