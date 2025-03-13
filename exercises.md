@@ -1,6 +1,8 @@
 # Exercício 1 – Cadastro de Funcionários do Banco J
 
-Você está desenvolvendo um sistema de gerenciamento de funcionários para o Banco J. Cada funcionário deve ter as seguintes informações armazenadas: nome completo, departamento, salário, data de entrada no banco (inicialmente como uma String), RG (String) e um indicador booleano para informar se o funcionário está atualmente ativo na empresa ou não. O sistema precisa fornecer funcionalidades para aplicar uma bonificação ao salário, recebendo um valor numérico como argumento, além de permitir demitir o funcionário, alterando seu status para "inativo". Não se esqueça de utilizar a convenção Java ao nomear classes, métodos e variáveis.
+Você está desenvolvendo um sistema de gerenciamento de funcionários para o Banco J. Cada funcionário deve ter as seguintes informações armazenadas: nome completo, departamento, salário, data de entrada no banco (inicialmente como uma String), RG (String) e um indicador booleano para informar se o funcionário está atualmente ativo na empresa ou não. 
+
+O sistema precisa fornecer funcionalidades para aplicar uma bonificação ao salário, recebendo um valor numérico como argumento, além de permitir demitir o funcionário, alterando seu status para "inativo". Não se esqueça de utilizar a convenção Java ao nomear classes, métodos e variáveis.
 
 **Estrutura sugerida de pastas:**
 

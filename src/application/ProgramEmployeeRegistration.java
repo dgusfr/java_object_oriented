@@ -3,7 +3,7 @@ package application;
 import java.util.Locale;
 import java.util.Scanner;
 
-import entities.Employee;
+import entities.EmployeeRegistration;
 
 public class ProgramEmployeeRegistration {
   
@@ -11,36 +11,43 @@ public class ProgramEmployeeRegistration {
             Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        Employee emp = new Employee();
+        EmployeeRegistration empRegis = new EmployeeRegistration();
 
         System.out.print("Bem vindo ao Banco J!");
         System.out.println("\nDigite os dados do funcionário:");
 
         System.out.print("Nome Completo: ");
-        emp.name = sc.nextLine();
+        empRegis.name = sc.nextLine();
 
         System.out.print("Departamento: ");
-        emp.grossSalary = sc.nextDouble();
+        empRegis.department = sc.nextLine();
 
         System.out.print("Salário: ");
-        emp.tax = sc.nextDouble();
+        empRegis.salary = sc.nextDouble();
 
         System.out.print("Data de entrada: ");
-        emp.date = sc.nextLine();
+        empRegis.startDate = sc.nextLine();
 
         System.out.print("RG: ");
-        emp.rg = sc.nextLine();
+        empRegis.rg = sc.nextLine();
 
         System.out.print("O Funcionario está ativo? ");
-        emp.ativo = sc.nextLine();
+        empRegis.ativo = sc.nextLine();
 
-        System.out.print("\nQual a porcentagem de bonificação? ");
-        double percentage = sc.nextDouble();
-
-        emp.increaseSalary(percentage);
+        System.out.print("\nQual a bonificação? ");
+        double bonus = sc.nextDouble();
+        empRegis.increaseSalary(bonus);
 
         System.out.println("Deseja desligar o funcionário? ");
-        emp.desligar = sc.nextLine();
+        empRegis.desligar = sc.nextLine();
+
+        System.out.println("\nDados do funcionário:");
+        System.out.println("Nome: " + empRegis.name);
+        System.out.println("Departamento: " + empRegis.department);
+        System.out.println("Salário: " + empRegis.salary);
+        System.out.println("Data de entrada: " + empRegis.startDate);
+        System.out.println("RG: " + empRegis.rg);
+        System.out.println("Ativo: " + empRegis.ativo);
 
         sc.close();
   }
