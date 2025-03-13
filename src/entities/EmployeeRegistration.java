@@ -15,5 +15,6 @@ public class EmployeeRegistration {
 
   public void dismissEmployee() {
     ativo = false;
+    System.out.println("Funcionário desligado com sucesso!");
   }
 }
