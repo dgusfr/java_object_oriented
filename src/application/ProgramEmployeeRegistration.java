@@ -25,7 +25,7 @@ public class ProgramEmployeeRegistration {
             System.out.print("O salário deve ser positivo. Digite novamente: ");
             salary = sc.nextDouble();
         }
-        sc.nextLine(); // Consumir quebra de linha
+        sc.nextLine(); 
 
         System.out.print("Data de entrada: ");
         String startDate = sc.nextLine();
@@ -39,7 +39,7 @@ public class ProgramEmployeeRegistration {
         System.out.print("\nQual a bonificação? ");
         double bonus = sc.nextDouble();
         empRegis.increaseSalary(bonus);
-        sc.nextLine(); // Consumir quebra de linha
+        sc.nextLine();
 
         System.out.println("Deseja desligar o funcionário? (Sim/Não):");
         String desligar = sc.nextLine().trim().toLowerCase();
