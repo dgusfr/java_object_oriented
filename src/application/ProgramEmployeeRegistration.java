@@ -8,7 +8,7 @@ import entities.EmployeeRegistration;
 public class ProgramEmployeeRegistration {
   
   public static void main(String[] args) {
-            Locale.setDefault(Locale.US);
+        Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
         EmployeeRegistration empRegis = new EmployeeRegistration();
@@ -24,6 +24,7 @@ public class ProgramEmployeeRegistration {
 
         System.out.print("Salário: ");
         empRegis.salary = sc.nextDouble();
+        sc.nextLine();
 
         System.out.print("Data de entrada: ");
         empRegis.startDate = sc.nextLine();
@@ -31,15 +32,19 @@ public class ProgramEmployeeRegistration {
         System.out.print("RG: ");
         empRegis.rg = sc.nextLine();
 
-        System.out.print("O Funcionario está ativo? ");
-        empRegis.ativo = sc.nextLine();
-
+        System.out.print("O funcionário está ativo? (Sim/Não): ");
+        String status = sc.nextLine().trim().toLowerCase();
+        empRegis.ativo = status.equals("sim");
+        
         System.out.print("\nQual a bonificação? ");
         double bonus = sc.nextDouble();
         empRegis.increaseSalary(bonus);
+        sc.nextLine();
 
-        System.out.println("Deseja desligar o funcionário? ");
-        empRegis.desligar = sc.nextLine();
+        System.out.println("Deseja desligar o funcionário? (Sim/Não):");
+        String desligar = sc.nextLine().trim().toLowerCase();
+        empRegis.desligar = desligar;
+
 
         System.out.println("\nDados do funcionário:");
         System.out.println("Nome: " + empRegis.name);

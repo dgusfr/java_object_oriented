@@ -6,7 +6,7 @@ public class EmployeeRegistration {
   public double salary;
   public String startDate;
   public String rg;
-  public String ativo;
+  public boolean ativo;
   public String desligar;
 
   public void increaseSalary(double bonus) {
