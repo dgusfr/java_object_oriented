@@ -2,7 +2,6 @@ package application;
 
 import java.util.Locale;
 import java.util.Scanner;
-
 import entities.EmployeeRegistration;
 
 public class ProgramEmployeeRegistration {
@@ -11,16 +10,14 @@ public class ProgramEmployeeRegistration {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        EmployeeRegistration empRegis = new EmployeeRegistration();
-
         System.out.print("Bem-vindo ao Banco J!");
         System.out.println("\nDigite os dados do funcionário:");
 
         System.out.print("Nome Completo: ");
-        empRegis.name = sc.nextLine();
+        String name = sc.nextLine();
 
         System.out.print("Departamento: ");
-        empRegis.department = sc.nextLine();
+        String department = sc.nextLine();
 
         System.out.print("Salário: ");
         double salary = sc.nextDouble();
@@ -28,19 +25,21 @@ public class ProgramEmployeeRegistration {
             System.out.print("O salário deve ser positivo. Digite novamente: ");
             salary = sc.nextDouble();
         }
-        empRegis.salary = salary;
-        sc.nextLine();
+        sc.nextLine(); // Consumir quebra de linha
 
         System.out.print("Data de entrada: ");
-        empRegis.startDate = sc.nextLine();
+        String startDate = sc.nextLine();
 
         System.out.print("RG: ");
-        empRegis.rg = sc.nextLine();
+        String rg = sc.nextLine();
+
+        // Criando o funcionário com o CONSTRUTOR
+        EmployeeRegistration empRegis = new EmployeeRegistration(name, department, salary, startDate, rg);
 
         System.out.print("\nQual a bonificação? ");
         double bonus = sc.nextDouble();
         empRegis.increaseSalary(bonus);
-        sc.nextLine();
+        sc.nextLine(); // Consumir quebra de linha
 
         System.out.println("Deseja desligar o funcionário? (Sim/Não):");
         String desligar = sc.nextLine().trim().toLowerCase();
