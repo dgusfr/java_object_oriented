@@ -18,7 +18,9 @@ src/
 
 # Exercício 2 – Teste da classe Funcionário
 
-Utilizando a classe `Funcionario` criada no exercício anterior, implemente uma classe `Main` que tenha o método `main`. Essa classe deverá criar dois funcionários distintos com dados fornecidos diretamente no código (hardcoded). Após isso, imprima as informações de cada funcionário para verificar se os dados foram corretamente armazenados. Utilize o método de impressão apropriado para exibir os dados de forma organizada e clara.
+Utilizando a classe `Funcionario` criada no exercício anterior, implemente uma classe `Main` que tenha o método `main`. Essa classe deverá criar dois funcionários distintos com dados fornecidos diretamente no código (hardcoded). 
+
+Após isso, imprima as informações de cada funcionário para verificar se os dados foram corretamente armazenados. Utilize o método de impressão apropriado para exibir os dados de forma organizada e clara.
 
 **Use a mesma estrutura sugerida no exercício anterior.**
 
