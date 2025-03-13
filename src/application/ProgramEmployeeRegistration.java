@@ -7,13 +7,13 @@ import entities.EmployeeRegistration;
 
 public class ProgramEmployeeRegistration {
   
-  public static void main(String[] args) {
+    public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
         EmployeeRegistration empRegis = new EmployeeRegistration();
 
-        System.out.print("Bem vindo ao Banco J!");
+        System.out.print("Bem-vindo ao Banco J!");
         System.out.println("\nDigite os dados do funcionário:");
 
         System.out.print("Nome Completo: ");
@@ -23,7 +23,12 @@ public class ProgramEmployeeRegistration {
         empRegis.department = sc.nextLine();
 
         System.out.print("Salário: ");
-        empRegis.salary = sc.nextDouble();
+        double salary = sc.nextDouble();
+        while (salary <= 0) {
+            System.out.print("O salário deve ser positivo. Digite novamente: ");
+            salary = sc.nextDouble();
+        }
+        empRegis.salary = salary;
         sc.nextLine();
 
         System.out.print("Data de entrada: ");
@@ -32,10 +37,6 @@ public class ProgramEmployeeRegistration {
         System.out.print("RG: ");
         empRegis.rg = sc.nextLine();
 
-        System.out.print("O funcionário está ativo? (Sim/Não): ");
-        String status = sc.nextLine().trim().toLowerCase();
-        empRegis.ativo = status.equals("sim");
-        
         System.out.print("\nQual a bonificação? ");
         double bonus = sc.nextDouble();
         empRegis.increaseSalary(bonus);
@@ -43,12 +44,11 @@ public class ProgramEmployeeRegistration {
 
         System.out.println("Deseja desligar o funcionário? (Sim/Não):");
         String desligar = sc.nextLine().trim().toLowerCase();
-        if (desligar.equals("sim") && empRegis.ativo == true) {
-          empRegis.dismissEmployee();
-        }else{
-          System.out.println("Funcionario não desligado!");
+        if (desligar.equals("sim")) {
+            empRegis.dismissEmployee();
+        } else {
+            System.out.println("Funcionário não desligado!");
         }
-
 
         System.out.println("\nDados do funcionário:");
         System.out.println("Nome: " + empRegis.name);
@@ -59,5 +59,5 @@ public class ProgramEmployeeRegistration {
         System.out.println("Ativo: " + empRegis.ativo);
 
         sc.close();
-  }
+    }
 }
