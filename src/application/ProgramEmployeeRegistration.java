@@ -13,26 +13,35 @@ public class ProgramEmployeeRegistration {
 
         Employee emp = new Employee();
 
-        System.out.print("Name: ");
+        System.out.print("Bem vindo ao Banco J!");
+        System.out.println("\nDigite os dados do funcionário:");
+
+        System.out.print("Nome Completo: ");
         emp.name = sc.nextLine();
 
-        System.out.print("Gross salary: ");
+        System.out.print("Departamento: ");
         emp.grossSalary = sc.nextDouble();
 
-        System.out.print("Tax: ");
+        System.out.print("Salário: ");
         emp.tax = sc.nextDouble();
 
-        System.out.println("\nEmployee: " + emp);
+        System.out.print("Data de entrada: ");
+        emp.date = sc.nextLine();
 
-        System.out.print("\nWhich percentage to increase salary? ");
+        System.out.print("RG: ");
+        emp.rg = sc.nextLine();
+
+        System.out.print("O Funcionario está ativo? ");
+        emp.ativo = sc.nextLine();
+
+        System.out.print("\nQual a porcentagem de bonificação? ");
         double percentage = sc.nextDouble();
 
         emp.increaseSalary(percentage);
 
-        System.out.println("\nUpdated data: " + emp);
+        System.out.println("Deseja desligar o funcionário? ");
+        emp.desligar = sc.nextLine();
 
         sc.close();
-
   }
-
 }
