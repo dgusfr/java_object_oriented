@@ -43,7 +43,11 @@ public class ProgramEmployeeRegistration {
 
         System.out.println("Deseja desligar o funcionário? (Sim/Não):");
         String desligar = sc.nextLine().trim().toLowerCase();
-        empRegis.desligar = desligar;
+        if (desligar.equals("sim") && empRegis.ativo == true) {
+          empRegis.dismissEmployee();
+        }else{
+          System.out.println("Funcionario não desligado!");
+        }
 
 
         System.out.println("\nDados do funcionário:");

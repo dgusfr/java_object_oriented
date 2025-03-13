@@ -14,10 +14,6 @@ public class EmployeeRegistration {
   }
 
   public void dismissEmployee() {
-    if (desligar.equals("Sim")) {
-      System.out.println("Funcionário desligado!");
-    } else {
-      System.out.println("Funcionário ativo!");
-    }
+    ativo = false;
   }
 }
