@@ -1,7 +1,7 @@
 package cadastroDeFuncionarios;
 import cadastroDeFuncionarios.Employee;
 
-public class TesteProgramEmployeeRegistration {
+public class testMain {
     public static void main(String[] args) {
         Employee emp1 = new Employee(
             "Carlos Silva", "TI", 5000.00, "10/03/2020", "12345678"
