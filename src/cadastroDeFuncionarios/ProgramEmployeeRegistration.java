@@ -1,8 +1,8 @@
-package application;
+package cadastroDeFuncionarios;
 
 import java.util.Locale;
 import java.util.Scanner;
-import entities.EmployeeRegistration;
+import cadastroDeFuncionarios.EmployeeRegistration;
 
 public class ProgramEmployeeRegistration {
   

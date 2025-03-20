@@ -1,4 +1,4 @@
-package entities;
+package cadastroDeFuncionarios;
 
 public class EmployeeRegistration {
     public String name;
