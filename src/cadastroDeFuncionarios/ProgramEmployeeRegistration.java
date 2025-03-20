@@ -2,7 +2,7 @@ package cadastroDeFuncionarios;
 
 import java.util.Locale;
 import java.util.Scanner;
-import cadastroDeFuncionarios.EmployeeRegistration;
+import cadastroDeFuncionarios.Employee;
 
 public class ProgramEmployeeRegistration {
   
@@ -33,7 +33,7 @@ public class ProgramEmployeeRegistration {
         System.out.print("RG: ");
         String rg = sc.nextLine();
 
-        EmployeeRegistration empRegis = new EmployeeRegistration(name, department, salary, startDate, rg);
+        Employee empRegis = new Employee(name, department, salary, startDate, rg);
 
         System.out.print("\nQual a bonificação? ");
         double bonus = sc.nextDouble();

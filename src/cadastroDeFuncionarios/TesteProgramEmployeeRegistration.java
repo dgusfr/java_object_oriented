@@ -1,13 +1,13 @@
 package cadastroDeFuncionarios;
-import cadastroDeFuncionarios.EmployeeRegistration;
+import cadastroDeFuncionarios.Employee;
 
 public class TesteProgramEmployeeRegistration {
     public static void main(String[] args) {
-        EmployeeRegistration emp1 = new EmployeeRegistration(
+        Employee emp1 = new Employee(
             "Carlos Silva", "TI", 5000.00, "10/03/2020", "12345678"
         );
 
-        EmployeeRegistration emp2 = new EmployeeRegistration(
+        Employee emp2 = new Employee(
             "Ana Souza", "RH", 4200.50, "15/06/2018", "87654321"
         );
 

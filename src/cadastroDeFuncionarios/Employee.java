@@ -1,6 +1,6 @@
 package cadastroDeFuncionarios;
 
-public class EmployeeRegistration {
+public class Employee {
     public String name;
     public String department;
     public double salary;
@@ -8,7 +8,7 @@ public class EmployeeRegistration {
     public String rg;
     public boolean ativo;
 
-    public EmployeeRegistration(String name, String department, double salary, String startDate, String rg) {
+    public Employee(String name, String department, double salary, String startDate, String rg) {
         this.name = name;
         this.department = department;
         this.salary = salary > 0 ? salary : 0; 
