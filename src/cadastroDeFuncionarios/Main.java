@@ -56,6 +56,15 @@ public class Main {
         System.out.println("RG: " + empRegis.rg);
         System.out.println("Ativo: " + empRegis.ativo);
 
+
+        Employee emp_one = new Employee("João Silva", "TI", 5000.00, "10/03/2020", "12345678");
+        Employee emp_two = new Employee("João Silva", "TI", 5000.00, "10/03/2020", "12345678");
+
+        System.out.println("\nComparando objetos emp_one e emp_two:" + (emp_one == emp_two) + "\n");
+
+        Employee emp_three = emp_one;
+        System.out.println("Comparação de referencias para o mesmo objeto: " + (emp_one == emp_three) + "\n");
+
         sc.close();
     }
 }
