@@ -1,5 +1,5 @@
 package cadastroDeFuncionarios;
-import entities.EmployeeRegistration;
+import cadastroDeFuncionarios.EmployeeRegistration;
 
 public class TesteProgramEmployeeRegistration {
     public static void main(String[] args) {
