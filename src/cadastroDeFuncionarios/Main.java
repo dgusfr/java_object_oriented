@@ -60,10 +60,12 @@ public class Main {
         Employee emp_one = new Employee("João Silva", "TI", 5000.00, "10/03/2020", "12345678");
         Employee emp_two = new Employee("João Silva", "TI", 5000.00, "10/03/2020", "12345678");
 
-        System.out.println("\nComparando objetos emp_one e emp_two:" + (emp_one == emp_two) + "\n");
+        System.out.println("\nComparando objetos empregado 1 e empregado 2:" + (emp_one == emp_two) + "\n");
 
         Employee emp_three = emp_one;
         System.out.println("Comparação de referencias para o mesmo objeto: " + (emp_one == emp_three) + "\n");
+
+        System.out.println("Quando usamos == para comparar emp1 e emp2, o resultado é false, pois são objetos distintos na memória, mesmo que tenham os mesmos valores.\n" + "Quando usamos == para comparar emp1 e emp3, o resultado é true, pois emp3 apenas referencia o mesmo objeto que emp1, ou seja, apontam para o mesmo endereço de memória.");
 
         sc.close();
     }
