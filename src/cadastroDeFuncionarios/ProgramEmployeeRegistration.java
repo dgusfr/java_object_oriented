@@ -33,7 +33,6 @@ public class ProgramEmployeeRegistration {
         System.out.print("RG: ");
         String rg = sc.nextLine();
 
-        // Criando o funcionário com o CONSTRUTOR
         EmployeeRegistration empRegis = new EmployeeRegistration(name, department, salary, startDate, rg);
 
         System.out.print("\nQual a bonificação? ");
