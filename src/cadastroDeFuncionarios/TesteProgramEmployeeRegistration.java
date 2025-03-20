@@ -1,4 +1,4 @@
-package application;
+package cadastroDeFuncionarios;
 import entities.EmployeeRegistration;
 
 public class TesteProgramEmployeeRegistration {
