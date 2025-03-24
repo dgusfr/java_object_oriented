@@ -42,7 +42,7 @@
 12. [Getters e Setters](#12-getters-e-setters)  
     12.1 [Problema do Acesso Direto](#121-problema-do-acesso-direto)  
     12.2 [O Papel dos Getters e Setters](#122-o-papel-dos-getters-e-setters)  
-    12.3 [Personalizando Getters](#123-personalizando-getters)  
+    12.3 [Aprofundando](#123-aprofundando)  
 13. [Construtores](#13-construtores)  
     13.1 [O Que é um Construtor?](#131-o-que-é-um-construtor)  
     13.2 [Construtor Default](#132-construtor-default)  
@@ -702,20 +702,44 @@ class Conta {
 }
 ```
 
-### 12.3 Personalizando Getters
+### 12.3 Aprofundando
 
-Getters podem incluir lógica adicional antes de retornar valores, como somar o saldo ao limite, por exemplo.
+**Resumo com essência e didática mantidas:**
 
-```java
-class Conta {
+Criar *getters* e *setters* automaticamente para todos os atributos de uma classe é uma má prática. Só devem ser criados quando houver real necessidade. 
+
+Por exemplo, se existem métodos como `saca()` ou `retira()` para manipular o saldo, não faz sentido expor um `setSaldo()`, pois isso quebraria o controle sobre como o saldo é alterado.
+
+Além disso, um método chamado `getX()` não precisa necessariamente retornar diretamente o atributo `x`. Isso faz parte do encapsulamento: podemos, por exemplo, definir que `getSaldo()` retorne o saldo somado ao limite, como os bancos costumam mostrar para os clientes. Assim, caso a lógica mude futuramente, basta alterar o `getSaldo()` — sem necessidade de alterar todos os pontos do código que usam essa informação.
+
+public class Conta {
+
     private double saldo;
     private double limite;
+    private Cliente dono;
 
-    public double getSaldoComLimite() {
+    private double getSaldo() {
         return this.saldo + this.limite;
+    }
+
+    // deposita() e saca()
+
+    public Cliente getDono() {
+        return this.dono;
+    }
+
+    public void setDono(Cliente dono) {
+        this.dono = dono;
     }
 }
 ```
+
+No exemplo dado, não existe um `getLimite()`, pois ainda não há necessidade disso. E `getSaldo()` já entrega exatamente o que queremos que o usuário veja, e não apenas o valor interno do atributo `saldo`.
+
+Esse uso de *getters* e *setters* controlados, além de proteger os dados, permite mudanças localizadas no código — característica essencial do encapsulamento.
+
+Por fim, mesmo com todos esses cuidados, é preciso validar os dados de entrada. Se o método `deposita()` aceitar valores negativos, o saldo pode acabar ficando abaixo do permitido. Isso pode ser evitado com uma simples verificação dentro do próprio método. Graças ao encapsulamento, essa mudança afeta apenas o método — sem impacto no restante do sistema.
+
 
 ---
 
