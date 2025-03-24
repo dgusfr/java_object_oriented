@@ -533,7 +533,7 @@ public class ChessMatch {
 
 ### 9.1 Problemas com Acesso Direto a Atributos
 
-Um dos problemas que temos no nosso sistema de contas é que a função saca permite sacar mesmo que o limite tenha sido atingido. Para podermos resolver esse problema
+Um dos problemas que temos no nosso sistema de contas é que a **função saca** permite sacar mesmo que o limite tenha sido atingido. Para podermos resolver esse problema, podemos criar o **método saca**:
 
 ```java
 class Conta {
@@ -547,9 +547,13 @@ class Conta {
 }
 ```
 
+Caso desejemos, ainda podemos incluir um **'if'** dentro do nosso método saca() para evitar que o cliente sacasse um valor maior que o saldo.
+
 ### 9.2 Encapsulamento para Proteger os Dados
 
-Encapsular atributos (usando `private`) e acessar/modificá-los através de métodos (getters/setters) garante a integridade dos dados.
+Ainda temos um problema em nosso codigo, ninguém garante que o Cliente vai sempre utilizar o método correto para alterar o saldo da conta. A melhor forma de resolver isso é forçar quem usa a classe Conta a chamar o método saca e não permitir o acesso direto ao atributo.
+
+capsular atributos (usando `private`) e acessar/modificá-los através de métodos (getters/setters) garante a integridade dos dados.
 
 ```java
 class Conta {
