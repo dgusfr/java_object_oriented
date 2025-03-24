@@ -577,8 +577,7 @@ class Conta {
 }
 ```
 
-É muito comum, e faz todo sentido, que seus atributos sejam private, e quase
-todos seus métodos sejam public (não é uma regra!).
+É muito comum, que em uma classe, seus atributos sejam private, e quase todos seus métodos sejam public (não é uma regra!).
 
 ---
 
