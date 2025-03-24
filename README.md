@@ -506,7 +506,7 @@ public class Produto {
 
     public Produto(String nome, double preco) {
         this.nome = nome; 
-        // this.nome refere-se ao atributo nome da classe Produto
+    // this.nome refere-se ao atributo 'nome' da classe Produto
         this.preco = preco;
     }
 }
