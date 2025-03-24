@@ -675,6 +675,10 @@ class TestaCliente {
 
 ## 12. Getters e Setters
 
+Com o encapsulamento nos 'escondemos' os membros de uma classe, mas e quando precisamos visualizar ou alterar eles, como fazemos?
+
+Para permitir o acesso aos atributos de uma maneira controlada, a prática mais comum é de criar dois métodos, um que retorna o valor e outro que muda o valor.
+
 ### 12.1 Problema do Acesso Direto
 
 Atributos privados não podem ser acessados diretamente, garantindo a proteção dos dados.
