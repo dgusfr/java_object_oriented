@@ -677,22 +677,15 @@ class TestaCliente {
 
 Com o encapsulamento nos 'escondemos' os membros de uma classe, mas e quando precisamos visualizar ou alterar eles, como fazemos?
 
-Para permitir o acesso aos atributos de uma maneira controlada, a prática mais comum é de criar dois métodos, um que retorna o valor e outro que muda o valor.
-
 ### 12.1 Problema do Acesso Direto
 
-Atributos privados não podem ser acessados diretamente, garantindo a proteção dos dados.
-
-```java
-class Conta {
-    private double saldo;
-    private String titular;
-}
-```
+Para permitir o acesso aos atributos de uma maneira controlada, a prática mais comum é de criar dois métodos, um que retorna o valor e outro que muda o valor.
 
 ### 12.2 O Papel dos Getters e Setters
 
 Esses métodos controlam o acesso e a modificação dos atributos privados, permitindo validações e formatações.
+
+O padrão para esses métodos é de colocar a palavra **get** ou **set** antes do nome do atributo. Por exemplo, para consultar quem é o titular de uma conta ou alterar ele, seguimos o seguinte modelo
 
 ```java
 class Conta {
