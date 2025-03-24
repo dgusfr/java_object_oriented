@@ -553,7 +553,7 @@ Caso desejemos, ainda podemos incluir um **'if'** dentro do nosso método saca()
 
 Ainda temos um problema em nosso codigo, ninguém garante que o Cliente vai sempre utilizar o método correto para alterar o saldo da conta. A melhor forma de resolver isso é forçar quem usa a classe Conta a chamar o método saca e não permitir o acesso direto ao atributo.
 
-Desta forma, encapsulamos atributos (usando `private`) e acessar/modificá-los através de métodos (getters/setters) garante a integridade dos dados.
+Desta forma, encapsulamos atributos (usando `private`) e acessamos/modificamos eles através de métodos (getters/setters) garantindo a integridade dos dados. Como no exemplo a baixo:
 
 ```java
 class Conta {
@@ -576,6 +576,10 @@ class Conta {
     }
 }
 ```
+
+É muito comum, e faz todo sentido, que seus atributos sejam private, e quase
+todos seus métodos sejam public (não é uma regra!).
+
 ---
 
 <br>
