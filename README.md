@@ -712,6 +712,7 @@ Por exemplo, se existem métodos como `saca()` ou `retira()` para manipular o sa
 
 Além disso, um método chamado `getX()` não precisa necessariamente retornar diretamente o atributo `x`. Isso faz parte do encapsulamento: podemos, por exemplo, definir que `getSaldo()` retorne o saldo somado ao limite, como os bancos costumam mostrar para os clientes. Assim, caso a lógica mude futuramente, basta alterar o `getSaldo()` — sem necessidade de alterar todos os pontos do código que usam essa informação.
 
+```java
 public class Conta {
 
     private double saldo;
