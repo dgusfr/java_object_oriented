@@ -533,7 +533,7 @@ public class ChessMatch {
 
 ### 9.1 Problemas com Acesso Direto a Atributos
 
-Acesso irrestrito aos atributos pode causar inconsistências, como saldos negativos.
+Um dos problemas que temos no nosso sistema de contas é que a função saca permite sacar mesmo que o limite tenha sido atingido. Para podermos resolver esse problema
 
 ```java
 class Conta {
