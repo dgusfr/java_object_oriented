@@ -577,7 +577,9 @@ class Conta {
 }
 ```
 
-É muito comum, que em uma classe, seus atributos sejam private, e quase todos seus métodos sejam public (não é uma regra!).
+É muito comum, que em uma classe, seus atributos sejam private, e quase todos seus métodos sejam public (**não** é uma regra!).
+
+O conjunto de métodos públicos de uma classe é também chamado de **interface da classe**, pois esta é a maneira a qual você se comunica com essa classe.
 
 ---
 
@@ -598,7 +600,7 @@ class Conta {
 - **Interface:** Conjunto de métodos públicos que definem como interagir com a classe.  
 - **Implementação:** Código interno que realiza as operações, podendo ser alterado sem afetar a interface.
 
-### 10.3 Modificadores de Acesso Detalhados
+### 10.3 Modificadores de Acesso
 
 Os modificadores de acesso em Java controlam a visibilidade de atributos, métodos e construtores:
 
