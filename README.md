@@ -49,16 +49,14 @@
     13.3 [Construtores com Argumentos](#133-construtores-com-argumentos)  
     13.4 [Sobrecarga de Construtores](#134-sobrecarga-de-construtores)  
     13.5 [Chamando Outro Construtor com this()](#135-chamando-outro-construtor-com-this)  
-14. [Resumo e Benefícios](#14-resumo-e-benefícios)  
-15. [Introdução aos Atributos de Classe](#15-introdução-aos-atributos-de-classe)  
-16. [Atributos Estáticos com static](#16-atributos-estáticos-com-static)  
+14. [Introdução aos Atributos de Classe](#15-introdução-aos-atributos-de-classe)  
+15. [Atributos Estáticos com static](#16-atributos-estáticos-com-static)  
     16.1 [Definição de Atributos Estáticos](#161-definição-de-atributos-estáticos)  
     16.2 [Acesso e Uso de Atributos Estáticos](#162-acesso-e-uso-de-atributos-estáticos)  
-17. [Métodos Estáticos](#17-métodos-estáticos)  
-    17.1 [Características dos Métodos Estáticos](#171-características-dos-métodos-estáticos)  
-    17.2 [Comparação: Métodos Estáticos vs. Métodos de Instância](#172-comparação-métodos-estáticos-vs-métodos-de-instância)  
-18. [Exemplo Prático: Controle de Contas Bancárias](#18-exemplo-prático-controle-de-contas-bancárias)  
-19. [Resumo e Benefícios](#19-resumo-e-benefícios)  
+16. [Métodos Estáticos](#16-métodos-estáticos)  
+    16.1 [Características dos Métodos Estáticos](#161-características-dos-métodos-estáticos)  
+    16.2 [Comparação: Métodos Estáticos vs. Métodos de Instância](#162-comparação-métodos-estáticos-vs-métodos-de-instância)  
+16. [Exemplo Prático: Controle de Contas Bancárias](#18-exemplo-prático-controle-de-contas-bancárias)  
 
 ---
 ## Introdução à Programação Orientada a Objetos
@@ -854,15 +852,15 @@ class Conta {
 
 <br>
 
-## 15. Introdução aos Atributos de Classe
+## 14. Introdução aos Atributos de Classe
 
 Atributos de classe (ou *variáveis de classe*) são compartilhados entre todas as instâncias. Eles são ideais para manter informações globais, como contadores ou configurações comuns.
 
 ---
 
-## 16. Atributos Estáticos com static
+## 15. Atributos Estáticos com static
 
-### 16.1 Definição de Atributos Estáticos
+### 15.1 Definição de Atributos Estáticos
 
 Atributos declarados com `static` pertencem à classe, não a instâncias individuais.
 
@@ -876,7 +874,7 @@ class Conta {
 }
 ```
 
-### 16.2 Acesso e Uso de Atributos Estáticos
+### 15.2 Acesso e Uso de Atributos Estáticos
 
 Podem ser acessados diretamente pelo nome da classe.
 
@@ -890,9 +888,9 @@ public static int getTotalDeContas() {
 
 <br>
 
-## 17. Métodos Estáticos
+## 16. Métodos Estáticos
 
-### 17.1 Características dos Métodos Estáticos
+### 16.1 Características dos Métodos Estáticos
 
 - São independentes do estado de instância e não possuem `this`.
 - Podem ser chamados utilizando o nome da classe.
@@ -905,14 +903,14 @@ class Calculadora {
 }
 ```
 
-### 17.2 Comparação: Métodos Estáticos vs. Métodos de Instância
+### 16.2 Comparação: Métodos Estáticos vs. Métodos de Instância
 
 - **Estáticos:** Usados para operações gerais, não dependem dos atributos do objeto.
 - **Instância:** Operam sobre os dados específicos do objeto.
 
 ---
 
-## 18. Exemplo Prático: Controle de Contas Bancárias
+## 17. Exemplo Prático: Controle de Contas Bancárias
 
 Exemplo de uma classe `Conta` que utiliza atributos e métodos estáticos para controlar o número total de contas.
 
@@ -961,13 +959,5 @@ public class ProgramaPrincipal {
     }
 }
 ```
-
----
-
-## 19. Resumo e Benefícios
-
-- **Atributos Estáticos:** São compartilhados por todas as instâncias, ideais para contadores e constantes.  
-- **Métodos Estáticos:** Executam operações gerais sem depender do estado do objeto.  
-- **Organização e Modularidade:** A correta utilização de encapsulamento, construtores, getters/setters e membros estáticos resulta em um código mais seguro, organizado e fácil de manter.
 
 ---
