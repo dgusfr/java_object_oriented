@@ -8,7 +8,6 @@
 - [Abstração](#4-abstração)
 - [Instância e Instanciação](#5-instância-e-instanciação)
 - [Classe, Objeto, Atributos e Métodos](#classe-objeto-atributos-e-métodos)
----
 1. [Conceitos Iniciais](#1-conceitos-iniciais)  
    1.2 [Projeto de Classes com UML](#12-projeto-de-classes-com-uml)  
 2. [Definindo Classes](#2-definindo-classes)  
@@ -59,9 +58,10 @@
     15.2 [Comparação: Métodos Estáticos vs. Métodos de Instância](#152-comparação-métodos-estáticos-vs-métodos-de-instância)
 
     15.3 [Diferenças entre Atributo Estático e Método Estático](#153-diferenças-entre-atributo-estático-e-método-estático)
-    
+
     [Exemplo Prático: Controle de Contas Bancárias](#exemplo-prático-controle-de-contas-bancárias)  
 ---
+[Herança e Polimorfismo](#herança-e-polimorfismo)
 
 ---
 ## Introdução à Programação Orientada a Objetos

@@ -1,3 +1,5 @@
+# Introdução à Programação Orientada a Objetos
+
 # Exercício 1 – Cadastro de Funcionários do Banco J
 
 Você está desenvolvendo um sistema de gerenciamento de funcionários para o Banco J. Cada funcionário deve ter as seguintes informações armazenadas: nome completo, departamento, salário, data de entrada no banco (inicialmente como uma String), RG (String) e um indicador booleano para informar se o funcionário está atualmente ativo na empresa ou não. 
@@ -89,3 +91,11 @@ Reescreva o método recursivo da classe `Fibonacci` criado anteriormente, utiliz
 # Exercício 10 – Validação de Dados do Funcionário
 
 Considerando que o banco precisa garantir que nenhum funcionário seja cadastrado com salário negativo ou vazio no nome, implemente a validação dos atributos da classe `Funcionario`. Se houver tentativas de inserir salários negativos ou nomes inválidos (String vazia ou somente espaços), imprima uma mensagem de erro e não altere os atributos. Realize testes na classe `Main` para verificar o funcionamento correto dessas validações.
+
+___
+
+<br>
+
+---
+
+# Controle de Acesso e Encapsulamento
