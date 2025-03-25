@@ -802,6 +802,8 @@ System.out.println(c.titular);
 
 O construtor se **resume** a dar possibilidades ou obrigar o usuário de uma classe à passar argumentos para o objeto durante o processo de criação do mesmo.
 
+Um construtor **não** é um método, já que não possui retorno e só é chamado durante a construção do objeto.
+
 ### 13.4 Sobrecarga de Construtores
 
 Uma classe pode ter vários construtores com assinaturas diferentes para maior flexibilidade.
@@ -826,7 +828,11 @@ class Conta {
 
 ### 13.5 Chamando Outro Construtor com this()
 
-Utilize `this()` para chamar outro construtor, evitando duplicação de código.
+Um construtor só pode rodar durante a construção do objeto, ou seja, nunca será possivél chamar o construtor em um objeto já construído. 
+
+Porém, durante a construção de um objeto, você pode fazer com que um construtor chame outro.
+
+Para isso, utilizamos a palavra **`this()`** para chamar outro construtor, evitando duplicação de código.
 
 ```java
 class Conta {
@@ -838,19 +844,11 @@ class Conta {
     }
 
     Conta(String titular, int numero) {
-        this(titular);
+        this(titular); // chama o construtor que foi declarado acima
         this.numero = numero;
     }
 }
 ```
-
----
-
-## 14. Resumo e Benefícios
-
-- **Encapsulamento:** Protege os dados e centraliza as validações, facilitando a manutenção.
-- **Getters e Setters:** Permitem controle rigoroso do acesso aos atributos.
-- **Construtores:** Garantem que os objetos sejam criados em estados consistentes, com suporte à sobrecarga para maior flexibilidade.
 
 ---
 
