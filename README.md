@@ -766,13 +766,22 @@ class Conta {
 }
 ```
 
+Então, quando fizermos:
+
+```java
+Conta c = new Conta();
+```
+
+A mensagem "Nova conta criada!" aparecerá.
+
 ### 13.2 Construtor Default
 
 Se nenhum construtor for declarado, o Java fornece um construtor sem parâmetros que inicializa os atributos com valores padrão.
+A partir do momento que você declara um construtor, o construtor default não é mais fornecido.
 
 ### 13.3 Construtores com Argumentos
 
-Permitem inicializar atributos com valores específicos no momento da criação.
+Construtores permitem inicializar atributos com valores específicos no momento da criação.
 
 ```java
 class Conta {
