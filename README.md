@@ -29,6 +29,8 @@
    7.2 [O Problema de null](#72-o-problema-de-null)  
    7.3 [Referências e null](#73-referências-e-null)  
 ---
+[Controle de Acesso e Encapsulamento](#controle-de-acesso-e-encapsulamento)
+
 8. [Palavra-chave this](#8-palavra-chave-this)  
    8.1 [Diferenciando Atributos de Variáveis Locais](#81-diferenciando-atributos-de-variáveis-locais)  
    8.2 [Passando o Próprio Objeto como Argumento](#82-passando-o-próprio-objeto-como-argumento)  
@@ -51,13 +53,12 @@
     13.4 [Sobrecarga de Construtores](#134-sobrecarga-de-construtores)  
     13.5 [Chamando Outro Construtor com this()](#135-chamando-outro-construtor-com-this)  
 14. [Introdução aos Atributos de Classe](#14-introdução-aos-atributos-de-classe)  
-15. [Atributos Estáticos com static](#15-atributos-estáticos-com-static)  
-    15.1 [Definição de Atributos Estáticos](#151-definição-de-atributos-estáticos)  
-    15.2 [Acesso e Uso de Atributos Estáticos](#152-acesso-e-uso-de-atributos-estáticos)  
-16. [Métodos Estáticos](#16-métodos-estáticos)  
-    16.1 [Características dos Métodos Estáticos](#161-características-dos-métodos-estáticos)  
-    16.2 [Comparação: Métodos Estáticos vs. Métodos de Instância](#162-comparação-métodos-estáticos-vs-métodos-de-instância)  
-17. [Exemplo Prático: Controle de Contas Bancárias](#17-exemplo-prático-controle-de-contas-bancárias)  
+    14.1 [Definição de Atributos Estáticos](#141-definição-de-atributos-estáticos)  
+15. [Métodos Estáticos](#15-métodos-estáticos)  
+    15.1 [Características dos Métodos Estáticos](#151-características-dos-métodos-estáticos)  
+    15.2 [Comparação: Métodos Estáticos vs. Métodos de Instância](#152-comparação-métodos-estáticos-vs-métodos-de-instância)  
+
+[Exemplo Prático: Controle de Contas Bancárias](#exemplo-prático-controle-de-contas-bancárias)  
 
 ---
 ## Introdução à Programação Orientada a Objetos
@@ -943,12 +944,17 @@ Note que estamos chamando o método usando o **nome da classe**, não um objeto.
 
 <br>
 
-## 16. Métodos Estáticos
+## 15. Métodos Estáticos
 
-### 16.1 Características dos Métodos Estáticos
+### 15.1 O que são Métodos Estáticos
 
-- São independentes do estado de instância e não possuem `this`.
-- Podem ser chamados utilizando o nome da classe.
+Um **método estático** é aquele que pertence à **classe**, e não a um objeto específico. Isso significa que:
+
+- Ele **não depende do estado (atributos)** de nenhuma instância (objeto).
+- Ele **não pode usar o `this`**, pois `this` se refere a um objeto, e métodos estáticos são independentes de objetos.
+- Pode ser chamado diretamente usando o **nome da classe**, sem precisar criar um objeto.
+
+#### Exemplo:
 
 ```java
 class Calculadora {
@@ -958,14 +964,100 @@ class Calculadora {
 }
 ```
 
-### 16.2 Comparação: Métodos Estáticos vs. Métodos de Instância
+Para usar esse método:
 
-- **Estáticos:** Usados para operações gerais, não dependem dos atributos do objeto.
-- **Instância:** Operam sobre os dados específicos do objeto.
+```java
+double resultado = Calculadora.soma(10, 5);
+```
+
+Não precisamos instanciar um objeto da classe `Calculadora` para usar o método `soma`.
 
 ---
 
-## 17. Exemplo Prático: Controle de Contas Bancárias
+### 15.2 Diferença entre Métodos Estáticos e Métodos de Instância
+
+#### **Métodos Estáticos:**
+- São usados quando **a lógica do método não depende de atributos do objeto**.
+- Normalmente aplicados em **operações utilitárias ou matemáticas**, como em classes auxiliares (`Math`, `Arrays`, `Collections`, etc.).
+- Exemplo clássico: `Math.pow(2, 3)` – calcula 2 elevado a 3.
+
+#### **Métodos de Instância:**
+- Operam sobre **dados específicos de um objeto**.
+- Precisam de um objeto para serem chamados, pois usam atributos de instância.
+
+#### Comparação rápida:
+
+| Tipo                  | Usa atributos do objeto? | Precisa de objeto para chamar? | Exemplo de uso             |
+|-----------------------|--------------------------|-------------------------------|----------------------------|
+| Método Estático       | Não                      | Não                            | `Calculadora.soma(2, 3)`   |
+| Método de Instância   | Sim                      | Sim                            | `conta.getSaldo()`         |
+
+Boa pergunta, Diego! Não, **atributo estático** e **método estático** **não são a mesma coisa**, embora compartilhem o uso da palavra-chave `static` e pertençam à classe, não ao objeto. Vamos esclarecer:
+
+---
+
+### **Atributo Estático (`static`)**
+
+- É uma **variável que pertence à classe**.
+- **Todos os objetos compartilham o mesmo valor** desse atributo.
+- Usado quando a informação é **comum a todas as instâncias** (por exemplo, contar quantos objetos foram criados).
+
+#### Exemplo:
+```java
+class Conta {
+    private static int totalDeContas = 0;
+
+    public Conta() {
+        Conta.totalDeContas++;
+    }
+
+    public static int getTotalDeContas() {
+        return totalDeContas;
+    }
+}
+```
+
+> `totalDeContas` é um **atributo estático**: independente da instância, ele guarda a contagem total de objetos criados.
+
+---
+
+### 15.3 Diferenças entre Atributo Estático e Método Estático
+
+### **Método Estático (`static`)**
+
+- É um **método que pertence à classe**, não a uma instância.
+- **Não pode acessar atributos ou métodos de instância diretamente**.
+- Pode ser chamado **sem criar um objeto**.
+
+#### Exemplo:
+```java
+class Util {
+    public static int dobro(int valor) {
+        return valor * 2;
+    }
+}
+```
+
+> `dobro` é um **método estático**: realiza uma operação genérica, sem depender de atributos de instância.
+
+---
+
+### Resumo da Diferença
+
+| Característica            | Atributo Estático         | Método Estático            |
+|---------------------------|---------------------------|-----------------------------|
+| Pertence à classe         | Sim                        | Sim                         |
+| Compartilhado entre objetos | Sim                      | Não se aplica               |
+| Depende de objeto         | Não                        | Não                         |
+| Acesso direto via classe  | Sim (`Classe.atributo`)   | Sim (`Classe.metodo()`)     |
+| Usa `this`                | Não                        | Não                         |
+
+
+<br>
+
+---
+
+## Exemplo Controle de Contas Bancárias
 
 Exemplo de uma classe `Conta` que utiliza atributos e métodos estáticos para controlar o número total de contas.
 
