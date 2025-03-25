@@ -8,6 +8,7 @@
 - [Abstração](#4-abstração)
 - [Instância e Instanciação](#5-instância-e-instanciação)
 - [Classe, Objeto, Atributos e Métodos](#classe-objeto-atributos-e-métodos)
+---
 1. [Conceitos Iniciais](#1-conceitos-iniciais)  
    1.2 [Projeto de Classes com UML](#12-projeto-de-classes-com-uml)  
 2. [Definindo Classes](#2-definindo-classes)  
