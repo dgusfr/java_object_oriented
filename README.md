@@ -750,10 +750,16 @@ Por fim, mesmo com todos esses cuidados, é preciso validar os dados de entrada.
 
 ### 13.1 O Que é um Construtor?
 
-Construtores são blocos especiais que inicializam os objetos no momento da criação.
+Construtores são blocos especiais, declarados com o mesmo nome que a classe, que inicializam os objetos no momento da criação.
 
 ```java
 class Conta {
+    int numero;
+    String dono;
+    double saldo;
+    double limite;
+
+    //construtor
     Conta() {
         System.out.println("Nova conta criada!");
     }
