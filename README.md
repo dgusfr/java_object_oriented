@@ -223,11 +223,11 @@ Conta minhaConta = new Conta();
 Após criar o objeto, precisamos criar metodos para alterar os atributos da Conta, para isso criamos o metodo que realiza a operação que desejamos (Ex: saldo, retorna o saldo atual da conta) e chamamos ele utilizando o operador '.', conforme exemplificado a baixo:
 
 ```java
-minhaConta.dono = "Duke";
+minhaConta.dono = "João";
 minhaConta.saldo = 1000.0;
 System.out.println(minhaConta.saldo);
 ```
-NO exemplo a cima alteramos o nome do dono da conta para Duke e alteramos o saldo dessa conta.
+NO exemplo a cima alteramos o nome do dono da conta para João e alteramos o saldo dessa conta.
 
 ---
 
@@ -379,7 +379,7 @@ import banco.modelo.Conta;
 public class ContaAplicacao {
     public static void main(String[] args) {
         Conta minhaConta = new Conta();
-        minhaConta.dono = "Duke";
+        minhaConta.dono = "João";
         minhaConta.saldo = 1000;
 
         minhaConta.saca(200);
@@ -411,7 +411,7 @@ Além disso, é possível definir valores padrão para os atributos diretamente 
 ```java
 class Conta {
     int numero = 1234;
-    String dono = "Duke";
+    String dono = "João";
     String cpf = "123.456.789-10";
     double saldo = 1000;
     double limite = 1000;
@@ -793,6 +793,15 @@ class Conta {
 }
 ```
 
+Esse construtor recebe o titular da conta. Assim, quando criarmos uma conta ela já terá um determinado dono.
+
+```java
+Conta c = new Conta("João");
+System.out.println(c.titular);
+```
+
+O construtor se **resume** a dar possibilidades ou obrigar o usuário de uma classe à passar argumentos para o objeto durante o processo de criação do mesmo.
+
 ### 13.4 Sobrecarga de Construtores
 
 Uma classe pode ter vários construtores com assinaturas diferentes para maior flexibilidade.
@@ -942,7 +951,7 @@ Programa principal:
 ```java
 public class ProgramaPrincipal {
     public static void main(String[] args) {
-        Conta conta1 = new Conta("Duke");
+        Conta conta1 = new Conta("João");
         conta1.deposita(1000);
 
         Conta conta2 = new Conta("Maria");
