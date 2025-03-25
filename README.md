@@ -49,14 +49,14 @@
     13.3 [Construtores com Argumentos](#133-construtores-com-argumentos)  
     13.4 [Sobrecarga de Construtores](#134-sobrecarga-de-construtores)  
     13.5 [Chamando Outro Construtor com this()](#135-chamando-outro-construtor-com-this)  
-14. [Introdução aos Atributos de Classe](#15-introdução-aos-atributos-de-classe)  
-15. [Atributos Estáticos com static](#16-atributos-estáticos-com-static)  
-    16.1 [Definição de Atributos Estáticos](#161-definição-de-atributos-estáticos)  
-    16.2 [Acesso e Uso de Atributos Estáticos](#162-acesso-e-uso-de-atributos-estáticos)  
+14. [Introdução aos Atributos de Classe](#14-introdução-aos-atributos-de-classe)  
+15. [Atributos Estáticos com static](#15-atributos-estáticos-com-static)  
+    15.1 [Definição de Atributos Estáticos](#151-definição-de-atributos-estáticos)  
+    15.2 [Acesso e Uso de Atributos Estáticos](#152-acesso-e-uso-de-atributos-estáticos)  
 16. [Métodos Estáticos](#16-métodos-estáticos)  
     16.1 [Características dos Métodos Estáticos](#161-características-dos-métodos-estáticos)  
     16.2 [Comparação: Métodos Estáticos vs. Métodos de Instância](#162-comparação-métodos-estáticos-vs-métodos-de-instância)  
-16. [Exemplo Prático: Controle de Contas Bancárias](#18-exemplo-prático-controle-de-contas-bancárias)  
+17. [Exemplo Prático: Controle de Contas Bancárias](#17-exemplo-prático-controle-de-contas-bancárias)  
 
 ---
 ## Introdução à Programação Orientada a Objetos
