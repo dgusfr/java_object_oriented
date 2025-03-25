@@ -56,9 +56,12 @@
     14.1 [Definição de Atributos Estáticos](#141-definição-de-atributos-estáticos)  
 15. [Métodos Estáticos](#15-métodos-estáticos)  
     15.1 [Características dos Métodos Estáticos](#151-características-dos-métodos-estáticos)  
-    15.2 [Comparação: Métodos Estáticos vs. Métodos de Instância](#152-comparação-métodos-estáticos-vs-métodos-de-instância)  
+    15.2 [Comparação: Métodos Estáticos vs. Métodos de Instância](#152-comparação-métodos-estáticos-vs-métodos-de-instância)
 
-[Exemplo Prático: Controle de Contas Bancárias](#exemplo-prático-controle-de-contas-bancárias)  
+    15.3 [Diferenças entre Atributo Estático e Método Estático](#153-diferenças-entre-atributo-estático-e-método-estático)
+    
+    [Exemplo Prático: Controle de Contas Bancárias](#exemplo-prático-controle-de-contas-bancárias)  
+---
 
 ---
 ## Introdução à Programação Orientada a Objetos
