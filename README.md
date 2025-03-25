@@ -855,7 +855,87 @@ class Conta {
 
 ## 14. Introdução aos Atributos de Classe
 
-Atributos de classe (ou *variáveis de classe*) são compartilhados entre todas as instâncias. Eles são ideais para manter informações globais, como contadores ou configurações comuns.
+Nosso banco quer controlar quantas contas foram criadas no sistema. Qual seria a forma mais simples de fazer isso?
+
+```java
+Conta c = new Conta();
+totalDeContas = totalDeContas + 1;
+```
+
+O problema é que esse controle ficaria espalhado por todo o sistema. E se esquecermos de atualizar essa variável em algum lugar? Isso já nos lembra o problema da validação de CPF.
+
+Vamos tentar fazer isso dentro da própria classe:
+
+```java
+class Conta {
+    private int totalDeContas;
+
+    Conta() {
+        this.totalDeContas = this.totalDeContas + 1;
+    }
+}
+```
+
+Se criarmos duas contas com esse código, o que acontece? Cada conta terá sua própria cópia da variável `totalDeContas`, então o valor será sempre 1. Ou seja, o atributo **é de cada objeto**, não da classe.
+
+O ideal seria que essa variável fosse **compartilhada entre todos os objetos**, para que ao alterar em um lugar, todos vejam o novo valor. Para isso, usamos o modificador `static`:
+
+```java
+private static int totalDeContas;
+```
+
+Com `static`, o atributo deixa de pertencer a cada objeto e passa a pertencer **à classe**. O valor é único e compartilhado.
+
+Para atualizar essa variável, usamos o nome da classe em vez de `this`:
+
+```java
+class Conta {
+    private static int totalDeContas;
+
+    Conta() {
+        Conta.totalDeContas = Conta.totalDeContas + 1;
+    }
+}
+```
+
+Como `totalDeContas` é `private`, precisamos de um **getter** para acessá-la de fora da classe:
+
+```java
+class Conta {
+    private static int totalDeContas;
+
+    Conta() {
+        Conta.totalDeContas = Conta.totalDeContas + 1;
+    }
+
+    public int getTotalDeContas() {
+        return Conta.totalDeContas;
+    }
+}
+```
+
+Agora podemos descobrir quantas contas existem assim:
+
+```java
+Conta c = new Conta();
+int total = c.getTotalDeContas();
+```
+
+Mas tem um detalhe: só conseguimos acessar o método se tivermos uma conta criada. O ideal seria consultar essa informação **sem precisar de um objeto**. Para isso, também deixamos o método como `static`:
+
+```java
+public static int getTotalDeContas() {
+    return Conta.totalDeContas;
+}
+```
+
+Agora podemos acessar diretamente:
+
+```java
+int total = Conta.getTotalDeContas();
+```
+
+Note que estamos chamando o método usando o **nome da classe**, não um objeto.
 
 ---
 
