@@ -878,7 +878,9 @@ class Conta {
 
 Se criarmos duas contas com esse código, o que acontece? Cada conta terá sua própria cópia da variável `totalDeContas`, então o valor será sempre 1. Ou seja, o atributo **é de cada objeto**, não da classe.
 
-O ideal seria que essa variável fosse **compartilhada entre todos os objetos**, para que ao alterar em um lugar, todos vejam o novo valor. Para isso, usamos o modificador `static`:
+### 14.1 Definição de Atributos Estáticos
+
+O ideal seria que essa variável fosse **compartilhada entre todos os objetos**, para que ao alterar em um lugar, todos vejam o novo valor. Para isso, usamos o modificador **`static`**:
 
 ```java
 private static int totalDeContas;
@@ -936,34 +938,6 @@ int total = Conta.getTotalDeContas();
 ```
 
 Note que estamos chamando o método usando o **nome da classe**, não um objeto.
-
----
-
-## 15. Atributos Estáticos com static
-
-### 15.1 Definição de Atributos Estáticos
-
-Atributos declarados com `static` pertencem à classe, não a instâncias individuais.
-
-```java
-class Conta {
-    private static int totalDeContas = 0;
-
-    Conta() {
-        Conta.totalDeContas += 1;
-    }
-}
-```
-
-### 15.2 Acesso e Uso de Atributos Estáticos
-
-Podem ser acessados diretamente pelo nome da classe.
-
-```java
-public static int getTotalDeContas() {
-    return Conta.totalDeContas;
-}
-```
 
 ---
 
