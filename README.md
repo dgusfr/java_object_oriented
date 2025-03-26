@@ -1129,9 +1129,13 @@ public class ProgramaPrincipal {
 
 ### 16.1 Herança
 
-Em um sistema bancário, podemos começar modelando um **funcionário genérico** com atributos como nome, CPF e salário. No entanto, há cargos específicos, como o de **gerente**, que possuem **características adicionais**, como uma senha para acessar o sistema interno do banco. Uma abordagem equivocada seria simplesmente adicionar o atributo `senha` à classe `Funcionario`, deixando-o vazio quando o funcionário não for um gerente. Porém, isso compromete o design, pois introduz comportamento irrelevante para alguns objetos.
+Em um sistema bancário, podemos começar modelando um **funcionário genérico** com atributos como nome, CPF e salário. No entanto, há cargos específicos, como o de **gerente**, que possuem **características adicionais**, como uma senha para acessar o sistema interno do banco. 
 
-Em vez disso, usamos o conceito de **herança**, onde criamos uma classe `Gerente` que **herda** os atributos e métodos da classe `Funcionario`. Em Java, fazemos isso com a palavra-chave `extends`. Dessa forma, `Gerente` se torna uma **subclasse** de `Funcionario`, que é a **superclasse**. O gerente herda todos os comportamentos do funcionário, mas pode também definir novos comportamentos, como o método `autentica(int senha)`.
+Uma abordagem equivocada seria simplesmente adicionar o atributo `senha` à classe `Funcionario`, deixando-o vazio quando o funcionário não for um gerente. Porém, isso compromete o design, pois introduz comportamento irrelevante para alguns objetos.
+
+Em vez disso, usamos o conceito de **herança**, onde criamos uma classe `Gerente` que **herda** os atributos e métodos da classe `Funcionario`. Em Java, fazemos isso com a palavra-chave `extends`. Dessa forma, `Gerente` se torna uma **subclasse** de `Funcionario`, que é a **superclasse**. 
+
+O gerente herda todos os comportamentos do funcionário, mas pode também definir novos comportamentos, como o método `autentica(int senha)`.
 
 ```java
 class Funcionario {
@@ -1215,6 +1219,8 @@ System.out.println(gerente.getBonificacao()); // 750.0
 ```
 
 O método chamado será o da **classe real do objeto** (Gerente), mesmo que a referência seja do tipo `Funcionario`.
+
+<br>
 
 ---
 
