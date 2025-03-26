@@ -1342,7 +1342,7 @@ Isso mostra o poder do **polimorfismo** aliado à **herança e reescrita de mét
 
 1. Imagine que **não existisse herança em Java**. Como você reutilizaria código entre duas classes que compartilham vários comportamentos? A resposta provável seria através de **composição**, criando objetos internos ou delegando responsabilidade.
 
-2. Em projetos reais, o **abuso da herança** pode levar a sistemas difíceis de manter. Muitas vezes, usar **composição ao invés de herança** resulta em um design mais flexível. Pesquise sobre o princípio **"favor composição sobre herança"**.
+
 
 
 
