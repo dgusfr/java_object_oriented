@@ -1125,7 +1125,9 @@ public class ProgramaPrincipal {
 
 ---
 
-### **16.1 - Herança**
+# 16. Herança, Reescrita de Métodos, Polimorfismo e Composição
+
+### 16.1 Herança
 
 Em um sistema bancário, podemos começar modelando um **funcionário genérico** com atributos como nome, CPF e salário. No entanto, há cargos específicos, como o de **gerente**, que possuem **características adicionais**, como uma senha para acessar o sistema interno do banco. Uma abordagem equivocada seria simplesmente adicionar o atributo `senha` à classe `Funcionario`, deixando-o vazio quando o funcionário não for um gerente. Porém, isso compromete o design, pois introduz comportamento irrelevante para alguns objetos.
 
@@ -1175,7 +1177,7 @@ Embora `protected` seja útil, ele **aumenta o acoplamento** entre as classes. E
 
 ---
 
-### **16.2 - Reescrita de Método (Override)**
+### 16.2 Reescrita de Método (Override)
 
 Ao final do ano, todos os funcionários do banco recebem uma **bonificação**. Funcionários comuns recebem 10% do salário, enquanto gerentes recebem 15%. Se deixarmos o método `getBonificacao` apenas na superclasse, todos herdarão o mesmo cálculo.
 
@@ -1216,7 +1218,7 @@ O método chamado será o da **classe real do objeto** (Gerente), mesmo que a re
 
 ---
 
-### **16.3 - Polimorfismo**
+### 16.3 Polimorfismo
 
 **Polimorfismo** é a capacidade de um objeto ser **referenciado de formas diferentes**, mantendo o mesmo comportamento em tempo de execução. Como `Gerente` é um `Funcionario`, podemos declarar uma variável do tipo `Funcionario`, mas apontando para um `Gerente`:
 
@@ -1264,7 +1266,7 @@ A **classe `ControleDeBonificacoes` funciona para qualquer novo tipo de funcion�
 
 ---
 
-### **16.4 - Exemplo Prático com Faculdade**
+### 16.4 Exemplo Prático com Faculdade
 
 Agora vamos adaptar esse conceito para um cenário universitário. Imagine uma classe `EmpregadoDaFaculdade` com nome e salário:
 
@@ -1330,7 +1332,7 @@ Isso mostra o poder do **polimorfismo** aliado à **herança e reescrita de mét
 
 ---
 
-### **16.5 - Reflexão Avançada**
+### 16.5 Reflexão Avançada
 
 1. Imagine que **não existisse herança em Java**. Como você reutilizaria código entre duas classes que compartilham vários comportamentos? A resposta provável seria através de **composição**, criando objetos internos ou delegando responsabilidade.
 
