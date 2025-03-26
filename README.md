@@ -68,8 +68,6 @@
     16.2 [Reescrita de Método (Override)](#162-reescrita-de-método-override)  
     16.3 [Polimorfismo](#163-polimorfismo)  
     16.4 [Exemplo Prático com Faculdade](#164-exemplo-prático-com-faculdade)  
-    16.5 [Reflexão Avançada](#165-reflexão-avançada)
-
 
 ---
 ## Introdução à Programação Orientada a Objetos
