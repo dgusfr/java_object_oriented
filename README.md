@@ -62,6 +62,13 @@
     [Exemplo Prático: Controle de Contas Bancárias](#exemplo-prático-controle-de-contas-bancárias)  
 ---
 [Herança e Polimorfismo](#herança-e-polimorfismo)
+16. [Herança, Reescrita de Métodos, Polimorfismo e Composição](#16-herança-reescrita-de-métodos-polimorfismo-e-composição)  
+    16.1 [Herança](#161-herança)  
+    16.2 [Reescrita de Método (Override)](#162-reescrita-de-método-override)  
+    16.3 [Polimorfismo](#163-polimorfismo)  
+    16.4 [Exemplo Prático com Faculdade](#164-exemplo-prático-com-faculdade)  
+    16.5 [Reflexão Avançada](#165-reflexão-avançada)
+
 
 ---
 ## Introdução à Programação Orientada a Objetos
