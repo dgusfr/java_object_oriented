@@ -1338,9 +1338,6 @@ Isso mostra o poder do **polimorfismo** aliado à **herança e reescrita de mét
 
 ---
 
-### 16.5 Reflexão Avançada
-
-1. Imagine que **não existisse herança em Java**. Como você reutilizaria código entre duas classes que compartilham vários comportamentos? A resposta provável seria através de **composição**, criando objetos internos ou delegando responsabilidade.
 
 
 
