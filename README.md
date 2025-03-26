@@ -1344,6 +1344,5 @@ Isso mostra o poder do **polimorfismo** aliado à **herança e reescrita de mét
 
 2. Em projetos reais, o **abuso da herança** pode levar a sistemas difíceis de manter. Muitas vezes, usar **composição ao invés de herança** resulta em um design mais flexível. Pesquise sobre o princípio **"favor composição sobre herança"**.
 
-3. Mesmo após reescrever um método, ainda é possível **acessar a versão original** com `super.metodo()`. Isso também se aplica a **construtores**, quando usamos `super()` para inicializar a superclasse dentro da subclasse.
 
 
