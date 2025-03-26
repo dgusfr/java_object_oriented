@@ -1111,3 +1111,223 @@ public class ProgramaPrincipal {
 ```
 
 ---
+
+<br>
+<br>
+
+---
+
+### **16.1 - Herança**
+
+Em um sistema bancário, podemos começar modelando um **funcionário genérico** com atributos como nome, CPF e salário. No entanto, há cargos específicos, como o de **gerente**, que possuem **características adicionais**, como uma senha para acessar o sistema interno do banco. Uma abordagem equivocada seria simplesmente adicionar o atributo `senha` à classe `Funcionario`, deixando-o vazio quando o funcionário não for um gerente. Porém, isso compromete o design, pois introduz comportamento irrelevante para alguns objetos.
+
+Em vez disso, usamos o conceito de **herança**, onde criamos uma classe `Gerente` que **herda** os atributos e métodos da classe `Funcionario`. Em Java, fazemos isso com a palavra-chave `extends`. Dessa forma, `Gerente` se torna uma **subclasse** de `Funcionario`, que é a **superclasse**. O gerente herda todos os comportamentos do funcionário, mas pode também definir novos comportamentos, como o método `autentica(int senha)`.
+
+```java
+class Funcionario {
+    String nome;
+    String cpf;
+    double salario;
+}
+
+class Gerente extends Funcionario {
+    int senha;
+
+    public boolean autentica(int senha) {
+        if (this.senha == senha) {
+            System.out.println("Acesso Permitido!");
+            return true;
+        } else {
+            System.out.println("Acesso Negado!");
+            return false;
+        }
+    }
+}
+```
+
+Ao instanciar um gerente, ele terá acesso tanto aos atributos herdados quanto aos novos:
+
+```java
+Gerente gerente = new Gerente();
+gerente.nome = "João da Silva";
+gerente.senha = 4231;
+```
+
+Apesar da herança incluir atributos e métodos `private`, a subclasse **não pode acessá-los diretamente**. Para isso, usamos o modificador `protected`, que permite o acesso **dentro da própria classe e das subclasses**.
+
+```java
+class Funcionario {
+    protected String nome;
+    protected String cpf;
+    protected double salario;
+}
+```
+
+Embora `protected` seja útil, ele **aumenta o acoplamento** entre as classes. Em muitos casos, manter os atributos como `private` e acessá-los por **getters e setters** continua sendo a opção mais segura.
+
+---
+
+### **16.2 - Reescrita de Método (Override)**
+
+Ao final do ano, todos os funcionários do banco recebem uma **bonificação**. Funcionários comuns recebem 10% do salário, enquanto gerentes recebem 15%. Se deixarmos o método `getBonificacao` apenas na superclasse, todos herdarão o mesmo cálculo.
+
+```java
+class Funcionario {
+    protected String nome;
+    protected String cpf;
+    protected double salario;
+
+    public double getBonificacao() {
+        return this.salario * 0.10;
+    }
+}
+```
+
+Porém, como o gerente possui uma bonificação diferente, precisamos **reescrever** esse método dentro da subclasse `Gerente`, usando a técnica de **override**:
+
+```java
+class Gerente extends Funcionario {
+    int senha;
+
+    @Override
+    public double getBonificacao() {
+        return this.salario * 0.15;
+    }
+}
+```
+
+Se testarmos esse comportamento:
+
+```java
+Gerente gerente = new Gerente();
+gerente.salario = 5000.0;
+System.out.println(gerente.getBonificacao()); // 750.0
+```
+
+O método chamado será o da **classe real do objeto** (Gerente), mesmo que a referência seja do tipo `Funcionario`.
+
+---
+
+### **16.3 - Polimorfismo**
+
+**Polimorfismo** é a capacidade de um objeto ser **referenciado de formas diferentes**, mantendo o mesmo comportamento em tempo de execução. Como `Gerente` é um `Funcionario`, podemos declarar uma variável do tipo `Funcionario`, mas apontando para um `Gerente`:
+
+```java
+Funcionario funcionario = new Gerente();
+funcionario.salario = 5000.0;
+System.out.println(funcionario.getBonificacao()); // 750.0
+```
+
+Mesmo usando o tipo `Funcionario`, o método executado será o do `Gerente`, porque o Java resolve chamadas de método com **base na classe real do objeto**, e não na variável de referência. Isso é o que chamamos de **ligação dinâmica**.
+
+Esse comportamento é especialmente útil em classes como a abaixo:
+
+```java
+class ControleDeBonificacoes {
+    private double totalDeBonificacoes = 0;
+
+    public void bonifica(Funcionario funcionario) {
+        this.totalDeBonificacoes += funcionario.getBonificacao();
+    }
+
+    public double getTotalDeBonificacoes() {
+        return this.totalDeBonificacoes;
+    }
+}
+```
+
+Podemos chamar esse método passando qualquer objeto que seja um `Funcionario`, inclusive instâncias de subclasses como `Gerente`:
+
+```java
+ControleDeBonificacoes controle = new ControleDeBonificacoes();
+
+Gerente g = new Gerente();
+g.salario = 5000.0;
+controle.bonifica(g);
+
+Funcionario f = new Funcionario();
+f.salario = 1000.0;
+controle.bonifica(f);
+
+System.out.println(controle.getTotalDeBonificacoes()); // 750 + 100 = 850
+```
+
+A **classe `ControleDeBonificacoes` funciona para qualquer novo tipo de funcionário** que você criar futuramente, desde que herde de `Funcionario`. Isso promove um **baixo acoplamento** e alta **reutilização de código**.
+
+---
+
+### **16.4 - Exemplo Prático com Faculdade**
+
+Agora vamos adaptar esse conceito para um cenário universitário. Imagine uma classe `EmpregadoDaFaculdade` com nome e salário:
+
+```java
+class EmpregadoDaFaculdade {
+    private String nome;
+    private double salario;
+
+    double getGastos() {
+        return this.salario;
+    }
+
+    String getInfo() {
+        return "nome: " + this.nome + " com salário " + this.salario;
+    }
+}
+```
+
+Um professor, além do salário, recebe um valor adicional por hora/aula. Para isso, criamos a subclasse `ProfessorDaFaculdade`, que **reescreve os métodos** `getGastos` e `getInfo`:
+
+```java
+class ProfessorDaFaculdade extends EmpregadoDaFaculdade {
+    private int horasDeAula;
+
+    @Override
+    double getGastos() {
+        return this.getSalario() + this.horasDeAula * 10;
+    }
+
+    @Override
+    String getInfo() {
+        String informacaoBasica = super.getInfo();
+        return informacaoBasica + " horas de aula: " + this.horasDeAula;
+    }
+}
+```
+
+Repare que usamos a palavra-chave **`super`** para **acessar métodos da superclasse**, evitando a repetição de código.
+
+Se mais tarde criarmos um `Reitor`:
+
+```java
+class Reitor extends ProfessorDaFaculdade {
+    @Override
+    String getInfo() {
+        return super.getInfo() + " e ele é um reitor";
+    }
+}
+```
+
+Nosso sistema continua funcionando **sem precisar alterar o código existente**, como o da classe `GeradorDeRelatorio`:
+
+```java
+class GeradorDeRelatorio {
+    public void adiciona(EmpregadoDaFaculdade e) {
+        System.out.println(e.getInfo());
+        System.out.println(e.getGastos());
+    }
+}
+```
+
+Isso mostra o poder do **polimorfismo** aliado à **herança e reescrita de métodos**, permitindo a evolução do sistema sem quebrar o que já existe.
+
+---
+
+### **16.5 - Reflexão Avançada**
+
+1. Imagine que **não existisse herança em Java**. Como você reutilizaria código entre duas classes que compartilham vários comportamentos? A resposta provável seria através de **composição**, criando objetos internos ou delegando responsabilidade.
+
+2. Em projetos reais, o **abuso da herança** pode levar a sistemas difíceis de manter. Muitas vezes, usar **composição ao invés de herança** resulta em um design mais flexível. Pesquise sobre o princípio **"favor composição sobre herança"**.
+
+3. Mesmo após reescrever um método, ainda é possível **acessar a versão original** com `super.metodo()`. Isso também se aplica a **construtores**, quando usamos `super()` para inicializar a superclasse dentro da subclasse.
+
+
