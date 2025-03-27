@@ -1224,49 +1224,106 @@ O método chamado será o da **classe real do objeto** (Gerente), mesmo que a re
 
 ### 16.3 Polimorfismo
 
-**Polimorfismo** é a capacidade de um objeto ser **referenciado de formas diferentes**, mantendo o mesmo comportamento em tempo de execução. Como `Gerente` é um `Funcionario`, podemos declarar uma variável do tipo `Funcionario`, mas apontando para um `Gerente`:
+**Polimorfismo** é um conceito da programação orientada a objetos que significa:  
+> **Um mesmo nome pode se comportar de formas diferentes, dependendo do tipo real do objeto.**
+
+Em Java, isso acontece quando **usamos uma variável de um tipo mais genérico (como uma superclasse) para se referir a um objeto de uma subclasse**.
+
+#### Exemplo prático:
+
+Imagine que temos uma classe `Funcionario` e uma subclasse `Gerente`:
 
 ```java
-Funcionario funcionario = new Gerente();
-funcionario.salario = 5000.0;
-System.out.println(funcionario.getBonificacao()); // 750.0
-```
+class Funcionario {
+    protected double salario;
 
-Mesmo usando o tipo `Funcionario`, o método executado será o do `Gerente`, porque o Java resolve chamadas de método com **base na classe real do objeto**, e não na variável de referência. Isso é o que chamamos de **ligação dinâmica**.
-
-Esse comportamento é especialmente útil em classes como a abaixo:
-
-```java
-class ControleDeBonificacoes {
-    private double totalDeBonificacoes = 0;
-
-    public void bonifica(Funcionario funcionario) {
-        this.totalDeBonificacoes += funcionario.getBonificacao();
+    public double getBonificacao() {
+        return this.salario * 0.10;
     }
+}
 
-    public double getTotalDeBonificacoes() {
-        return this.totalDeBonificacoes;
+class Gerente extends Funcionario {
+    @Override
+    public double getBonificacao() {
+        return this.salario * 0.15;
     }
 }
 ```
 
-Podemos chamar esse método passando qualquer objeto que seja um `Funcionario`, inclusive instâncias de subclasses como `Gerente`:
+Agora veja esse código:
+
+```java
+Funcionario funcionario = new Gerente();
+funcionario.salario = 5000.0;
+System.out.println(funcionario.getBonificacao());
+```
+
+A pergunta é: qual método será chamado? O de `Funcionario` (10%) ou o de `Gerente` (15%)?
+
+### Resposta: será chamado o método da **classe real** do objeto, ou seja, **`Gerente`**, mesmo que a variável seja do tipo `Funcionario`.
+
+---
+
+### 📦 Representação na memória
+
+Vamos visualizar isso como se fosse uma **caixa com etiqueta** apontando para um **objeto real**:
+
+```
+[variável funcionario] ---> (objeto Gerente na memória)
+                            +--------------------------+
+                            | tipo real: Gerente       |
+                            | salario = 5000.0         |
+                            | getBonificacao() = 15%   |
+                            +--------------------------+
+```
+
+Mesmo que a variável `funcionario` diga ser um "Funcionario", na verdade ela aponta para um "Gerente". E o Java, em tempo de execução, vai olhar o **objeto real** e não o **tipo da variável**.
+
+---
+
+### 🧠 Por que isso é útil?
+
+Porque nos permite escrever **códigos genéricos** que funcionam com diferentes tipos de objetos, sem precisar alterar a lógica toda vez que surgir uma nova subclasse.
+
+Veja o exemplo abaixo:
+
+```java
+class ControleDeBonificacoes {
+    private double total = 0;
+
+    public void bonifica(Funcionario f) {
+        total += f.getBonificacao();
+    }
+
+    public double getTotal() {
+        return total;
+    }
+}
+```
+
+Podemos usar essa classe com **qualquer tipo de funcionário** (Gerente, Diretor, Secretaria...), sem precisar criar métodos específicos para cada um:
 
 ```java
 ControleDeBonificacoes controle = new ControleDeBonificacoes();
 
-Gerente g = new Gerente();
-g.salario = 5000.0;
-controle.bonifica(g);
+Funcionario f1 = new Gerente(); // 15%
+f1.salario = 5000;
+controle.bonifica(f1);
 
-Funcionario f = new Funcionario();
-f.salario = 1000.0;
-controle.bonifica(f);
+Funcionario f2 = new Funcionario(); // 10%
+f2.salario = 1000;
+controle.bonifica(f2);
 
-System.out.println(controle.getTotalDeBonificacoes()); // 750 + 100 = 850
+System.out.println(controle.getTotal()); // 750 + 100 = 850
 ```
 
-A **classe `ControleDeBonificacoes` funciona para qualquer novo tipo de funcionário** que você criar futuramente, desde que herde de `Funcionario`. Isso promove um **baixo acoplamento** e alta **reutilização de código**.
+---
+
+### 📌 Resumo rápido
+
+- Com **polimorfismo**, você pode usar uma **referência de superclasse** para apontar para **objetos de subclasses**.
+- O método chamado é o da **classe real do objeto**, não da variável.
+- Isso permite criar **códigos genéricos, reutilizáveis e flexíveis**, promovendo **baixo acoplamento**.
 
 ---
 
