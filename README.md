@@ -1281,7 +1281,7 @@ Mesmo que a variável `funcionario` diga ser um "Funcionario", na verdade ela ap
 
 ---
 
-### Por que isso é útil?
+### 🧠 Por que isso é útil?
 
 Porque nos permite escrever **códigos genéricos** que funcionam com diferentes tipos de objetos, sem precisar alterar a lógica toda vez que surgir uma nova subclasse.
 
